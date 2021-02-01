@@ -1,0 +1,199 @@
+<mamecheat version="1">
+
+  <NGH>218</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="on">
+      <action>temp0 =maincpu.md@033B60</action>
+      <action>temp1 =maincpu.mw@033B64</action>
+    </script>
+    <script state="run">
+      <action>maincpu.md@033B60=3D7C0909</action>
+      <action>maincpu.mw@033B64=001E</action> <!-- move.w #$0909,($1e,A6) -->
+    </script>
+    <script state="off">
+      <action>maincpu.md@033B60=temp0 </action>
+      <action>maincpu.mw@033B64=temp1 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish this Round Now!">
+    <script state="on">
+      <action>maincpu.pw@10022E=0001</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Always Enable Special Move"> <comment>You can use special move regardless of an energy (Normally it needs 0x3F or lower).</comment>
+    <script state="on">
+      <action>temp0 =maincpu.mb@01708B</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mb@01708B=01</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mb@01708B=temp0 </action>
+    </script>
+  </cheat>
+
+  <!--  List for Special Move. -->
+  <!--  * Susano - 'Soumei FuuRaiKen' - 236214+CD -->
+  <!--  * Benten - 'Shinkuu Renzan' - 6463214+AB -->
+  <!--  * ChiChi + NeNe - 'Tensei FuuRaiJin' - 4613+ABCD -->
+  <!--  * Gokuu - 'EnHouJyutsu' - 64646+ABC -->
+  <!--  * Binten - 'Hachimon RensaJin' - 464236+ABCD -->
+  <!--  * Syuten-Dozi - 'Reisyu Kishin Yadori' - 623623+AB - C,C,C... -->
+  <!--  * Seena - 'Sea Mind Storm' - 2(Charge)46+BC -->
+  <!--  * Igret - 'Hell Inhabitant' - (In air)874123698+AB -->
+  <!--  * Behemoth - 'Ground Explosion' - 214236+CD -->
+  <!--  * Eelith - 'Midnight Fear' - 63214236+BC -->
+  <!--  * Lucifer - 'Flare Burst' - ABCD(Charge) -->
+
+  <cheat desc="All Characters Selectable"> <comment>You can select Behemoth, Eelith, Lucifer and Gilfer in the character selection screen. They are hidden between Susano and Igret. But selectable Gilfer is buggy because he is another version of Lucifer</comment>
+    <script state="on">
+      <action>temp0 =maincpu.mb@00FD75</action>
+      <action>temp1 =maincpu.mb@00FDD7</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mb@00FD75= B</action>
+      <action>maincpu.mb@00FDD7=0C</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mb@00FD75=temp0 </action>
+      <action>maincpu.mb@00FDD7=temp1 </action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="on">
+      <action>temp0 =maincpu.md@0333D2</action>
+      <action>temp1 =maincpu.mw@0333D6</action>
+      <action>temp2 =maincpu.md@0333D8</action>
+      <action>temp3 =maincpu.mw@0333DC</action>
+    </script>
+    <script state="run">
+      <action>maincpu.md@0333D2=317C00FF</action>
+      <action>maincpu.mw@0333D6=006C</action> <!-- 1st + 2nd = move.w #$ff,($6c,A0) -->
+      <action>maincpu.md@0333D8=3D7C0060</action>
+      <action>maincpu.mw@0333DC=0026</action> <!-- 3rd + 4th = move.w #$60,($26,A6) -->
+    </script>
+    <script state="off">
+      <action>maincpu.md@0333D2=temp0 </action>
+      <action>maincpu.mw@0333D6=temp1 </action>
+      <action>maincpu.md@0333D8=temp2 </action>
+      <action>maincpu.mw@0333DC=temp3 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@109089=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility"> <comment>Disabled against a catch or throw by opponent</comment>
+    <script state="on">
+      <action>temp0 =maincpu.mb@01CD01</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mb@01CD01=32</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mb@01CD01=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character"> <comment>Free player selection - Use it on the selection screen</comment>
+    <parameter>
+      <item value="0x08">Behemoth</item>
+      <item value="0x09">Eelis</item>
+      <item value="0x0A">Lucifer</item>
+      <item value="0x0B">Gilfer</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@108D4C=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="on">
+      <action>temp0 =maincpu.md@0333F2</action>
+      <action>temp1 =maincpu.mw@0333F6</action>
+      <action>temp2 =maincpu.md@0333F8</action>
+      <action>temp3 =maincpu.mw@0333FC</action>
+    </script>
+    <script state="run">
+      <action>maincpu.md@0333F2=317C00FF</action>
+      <action>maincpu.mw@0333F6=006C</action> <!-- 1st + 2nd = move.w #$ff,($6c,A0) -->
+      <action>maincpu.md@0333F8=3D7C0060</action>
+      <action>maincpu.mw@0333FC=0028</action> <!-- 3rd + 4th = move.w #$60,($28,A6) -->
+    </script>
+    <script state="off">
+      <action>maincpu.md@0333F2=temp0 </action>
+      <action>maincpu.mw@0333F6=temp1 </action>
+      <action>maincpu.md@0333F8=temp2 </action>
+      <action>maincpu.mw@0333FC=temp3 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@109361=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility"> <comment>Disabled against a catch or throw by opponent</comment>
+    <script state="on">
+      <action>temp0 =maincpu.mb@01CD1D</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mb@01CD1D=32</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mb@01CD1D=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character"> <comment>Free player selection - Use it on the selection screen</comment>
+    <parameter>
+      <item value="0x08">Behemoth</item>
+      <item value="0x09">Eelis</item>
+      <item value="0x0A">Lucifer</item>
+      <item value="0x0B">Gilfer</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@108D4D=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

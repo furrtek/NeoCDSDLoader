@@ -1,0 +1,214 @@
+<mamecheat version="1">
+
+  <NGH>064</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@10C109=9A</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish this Round Now!"> <comment>Disable Infinite Time before activating this cheat</comment>
+    <script state="on">
+      <action>maincpu.pb@10C109=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Always Round 1">
+    <script state="run">
+      <action>maincpu.pb@10C121=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pw@10600C=6060</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pw@10600C=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character"> <comment>Free player selection, Use BETWEEN rounds</comment>
+    <parameter>
+      <item value="0x01">Dragon</item>
+      <item value="0x02">Hanzou</item>
+      <item value="0x03">Muscle</item>
+      <item value="0x04">J. Carn</item>
+      <item value="0x05">Janne</item>
+      <item value="0x06">Rasputin</item>
+      <item value="0x07">Fuuma</item>
+      <item value="0x08">Brocken</item>
+      <item value="0x09">Shura</item>
+      <item value="0x0A">Ryoko</item>
+      <item value="0x0B">C. Kidd</item>
+      <item value="0x0C">Mudman</item>
+      <item value="0x0D">Erick</item>
+      <item value="0x0E">J. Max</item>
+      <item value="0x0F">Jack</item>
+      <item value="0x10">Ryofu</item>
+      <item value="0x11">Zeus</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@106004=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Wins = 0">
+    <script state="run">
+      <action>maincpu.pb@10C122=00|(maincpu.pb@10C122 BAND ~03)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Wins = 2"> <comment>As long as P2 wins LT 2 then P1 wins the battle automatically at the end of round</comment>
+    <script state="run">
+      <action>maincpu.pb@10C122=03|(maincpu.pb@10C122 BAND ~03)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Wins = 0 Now!">
+    <script state="on">
+      <action>maincpu.pb@10C122=00|(maincpu.pb@10C122 BAND ~03)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Wins = 1 Now!">
+    <script state="on">
+      <action>maincpu.pb@10C122=01|(maincpu.pb@10C122 BAND ~03)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Wins = 2 Now!"> <comment>As long as P2 wins LT 2 then P1 wins the battle automatically at the end of round</comment>
+    <script state="on">
+      <action>maincpu.pb@10C122=03|(maincpu.pb@10C122 BAND ~03)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always Won 3 Rounds">
+    <script state="run">
+      <action>maincpu.pb@10C122=15|(maincpu.pb@10C122 BAND ~3F)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pw@10610C=6060</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pw@10610C=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character"> <comment>Free player selection, Use BETWEEN rounds</comment>
+    <parameter>
+      <item value="0x01">Dragon</item>
+      <item value="0x02">Hanzou</item>
+      <item value="0x03">Muscle</item>
+      <item value="0x04">J. Carn</item>
+      <item value="0x05">Janne</item>
+      <item value="0x06">Rasputin</item>
+      <item value="0x07">Fuuma</item>
+      <item value="0x08">Brocken</item>
+      <item value="0x09">Shura</item>
+      <item value="0x0A">Ryoko</item>
+      <item value="0x0B">C. Kidd</item>
+      <item value="0x0C">Mudman</item>
+      <item value="0x0D">Erick</item>
+      <item value="0x0E">J. Max</item>
+      <item value="0x0F">Jack</item>
+      <item value="0x10">Ryofu</item>
+      <item value="0x11">Zeus</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@106104=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Wins = 0">
+    <script state="run">
+      <action>maincpu.pb@10C122=00|(maincpu.pb@10C122 BAND ~0C)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Wins = 2"> <comment>As long as P2 wins LT 2 then P1 wins the battle automatically at the end of round</comment>
+    <script state="run">
+      <action>maincpu.pb@10C122=0C|(maincpu.pb@10C122 BAND ~0C)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Wins = 0 Now!">
+    <script state="on">
+      <action>maincpu.pb@10C122=00|(maincpu.pb@10C122 BAND ~0C)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Wins = 1 Now!">
+    <script state="on">
+      <action>maincpu.pb@10C122=04|(maincpu.pb@10C122 BAND ~0C)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Wins = 2 Now!"> <comment>As long as P1 wins LT 2 then P2 wins the battle automatically at the end of round</comment>
+    <script state="on">
+      <action>maincpu.pb@10C122=0C|(maincpu.pb@10C122 BAND ~0C)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always Won 3 Rounds">
+    <script state="run">
+      <action>maincpu.pb@10C123=15|(maincpu.pb@10C123 BAND ~3F)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Deathmatch P Downs = 0">
+    <script state="run">
+      <action>maincpu.pb@106111=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Deathmatch CPU Downs = 6">
+    <script state="run">
+      <action>maincpu.pb@106011=06</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

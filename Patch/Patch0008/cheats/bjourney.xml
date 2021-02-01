@@ -1,0 +1,312 @@
+<mamecheat version="1">
+
+  <NGH>022</NGH>
+
+  <cheat desc="Infinite Continues">
+    <script state="run">
+      <action>maincpu.pb@10FD89=64</action>
+      <action>maincpu.pw@1030B2=0000</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="Infinite Time">
+    <script state="run">
+      <action condition="(frame % 60 == 0)">maincpu.pb@106906=38</action>
+      <action condition="(frame % 60 == 0)">maincpu.pb@106907=40</action>
+    </script>
+  </cheat>-->
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@106906=38</action>
+      <action>maincpu.pb@106907=40</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Shop Time">
+    <script state="run">
+      <action>maincpu.pb@10783F=09</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish this Round Now!">
+    <script state="on">
+      <action>maincpu.pb@103004=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="See End Sequence Now!">
+    <script state="on">
+      <action>maincpu.pb@103004=07</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="Display Debug Menu Now!">
+    <script state="on">
+      <action>maincpu.pb@103004= B</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@107000=09</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@107009=7F</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@107011=05</action>
+      <action>maincpu.pb@107020=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Get 255 Roses Now!">
+    <script state="on">
+      <action>maincpu.pb@107010=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Money">
+    <script state="run">
+      <action>maincpu.pb@107010=FF</action>
+      <action>maincpu.pb@10701B=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always 1 cocoon">
+    <script state="run">
+      <action>maincpu.pb@107017=04</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P1 Always has leaf">
+    <script state="run">
+      <action>maincpu.pb@107012=02</action>
+      <action>maincpu.pb@10702B=00</action>
+      <action>maincpu.pb@10702C=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has boomerang">
+    <script state="run">
+      <action>maincpu.pb@107012=00</action>
+      <action>maincpu.pb@10702B=03</action>
+      <action>maincpu.pb@10702C=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has bomb">
+    <script state="run">
+      <action>maincpu.pb@107012=00</action>
+      <action>maincpu.pb@10702B=00</action>
+      <action>maincpu.pb@10702C=03</action>
+    </script>
+  </cheat>-->
+
+  <!--<cheat desc="P1 Never lose flowers">
+    <script state="run">
+      <action>maincpu.pb@10701C=01</action>
+    </script>
+  </cheat>-->
+
+  <!--<cheat desc="P1 Never get cursed">
+    <script state="run">
+      <action>maincpu.pb@107019=00</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc="P1 Always has club">
+    <script state="run">
+      <action>maincpu.pb@10701A=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has spikes">
+    <script state="run">
+      <action>maincpu.pb@107013=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has spring">
+    <script state="run">
+      <action>maincpu.pb@107014=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has swim fin">
+    <script state="run">
+      <action>maincpu.pb@107015=01</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P1 Always has No Safe">
+    <script state="run">
+      <action>maincpu.pb@107016=00</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc="P1 Always has Light Safe">
+    <script state="run">
+      <action>maincpu.pb@107016=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Super Safe">
+    <script state="run">
+      <action>maincpu.pb@107016=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@107400=09</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@107409=7F</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@107411=05</action>
+      <action>maincpu.pb@107420=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Get 255 Roses Now!">
+    <script state="on">
+      <action>maincpu.pb@107410=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Money">
+    <script state="run">
+      <action>maincpu.pb@107410=FF</action>
+      <action>maincpu.pb@10741B=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always 1 cocoon">
+    <script state="run">
+      <action>maincpu.pb@107417=04</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P2 Always has leaf">
+    <script state="run">
+      <action>maincpu.pb@107412=02</action>
+      <action>maincpu.pb@10742B=00</action>
+      <action>maincpu.pb@10742C=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has boomerang">
+    <script state="run">
+      <action>maincpu.pb@107412=00</action>
+      <action>maincpu.pb@10742B=03</action>
+      <action>maincpu.pb@10742C=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has bomb">
+    <script state="run">
+      <action>maincpu.pb@107412=00</action>
+      <action>maincpu.pb@10742B=00</action>
+      <action>maincpu.pb@10742C=03</action>
+    </script>
+  </cheat>-->
+
+  <!--<cheat desc="P2 Never lose flowers">
+    <script state="run">
+      <action>maincpu.pb@10741C=01</action>
+    </script>
+  </cheat>-->
+
+  <!--<cheat desc="P2 Never get cursed">
+    <script state="run">
+      <action>maincpu.pb@107419=00</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc="P2 Always has club">
+    <script state="run">
+      <action>maincpu.pb@10741A=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has spikes">
+    <script state="run">
+      <action>maincpu.pb@107413=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has spring">
+    <script state="run">
+      <action>maincpu.pb@107414=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has swim fin">
+    <script state="run">
+      <action>maincpu.pb@107415=01</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P2 Always has No Safe">
+    <script state="run">
+      <action>maincpu.pb@107416=00</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc="P2 Always has Light Safe">
+    <script state="run">
+      <action>maincpu.pb@107416=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Super Safe">
+    <script state="run">
+      <action>maincpu.pb@107416=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

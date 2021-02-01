@@ -1,0 +1,174 @@
+<mamecheat version="1">
+
+  <NGH>017</NGH>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@1000B3=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@100305=06</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility">
+    <script state="run">
+      <action condition="(frame % 60 == 0)">maincpu.pb@10037F=50</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Rapid Fire">
+    <script state="run">
+      <action>maincpu.pb@1000F6=00|(maincpu.pb@1000F6 BAND ~10)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Enable Transformation">
+    <script state="run">
+      <action>maincpu.pb@100336=0F</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Change Time Ninja">
+    <script state="run">
+      <action>maincpu.pb@100365=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Change Time Samourai">
+    <script state="run">
+      <action>maincpu.pb@100367=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Change Time Dog">
+    <script state="run">
+      <action>maincpu.pb@100369=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Permanent Weapons">
+    <script state="run">
+      <action>maincpu.pb@100380=04</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Weapon">
+    <parameter>
+      <item value="0x00">None</item>
+      <item value="0x01">Red Sphere</item>
+      <item value="0x02">Blue Sphere</item>
+      <item value="0x03">Purple Sphere</item>
+      <item value="0x04">Yellow Sphere</item>
+      <item value="0x05">Unknown Power 1</item>
+      <item value="0x06">Unknown Power 2</item>
+      <item value="0x07">Unknown Power 3</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1002F9=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@1000B5=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@100405=06</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility">
+    <script state="run">
+      <action condition="(frame % 60 == 0)">maincpu.pb@10047F=50</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Rapid Fire">
+    <script state="run">
+      <action>maincpu.pb@1000F7=00|(maincpu.pb@1000F7 BAND ~10)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Enable Transformation">
+    <script state="run">
+      <action>maincpu.pb@100436=0F</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Change Time Ninja">
+    <script state="run">
+      <action>maincpu.pb@100465=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Change Time Samourai">
+    <script state="run">
+      <action>maincpu.pb@100467=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Change Time Dog">
+    <script state="run">
+      <action>maincpu.pb@100469=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Permanent Weapons">
+    <script state="run">
+      <action>maincpu.pb@100480=04</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Weapon">
+    <parameter>
+      <item value="0x00">None</item>
+      <item value="0x01">Red Sphere</item>
+      <item value="0x02">Blue Sphere</item>
+      <item value="0x03">Purple Sphere</item>
+      <item value="0x04">Yellow Sphere</item>
+      <item value="0x05">Unknown Power 1</item>
+      <item value="0x06">Unknown Power 2</item>
+      <item value="0x07">Unknown Power 3</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1003F9=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

@@ -1,0 +1,79 @@
+<mamecheat version="1">
+
+  <NGH>048</NGH>
+
+  <cheat desc="Infinite Move Time">
+    <script state="run">
+      <action>maincpu.pb@108418=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+  <cheat desc="The winning hand cheat must be used when you've got"/>
+  <cheat desc="14 tiles in your hand, then you must select 'AGARI'."/>
+  <cheat desc="The tiles do not visually change, until you make a move."/>
+  <cheat desc=" "/>
+
+  <!--<cheat desc="Get winning hand Now!">
+    <script state="on">
+      <action>maincpu.pb@108220=04</action>
+      <action>maincpu.pb@108221=00</action>
+      <action>maincpu.pb@108224=04</action>
+      <action>maincpu.pb@108225=00</action>
+      <action>maincpu.pb@108228=04</action>
+      <action>maincpu.pb@108229=00</action>
+      <action>maincpu.pb@10822C=04</action>
+      <action>maincpu.pb@10822D=01</action>
+      <action>maincpu.pb@108230=04</action>
+      <action>maincpu.pb@108231=01</action>
+      <action>maincpu.pb@108234=04</action>
+      <action>maincpu.pb@108235=01</action>
+      <action>maincpu.pb@108238=04</action>
+      <action>maincpu.pb@108239=02</action>
+      <action>maincpu.pb@10823C=04</action>
+      <action>maincpu.pb@10823D=02</action>
+      <action>maincpu.pb@108240=04</action>
+      <action>maincpu.pb@108241=02</action>
+      <action>maincpu.pb@108244=04</action>
+      <action>maincpu.pb@108245=03</action>
+      <action>maincpu.pb@108248=04</action>
+      <action>maincpu.pb@108249=03</action>
+      <action>maincpu.pb@10824C=04</action>
+      <action>maincpu.pb@10824D=03</action>
+      <action>maincpu.pb@108250=04</action>
+      <action>maincpu.pb@108251=04</action>
+      <action>maincpu.pb@108254=04</action>
+      <action>maincpu.pb@108255=04</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc=" "/>
+  <cheat desc="See    mahjonginmame.nm.ru/index.htm     for mahjong rules."/>
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

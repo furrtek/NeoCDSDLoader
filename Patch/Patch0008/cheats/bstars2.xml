@@ -1,0 +1,178 @@
+<mamecheat version="1">
+
+  <NGH>041</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@1041D8=59</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Total Outs">
+    <script state="run">
+      <action>maincpu.pb@10000D=16</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Strikes">
+    <script state="run">
+      <action>maincpu.pb@10442C=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Set Strikes to 0 Now!">
+    <script state="on">
+      <action>maincpu.pb@10442C=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Set Strikes to 2 Now!">
+    <script state="on">
+      <action>maincpu.pb@10442C=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Balls">
+    <script state="run">
+      <action>maincpu.pb@10442D=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Set Balls to 0 Now!">
+    <script state="on">
+      <action>maincpu.pb@10442D=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Set Balls to 3 Now!">
+    <script state="on">
+      <action>maincpu.pb@10442D=03</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Outs">
+    <script state="run">
+      <action>maincpu.pb@10442B=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Set Outs to 0 Now!">
+    <script state="on">
+      <action>maincpu.pb@10442B=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Set Outs to 2 Now!">
+    <script state="on">
+      <action>maincpu.pb@10442B=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Always has Max POW">
+    <script state="run">
+      <action>maincpu.pb@104422=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Get Max POW Now!">
+    <script state="on">
+      <action>maincpu.pb@104422=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always win game">
+    <script state="run">
+      <action>maincpu.pb@1043F2=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Win this game Now!">
+    <script state="on">
+      <action>maincpu.pb@1043F2=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select POW Points Now!">
+    <parameter min="0" max="99" step="1"/>
+    <script state="change">
+      <action>maincpu.pb@104422=(param)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Score">
+    <parameter min="0" max="99" step="1"/>
+    <script state="change">
+      <action>maincpu.pb@1043F2=tobcd(param)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Always has Max POW">
+    <script state="run">
+      <action>maincpu.pb@104423=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Get Max POW Now!">
+    <script state="on">
+      <action>maincpu.pb@104423=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always win game">
+    <script state="run">
+      <action>maincpu.pb@1043F3=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Win this game Now!">
+    <script state="on">
+      <action>maincpu.pb@1043F3=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select POW Points Now!">
+    <parameter min="0" max="99" step="1"/>
+    <script state="change">
+      <action>maincpu.pb@104423=(param)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Score">
+    <parameter min="0" max="99" step="1"/>
+    <script state="change">
+      <action>maincpu.pb@1043F3=tobcd(param)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

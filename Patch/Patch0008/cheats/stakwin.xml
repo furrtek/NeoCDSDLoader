@@ -1,0 +1,144 @@
+<mamecheat version="1">
+
+  <NGH>088</NGH>
+
+  <cheat desc="Infinite Time in Training"> <comment>Disable during races !</comment>
+    <script state="run">
+      <action>maincpu.pb@100022=32</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Money">
+    <script state="run">
+      <action>maincpu.pb@10029E=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always Extra Speed"> <comment>Only Press 'A' Don't whip!</comment>
+    <script state="run">
+      <action>maincpu.pb@1002B8=0A</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Maximum Speed">
+    <script state="run">
+      <action>maincpu.pb@100275=08</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Maximum Stamina">
+    <script state="run">
+      <action>maincpu.pb@100277=08</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Maximum Strength">
+    <script state="run">
+      <action>maincpu.pb@10027B=08</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Power 1">
+    <script state="run">
+      <action>maincpu.pb@102998=44</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Power 2">
+    <script state="run">
+      <action>maincpu.pb@102AD6=44</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Power 3">
+    <script state="run">
+      <action>maincpu.pb@102C14=44</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Power 4">
+    <script state="run">
+      <action>maincpu.pb@102D52=44</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Power 5">
+    <script state="run">
+      <action>maincpu.pb@102E90=44</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Power 6">
+    <script state="run">
+      <action>maincpu.pb@102FCE=44</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Power 7">
+    <script state="run">
+      <action>maincpu.pb@10310C=44</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Money">
+    <script state="run">
+      <action>maincpu.pb@100336=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always Extra Speed"> <comment>Only Press 'A' Don't whip!</comment>
+    <script state="run">
+      <action>maincpu.pb@100350=0A</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Maximum Speed">
+    <script state="run">
+      <action>maincpu.pb@10030D=08</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Maximum Stamina">
+    <script state="run">
+      <action>maincpu.pb@10030F=08</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Maximum Strength">
+    <script state="run">
+      <action>maincpu.pb@100313=08</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

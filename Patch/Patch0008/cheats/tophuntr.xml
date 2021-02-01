@@ -1,0 +1,134 @@
+<mamecheat version="1">
+
+  <NGH>046</NGH>
+
+  <cheat desc="Infinite Continues">
+    <script state="run">
+      <action>maincpu.pb@10FD89=64</action>
+      <action>maincpu.pb@10008A=00</action>
+      <action>maincpu.pb@10008B=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@108CC2=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Always have Loaded Gun"> <comment>Enable this Cheat before you start the game</comment>
+    <script state="on">
+      <action>temp0 =maincpu.md@02780C</action>
+      <action>temp1 =maincpu.mb@02B47C</action>
+      <action>temp2 =maincpu.mq@02B764</action>
+      <action>temp3 =maincpu.mq@07F000</action>
+      <action>temp4 =maincpu.mq@07F008</action>
+    </script>
+    <script state="run">
+      <action>maincpu.md@02780C=4E714E71</action> <!-- Ammo Decrement -->
+      <action>maincpu.mb@02B47C=60</action> <!-- Keep Gun on Collision -->
+      <action>maincpu.mq@02B764=4E714EB90007F000</action> <!-- Start/Continue with Gun and 4 Bullets JSR to seperate routine - jsr $7f000 -->
+      <action>maincpu.mq@07F000=197C000100AC197C</action> <!-- Start with Gun - move.b  #$1, ($ac,A4) {197C 0001 00AC} -->
+      <action>maincpu.mq@07F008=000400674E75FFFF</action> <!-- Start with 4 Ammo - move.b  #$4, ($67,A4) {197C 0004 0067} , RTS {4E75} -->
+    </script>
+    <script state="off">
+      <action>maincpu.md@02780C=temp0 </action>
+      <action>maincpu.mb@02B47C=temp1 </action>
+      <action>maincpu.mq@02B764=temp2 </action>
+      <action>maincpu.mq@07F000=temp3 </action>
+      <action>maincpu.mq@07F008=temp4 </action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@108D1D=64</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Power">
+    <script state="run">
+      <action>maincpu.pb@108D0D=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Get Power Now!">
+    <script state="on">
+      <action>maincpu.pb@108D0D=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@108CDC)+61)=40</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@108CDC)+63)=03</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@108D21=64</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Power">
+    <script state="run">
+      <action>maincpu.pb@108D11=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Get Power Now!">
+    <script state="on">
+      <action>maincpu.pb@108D11=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@108CE0)+61)=40</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@108CE0)+63)=03</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

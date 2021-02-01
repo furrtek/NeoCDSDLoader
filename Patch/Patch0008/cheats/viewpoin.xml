@@ -1,0 +1,102 @@
+<mamecheat version="1">
+
+  <NGH>051</NGH>
+
+  <cheat desc="Infinite Continues">
+    <script state="run">
+      <action>maincpu.pb@108027=64</action> <!-- Value for 2 simultaneous players -->
+      <action>maincpu.pb@10804C=64</action> <!-- Value for player 1 -->
+      <action>maincpu.pb@10805C=64</action> <!-- Value for player 2 -->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@108D99=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Infinite Bombs">
+    <parameter>
+      <item value="0x01">Infinite Plasma Bombs</item>
+      <item value="0x02">Infinite Fire Bombs</item>
+      <item value="0x03">Infinite Homing Bombs</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@108D8F=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@108D3C=08</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Fast Full Charge Shot">
+    <script state="run">
+      <action>maincpu.pb@108D97=50</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@1090ED=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Infinite Bombs">
+    <parameter>
+      <item value="0x01">Infinite Plasma Bombs</item>
+      <item value="0x02">Infinite Fire Bombs</item>
+      <item value="0x03">Infinite Homing Bombs</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1090E3=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@109090=08</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Fast Full Charge Shot">
+    <script state="run">
+      <action>maincpu.pb@1090EB=50</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

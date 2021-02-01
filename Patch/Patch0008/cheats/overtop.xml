@@ -1,0 +1,91 @@
+<mamecheat version="1">
+
+  <NGH>212</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@10B004=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Select Time">
+    <script state="run">
+      <action>maincpu.pb@10B066=12</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Lap time always zero">
+    <script state="run">
+      <action>maincpu.pb@10E098=00</action>
+      <action>maincpu.pb@10E099=00</action>
+      <action>maincpu.pb@10E09A=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Always Finish 1st Place">
+    <script state="run">
+      <action>maincpu.pb@10E0FD=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Go at max speed"> <comment>Turn off with F6 when stuck!</comment>
+    <script state="run">
+      <action>maincpu.pb@104851=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Get to Max Speed in 1 sec">
+    <script state="on">
+      <action>temp0 =maincpu.pb@104851</action>
+    </script>
+    <script state="run">
+      <action condition="(frame % 60 == 0) AND (maincpu.pb@104851!=temp0 )">maincpu.pb@104851=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Get to Max Speed in 3 secs">
+    <script state="on">
+      <action>temp0 =maincpu.pb@104851</action>
+    </script>
+    <script state="run">
+      <action condition="(frame % 120 == 0) AND (maincpu.pb@104851!=temp0 )">maincpu.pb@104851=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Get to Max Speed in 5 secs">
+    <script state="on">
+      <action>temp0 =maincpu.pb@104851</action>
+    </script>
+    <script state="run">
+      <action condition="(frame % 300 == 0) AND (maincpu.pb@104851!=temp0 )">maincpu.pb@104851=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

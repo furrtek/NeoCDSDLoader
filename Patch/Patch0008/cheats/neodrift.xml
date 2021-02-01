@@ -1,0 +1,88 @@
+<mamecheat version="1">
+
+  <NGH>213</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@103334=17</action>
+      <action>maincpu.pb@103335=70</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Stop Practice Total Time">
+    <script state="run">
+      <action>maincpu.pb@103378=00</action>
+      <action>maincpu.pb@103379=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Stop Stage 1 Total Time">
+    <script state="run">
+      <action>maincpu.pb@10339A=00</action>
+      <action>maincpu.pb@10339B=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Stop Stage 2 Total Time">
+    <script state="run">
+      <action>maincpu.pb@1033BC=00</action>
+      <action>maincpu.pb@1033BD=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Stop Stage 3 Total Time">
+    <script state="run">
+      <action>maincpu.pb@1033DE=00</action>
+      <action>maincpu.pb@1033DF=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Stop Stage 4 Total Time">
+    <script state="run">
+      <action>maincpu.pb@103400=00</action>
+      <action>maincpu.pb@103401=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Stop Stage 5 Total Time">
+    <script state="run">
+      <action>maincpu.pb@103422=00</action>
+      <action>maincpu.pb@103423=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Stop Stage 6 Total Time">
+    <script state="run">
+      <action>maincpu.pb@103444=00</action>
+      <action>maincpu.pb@103445=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

@@ -1,0 +1,154 @@
+<mamecheat version="1">
+
+  <NGH>024</NGH>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@108030=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@104229=7D</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Maximum Power">
+    <script state="run">
+      <action>maincpu.pb@104265=04</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Maximum Speed">
+    <script state="run">
+      <action>maincpu.pb@104267=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Shot">
+    <script state="run">
+      <action>maincpu.pw@10425E=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Pod Shot">
+    <script state="run">
+      <action>maincpu.pw@104260=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Laser">
+    <script state="run">
+      <action>maincpu.pw@104258=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Homing">
+    <script state="run">
+      <action>maincpu.pw@10424C=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Grenade">
+    <script state="run">
+      <action>maincpu.pw@10425C=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Rapid Fire"> <comment>Turn it OFF on the name entry screen</comment>
+    <script state="run">
+      <action>maincpu.pb@10FD96=00|(maincpu.pb@10FD96 BAND ~10)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@108031=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@1042A9=7D</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Maximum Power">
+    <script state="run">
+      <action>maincpu.pb@1042E5=04</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Maximum Speed">
+    <script state="run">
+      <action>maincpu.pb@1042E7=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Shot">
+    <script state="run">
+      <action>maincpu.pw@1042DE=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Pod Shot">
+    <script state="run">
+      <action>maincpu.pw@1042E0=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Laser">
+    <script state="run">
+      <action>maincpu.pw@1042D8=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Homing">
+    <script state="run">
+      <action>maincpu.pw@1042CC=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Grenade">
+    <script state="run">
+      <action>maincpu.pw@1042DC=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Rapid Fire"> <comment>Turn it OFF on the name entry screen</comment>
+    <script state="run">
+      <action>maincpu.pb@10FD9C=00|(maincpu.pb@10FD9C BAND ~10)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

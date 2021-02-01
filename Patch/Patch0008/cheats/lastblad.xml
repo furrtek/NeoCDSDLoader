@@ -1,0 +1,300 @@
+<mamecheat version="1">
+
+  <NGH>234</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@10E32B=61</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+  <cheat desc="Both story cheats are useful when using KAEDE, YUKI or MORIYA."/>
+  <cheat desc="Story Part 2 cheat is useful for JUZOH, AKARI, WASHIZUKA,"/>
+  <cheat desc="SHIKYOH, OKINA, and SHINGEN."/>
+  <cheat desc="They MUST be activated on the character select screen."/>
+  <cheat desc=" "/>
+
+  <cheat desc="Story Part 1 Stage 7">
+    <script state="on">
+      <action>maincpu.pb@10AC43=06</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Story Part 2 Stage 8">
+    <script state="on">
+      <action>maincpu.pb@10AC43=07</action>
+    </script>
+  </cheat>
+
+  <cheat desc="The boss cheat must be activated on the Character Select screen."/>
+
+  <cheat desc="First Boss">
+    <script state="on">
+      <action>maincpu.pb@10AC43=08</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Final Boss.">
+    <script state="on">
+      <action>maincpu.pb@10AC43=09</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Next Cinematic Now!"> <comment>This cheat must be activated during any fight. After winning, you can see the cinematic.</comment>
+    <parameter>
+      <item value="0x03">Middle Cinematic</item>
+      <item value="0x07">First boss Cinematic</item>
+      <item value="0x08">Inbetween Bosses Cinematic</item>
+      <item value="0x09">Ending Cinematic</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@10AC43=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pw@((maincpu.pd@10AC2C)+180)=0100</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pw@((maincpu.pd@10AC2C)+180)=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Power Mode">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10AC2C)+18C)=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Speed Mode">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10AC2C)+18C)=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Maximum Power"> <comment>Power Bar display maybe incorrect though</comment>
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10AC2C)+18D)=40</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Minimum Power">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10AC2C)+18D)=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain All Power Now!">
+    <script state="on">
+      <action>maincpu.pb@((maincpu.pd@10AC2C)+18D)=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character">
+    <parameter>
+      <item value="0x00">Kaede</item>
+      <item value="0x01">Moriya</item>
+      <item value="0x02">Yuki</item>
+      <item value="0x03">Okina</item>
+      <item value="0x04">Akari</item>
+      <item value="0x05">Juzoh</item>
+      <item value="0x06">Washizuka</item>
+      <item value="0x07">Shikyoh</item>
+      <item value="0x08">Amano</item>
+      <item value="0x09">Lee</item>
+      <item value="0x0A">Zantetsu</item>
+      <item value="0x0B">Shigen</item>
+      <item value="0x0C">Musashi</item>
+      <item value="0x0D">Kagami</item>
+      <item value="0x0E">Awakened Kaede</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10EAAD=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pw@((maincpu.pd@10AC30)+180)=0100</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pw@((maincpu.pd@10AC30)+180)=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Power Mode">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10AC30)+18C)=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Speed Mode">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10AC30)+18C)=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Maximum Power"> <comment>Power Bar display maybe incorrect though</comment>
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10AC30)+18D)=40</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Minimum Power">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10AC30)+18D)=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain All Power Now!">
+    <script state="on">
+      <action>maincpu.pb@((maincpu.pd@10AC30)+18D)=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character">
+    <parameter>
+      <item value="0x00">Kaede</item>
+      <item value="0x01">Moriya</item>
+      <item value="0x02">Yuki</item>
+      <item value="0x03">Okina</item>
+      <item value="0x04">Akari</item>
+      <item value="0x05">Juzoh</item>
+      <item value="0x06">Washizuka</item>
+      <item value="0x07">Shikyoh</item>
+      <item value="0x08">Amano</item>
+      <item value="0x09">Lee</item>
+      <item value="0x0A">Zantetsu</item>
+      <item value="0x0B">Shigen</item>
+      <item value="0x0C">Musashi</item>
+      <item value="0x0D">Kagami</item>
+      <item value="0x0E">Awakened Kaede</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10EAAF=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Hide Background"> <comment>Activate before match start</comment>
+    <script state="on">
+      <action>temp0=maincpu.rw@05F8D6</action>
+      <action>maincpu.rw@05F8D6=0001</action>
+      <action>temp1=maincpu.rd@05F9C0</action>
+      <action>maincpu.rd@05F9C0=4E714E71</action><!--HUD-->
+      <action>temp2=maincpu.rw@060790</action><!--flashing text-->
+      <action>maincpu.rw@060790=6028</action><!--flashing text-->
+    </script>
+    <script state="run">
+      <action>temp9=maincpu.rw@10AC40</action> <!--stage-->
+      <action condition="maincpu.pb@10A922 == 0">temp9=FF</action> <!-- match inactive -->
+      <action condition="temp9 != FF">maincpu.pw@10829E=8F8F</action> <!-- BG colour (pink) -->
+      <action condition="temp9 == 0"> <!--Kaede stage BG layers and solid shadows-->
+        maincpu.pw@109D9C=0700</action>
+      <action condition="temp9 == 0">maincpu.pq@10A8A0=007B007F00850089
+      </action>
+      <action condition="temp9 == 1"> <!--Moriya-->
+        maincpu.pw@109D9C=0130</action>
+      <action condition="temp9 == 1">maincpu.pq@10A890=00640068006E0072
+      </action>
+      <action condition="temp9 == 2"> <!--Yuki-->
+        maincpu.pw@109D9C=0E00</action>
+      <action condition="temp9 == 2">maincpu.pq@10A8A4=005A005E00640068
+      </action>
+      <action condition="temp9 == 3"> <!--Okina-->
+        maincpu.pw@109D9C=008C</action>
+      <action condition="temp9 == 3">maincpu.pq@10A888=00350039003F0043
+      </action>
+      <action condition="temp9 == 4"> <!--Akari-->
+        maincpu.pw@109D9C=800C</action>
+      <action condition="temp9 == 4">maincpu.pq@10A888=00350039003F0043
+      </action>
+      <action condition="temp9 == 5"> <!--Juzoh-->
+        maincpu.pw@109D9C=080C</action>
+      <action condition="temp9 == 5">maincpu.pq@10A888=00350039003F0043
+      </action>
+      <action condition="temp9 == 6"> <!--Washizuka-->
+        maincpu.pw@109D9C=0098</action>
+      <action condition="temp9 == 6">maincpu.pq@10A88C=00530057005D0061
+      </action>
+      <action condition="temp9 == 7"> <!--Shikyoh-->
+        maincpu.pw@109D9C=008C</action>
+      <action condition="temp9 == 7">maincpu.pq@10A888=00350039003F0043
+      </action>
+      <action condition="temp9 == 8"> <!--Amano-->
+        maincpu.pw@109D9C=040C</action>
+      <action condition="temp9 == 8">maincpu.pq@10A888=00350039003F0043
+      </action>
+      <action condition="temp9 == 9"> <!--Lee-->
+        maincpu.pw@109D9C=020C</action>
+      <action condition="temp9 == 9">maincpu.pq@10A888=00350039003F0043
+      </action>
+      <action condition="temp9 == A"> <!--Zantetsu-->
+        maincpu.pw@109D9C=0070</action>
+      <action condition="temp9 == A">maincpu.pq@10A890=00550059005F0063
+      </action>
+      <action condition="temp9 == B"> <!--Shigen-->
+        maincpu.pw@109D9C=00E0</action>
+      <action condition="temp9 == B"> maincpu.pq@10A898=00E600ED00F000F7
+      </action>
+      <action condition="temp9 == C"> <!--Musashi-->
+        maincpu.pw@109D9C=0038</action>
+      <action condition="temp9 == C">maincpu.pq@10A88C=0049004D00530058
+      </action>
+      <action condition="temp9 == D"> <!--Kagami-->
+        maincpu.pw@109D9C=0260</action>
+      <action condition="temp9 == D">maincpu.pq@10A894=00550059005F0063
+      </action>
+    </script>
+    <script state="off">
+      <action>maincpu.rw@05F8D6=temp0</action>
+      <action>maincpu.rd@05F9C0=temp1</action>
+      <action>maincpu.rw@060790=temp2</action>
+    </script>
+  </cheat>
+
+  <cheat desc="No Background Music">
+    <script state="run">
+      <action>audiocpu.pb@FDE0=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

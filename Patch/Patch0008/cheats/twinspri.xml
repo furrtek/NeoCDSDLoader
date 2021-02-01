@@ -1,0 +1,212 @@
+<mamecheat version="1">
+
+  <NGH>224</NGH>
+
+  <cheat desc="P1 Infinite Lives"> <comment>F6 at the end of game</comment>
+    <script state="run">
+      <action>maincpu.pb@10C005=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@10C014=28</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Bombs">
+    <script state="run">
+      <action>maincpu.pb@10C021=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Power">
+    <script state="run">
+      <action>maincpu.pb@10C08A=30</action>
+      <action>maincpu.pb@10C08B=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Get LV1 Attack">
+    <script state="on">
+      <action>maincpu.pb@10C088=10</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Get LV2 Attack">
+    <script state="on">
+      <action>maincpu.pb@10C088=20</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Get Boss Attack">
+    <script state="on">
+      <action>maincpu.pb@10C088=30</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character"> <comment>Free player selection - enable/change it on the VS screen or the character select screen</comment>
+    <parameter>
+      <item value="0x01">Loadran</item>
+      <item value="0x02">Macky + Pentell</item>
+      <item value="0x03">Arthur Schmidt</item>
+      <item value="0x04">Yan Yanyung</item>
+      <item value="0x05">Griffon</item>
+      <item value="0x06">Really Till</item>
+      <item value="0x07">Tinker + Linker</item>
+      <item value="0x08">Nanja Monja</item>
+      <item value="0x09">Kim</item>
+      <item value="0x10">Sprites</item>
+      <item value="0x11">Dark Ran</item>
+      <item value="0x12">Mevious</item>
+      <item value="0x13">Memory</item>
+    </parameter>
+    <script state="run">
+      <action condition="(param==01)">maincpu.pb@10A681=00</action>
+      <action condition="(param==01)">maincpu.pb@10C007=00</action>
+      <action condition="(param==02)">maincpu.pb@10A681=01</action>
+      <action condition="(param==02)">maincpu.pb@10C007=01</action>
+      <action condition="(param==03)">maincpu.pb@10A681=02</action>
+      <action condition="(param==03)">maincpu.pb@10C007=02</action>
+      <action condition="(param==04)">maincpu.pb@10A681=03</action>
+      <action condition="(param==04)">maincpu.pb@10C007=03</action>
+      <action condition="(param==05)">maincpu.pb@10A681=04</action>
+      <action condition="(param==05)">maincpu.pb@10C007=04</action>
+      <action condition="(param==06)">maincpu.pb@10A681=05</action>
+      <action condition="(param==06)">maincpu.pb@10C007=05</action>
+      <action condition="(param==07)">maincpu.pb@10A681=06</action>
+      <action condition="(param==07)">maincpu.pb@10C007=06</action>
+      <action condition="(param==08)">maincpu.pb@10A681=07</action>
+      <action condition="(param==08)">maincpu.pb@10C007=07</action>
+      <action condition="(param==09)">maincpu.pb@10A681=08</action>
+      <action condition="(param==09)">maincpu.pb@10C007=08</action>
+      <action condition="(param==10)">maincpu.pb@10A681=09</action>
+      <action condition="(param==10)">maincpu.pb@10C007=09</action>
+      <action condition="(param==11)">maincpu.pb@10A681=0A</action>
+      <action condition="(param==11)">maincpu.pb@10C007=0A</action>
+      <action condition="(param==12)">maincpu.pb@10A681= B</action>
+      <action condition="(param==12)">maincpu.pb@10C007= B</action>
+      <action condition="(param==13)">maincpu.pb@10A681=0C</action>
+      <action condition="(param==13)">maincpu.pb@10C007=0C</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Lives"> <comment>F6 at the end of game</comment>
+    <script state="run">
+      <action>maincpu.pb@10D005=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@10D014=28</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Bombs">
+    <script state="run">
+      <action>maincpu.pb@10D021=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Power">
+    <script state="run">
+      <action>maincpu.pb@10D08A=30</action>
+      <action>maincpu.pb@10D08B=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Get LV1 Attack">
+    <script state="on">
+      <action>maincpu.pb@10D088=10</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Get LV2 Attack">
+    <script state="on">
+      <action>maincpu.pb@10D088=20</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Get Boss Attack">
+    <script state="on">
+      <action>maincpu.pb@10D088=30</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character"> <comment>Free player selection - enable/change it on the VS screen or the character select screen</comment>
+    <parameter>
+      <item value="0x01">Loadran</item>
+      <item value="0x02">Macky + Pentell</item>
+      <item value="0x03">Arthur Schmidt</item>
+      <item value="0x04">Yan Yanyung</item>
+      <item value="0x05">Griffon</item>
+      <item value="0x06">Really Till</item>
+      <item value="0x07">Tinker + Linker</item>
+      <item value="0x08">Nanja Monja</item>
+      <item value="0x09">Kim</item>
+      <item value="0x10">Sprites</item>
+      <item value="0x11">Dark Ran</item>
+      <item value="0x12">Mevious</item>
+      <item value="0x13">Memory</item>
+    </parameter>
+    <script state="run">
+      <action condition="(param==01)">maincpu.pb@10A6C1=00</action>
+      <action condition="(param==01)">maincpu.pb@10D007=00</action>
+      <action condition="(param==02)">maincpu.pb@10A6C1=01</action>
+      <action condition="(param==02)">maincpu.pb@10D007=01</action>
+      <action condition="(param==03)">maincpu.pb@10A6C1=02</action>
+      <action condition="(param==03)">maincpu.pb@10D007=02</action>
+      <action condition="(param==04)">maincpu.pb@10A6C1=03</action>
+      <action condition="(param==04)">maincpu.pb@10D007=03</action>
+      <action condition="(param==05)">maincpu.pb@10A6C1=04</action>
+      <action condition="(param==05)">maincpu.pb@10D007=04</action>
+      <action condition="(param==06)">maincpu.pb@10A6C1=05</action>
+      <action condition="(param==06)">maincpu.pb@10D007=05</action>
+      <action condition="(param==07)">maincpu.pb@10A6C1=06</action>
+      <action condition="(param==07)">maincpu.pb@10D007=06</action>
+      <action condition="(param==08)">maincpu.pb@10A6C1=07</action>
+      <action condition="(param==08)">maincpu.pb@10D007=07</action>
+      <action condition="(param==09)">maincpu.pb@10A6C1=08</action>
+      <action condition="(param==09)">maincpu.pb@10D007=08</action>
+      <action condition="(param==10)">maincpu.pb@10A6C1=09</action>
+      <action condition="(param==10)">maincpu.pb@10D007=09</action>
+      <action condition="(param==11)">maincpu.pb@10A6C1=0A</action>
+      <action condition="(param==11)">maincpu.pb@10D007=0A</action>
+      <action condition="(param==12)">maincpu.pb@10A6C1= B</action>
+      <action condition="(param==12)">maincpu.pb@10D007= B</action>
+      <action condition="(param==13)">maincpu.pb@10A6C1=0C</action>
+      <action condition="(param==13)">maincpu.pb@10D007=0C</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

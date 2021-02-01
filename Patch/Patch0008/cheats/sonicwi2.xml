@@ -1,0 +1,117 @@
+<mamecheat version="1">
+
+  <NGH>075</NGH>
+
+  <cheat desc="Invincibility">
+    <script state="on">
+      <action>temp0 =maincpu.mw@024666</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mw@024666=4E71</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mw@024666=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Hit Anywhere">
+    <script state="on">
+      <action>temp0 =maincpu.mw@006AD8</action>
+      <action>temp1 =maincpu.mw@006B00</action>
+      <action>temp2 =maincpu.mw@006B08</action>
+      <action>temp3 =maincpu.mw@006B40</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mw@006AD8=6014</action> <!-- This ROM cheat was made by nolberto82 -->
+      <action>maincpu.mw@006B00=6002</action>
+      <action>maincpu.mw@006B08=6002</action>
+      <action>maincpu.mw@006B40=6004</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mw@006AD8=temp0 </action>
+      <action>maincpu.mw@006B00=temp1 </action>
+      <action>maincpu.mw@006B08=temp2 </action>
+      <action>maincpu.mw@006B40=temp3 </action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@10E441=05</action> <!-- Was 10E43F -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Bombs">
+    <script state="run">
+      <action>maincpu.pb@10E459=03</action> <!-- Was 10E457 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Maximum Fire Power">
+    <script state="run">
+      <action>maincpu.pb@10E445=03</action> <!-- Was 10E443 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Rapid Fire">
+    <script state="run">
+      <action>maincpu.pb@10E5C7=00</action> <!-- Was 10E5C5 -->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@10E4A3=05</action> <!-- Was 10E4A1 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Bombs">
+    <script state="run">
+      <action>maincpu.pb@10E4BB=03</action> <!-- Was 10E4B9 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Maximum Fire Power">
+    <script state="run">
+      <action>maincpu.pb@10E4A7=03</action> <!-- Was 10E4A5 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Rapid Fire">
+    <script state="run">
+      <action>maincpu.pb@10E5CC=00</action> <!-- Was 10E5CA -->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

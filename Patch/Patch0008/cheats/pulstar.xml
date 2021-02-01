@@ -1,0 +1,165 @@
+<mamecheat version="1">
+
+  <NGH>089</NGH>
+
+  <cheat desc="Invincibility">
+    <script state="on">
+      <action>temp0 =maincpu.mw@00CB70</action>
+      <action>temp1 =maincpu.mw@00CB7A</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mw@00CB70=0002</action> <!-- Sprite to Sprite -->
+      <action>maincpu.mw@00CB7A=0002</action> <!-- Sprite to Background -->
+    </script>
+    <script state="off">
+      <action>maincpu.mw@00CB70=temp0 </action>
+      <action>maincpu.mw@00CB7A=temp1 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Always Maximum Speed">
+    <script state="run">
+      <action>maincpu.pb@101B30=07</action> <!-- Was 1017DE -->
+    </script>
+  </cheat>
+
+  <cheat desc="Always Full Charge">
+    <script state="run">
+      <action>maincpu.pb@1019E8=FF</action> <!-- Was 101696 -->
+    </script>
+  </cheat>
+
+  <cheat desc="Select Extra Weapon">
+    <parameter>
+      <item value="0x01">Rear Shot</item>
+      <item value="0x02">Flames</item>
+      <item value="0x03">Laser</item>
+      <item value="0x04">Wave Shot</item>
+      <item value="0x05">Disabled</item>
+    </parameter>
+    <script state="run">
+      <action condition="(param==01)">maincpu.pw@1017E0=0138|(maincpu.pw@1017E0 BAND ~FFFFFF38)</action>
+      <action condition="(param==02)">maincpu.pw@1017E0=0220|(maincpu.pw@1017E0 BAND ~FFFFFF20)</action>
+      <action condition="(param==03)">maincpu.pw@1017E0=0320|(maincpu.pw@1017E0 BAND ~FFFFFF20)</action>
+      <action condition="(param==04)">maincpu.pw@1017E0=0420|(maincpu.pw@1017E0 BAND ~FFFFFF20)</action>
+      <action condition="(param==05)">maincpu.pw@1017E0=0000|(maincpu.pw@1017E0 BAND ~FFFFFF38)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Bomb Weapon">
+    <parameter>
+      <item value="0x00000040">Homing Missile</item>
+      <item value="0x00020040">Bomb</item>
+      <item value="0x00000000">Disabled</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pd@1017DE=param|(maincpu.pd@1017DE BAND ~00FF0040)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Front Protection">
+    <parameter>
+      <item value="0x01">Enabled</item>
+      <item value="0x00">Disabled</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1017E1=param|(maincpu.pb@1017E1 BAND ~01)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Upper Pod">
+    <parameter>
+      <item value="0x02">Enabled</item>
+      <item value="0x00">Disabled</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1017E1=param|(maincpu.pb@1017E1 BAND ~02)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Lower Pod">
+    <parameter>
+      <item value="0x04">Enabled</item>
+      <item value="0x00">Disabled</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1017E1=param|(maincpu.pb@1017E1 BAND ~04)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@10167C=02</action> <!-- Was 10132A -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Starting Stage"> <comment>You must choose Stage 1 INGAME for this cheat to work</comment>
+    <parameter>
+      <item value="0x01">Stage 1 - Front Line On The Earth</item>
+      <item value="0x02">Stage 2 - Water Vein Under Ground</item>
+      <item value="0x03">Stage 3 - The Fire Prominence</item>
+      <item value="0x04">Stage 4 - Attack On Space Station</item>
+      <item value="0x05">Stage 5 - The Dangerous Forest</item>
+      <item value="0x06">Stage 6 - The Terminators</item>
+      <item value="0x07">Stage 7 - Darkness Nebura</item>
+      <item value="0x08">Final Stage Pt 1 - Life or Death</item>
+      <item value="0x09">Final Stage Pt 2 - Final Boss</item>
+    </parameter>
+    <script state="run">
+      <action condition="(maincpu.pb@101ADD==01)">maincpu.pb@101ADD=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@10167D=02</action> <!-- Was 10132B -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Starting Stage"> <comment>You must choose Stage 1 INGAME for this cheat to work</comment>
+    <parameter>
+      <item value="0x01">Stage 1 - Front Line On The Earth</item>
+      <item value="0x02">Stage 2 - Water Vein Under Ground</item>
+      <item value="0x03">Stage 3 - The Fire Prominence</item>
+      <item value="0x04">Stage 4 - Attack On Space Station</item>
+      <item value="0x05">Stage 5 - The Dangerous Forest</item>
+      <item value="0x06">Stage 6 - The Terminators</item>
+      <item value="0x07">Stage 7 - Darkness Nebura</item>
+      <item value="0x08">Final Stage Pt 1 - Life or Death</item>
+      <item value="0x09">Final Stage Pt 2 - Final Boss</item>
+    </parameter>
+    <script state="run">
+      <action condition="(maincpu.pb@101ADF==01)">maincpu.pb@101ADF=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

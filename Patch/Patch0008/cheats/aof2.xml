@@ -1,0 +1,400 @@
+<mamecheat version="1">
+
+  <NGH>056</NGH>
+
+  <cheat desc="Infinite Time">  <!-- (Turn OFF on the Bonus Stage!) -->
+    <script state="run">
+      <action>maincpu.pb@108406=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish this Fight Now!">
+    <script state="on">
+      <action>maincpu.pb@108406=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Invincibility [Master Code]" tempvariables="19">
+    <script state="on">
+      <action>temp0 =maincpu.md@0F6B9A</action>
+      <action>temp1 =maincpu.md@0FDDA0</action>
+      <action>temp2 =maincpu.md@0FDDA4</action>
+      <action>temp3 =maincpu.md@0FDDA8</action>
+      <action>temp4 =maincpu.md@0FDDAC</action>
+      <action>temp5 =maincpu.md@01DAEA</action>
+      <action>temp6 =maincpu.mw@01DAEE</action>
+      <action>temp7 =maincpu.md@0FDDB0</action>
+      <action>temp8 =maincpu.mw@0FDDB4</action>
+      <action>temp9 =maincpu.md@0FDDB6</action>
+      <action>temp10=maincpu.md@0FDDBA</action>
+      <action>temp11=maincpu.md@0FDDBE</action>
+      <action>temp12=maincpu.md@01DC14</action>
+      <action>temp13=maincpu.mw@01DC18</action>
+      <action>temp14=maincpu.md@0FDDC2</action>
+      <action>temp15=maincpu.mw@0FDDC6</action>
+      <action>temp16=maincpu.md@0FDDC8</action>
+      <action>temp17=maincpu.md@0FDDCC</action>
+      <action>temp18=maincpu.md@0FDDD0</action>
+    </script>
+    <script state="run">
+      <action>maincpu.md@0F6B9A=61007204</action>
+      <action>maincpu.md@0FDDA0=4A2C007E</action> <!-- [ Direct Attack or Firearm ] -->
+      <action>maincpu.md@0FDDA4=6606C22C</action> <!-- F6B9A - bsr $fdda0 / FDDA0 - tst.b ($7e,A4) / FDDA4 - bne $fddac -->
+      <action>maincpu.md@0FDDA8=006B4E75</action> <!-- FDDA6 - and.b ($6b,A4),D1 / FDDAA - rts -->
+      <action>maincpu.md@0FDDAC=72004E75</action> <!-- FDDAC - moveq #$0,D1 / FDDAE - rts -->
+      <action>maincpu.md@01DAEA=4EB9000F</action> <!-- [ Catch or Throw ] -->
+      <action>maincpu.mw@01DAEE=DDB0</action> <!-- 1DAEA - jsr $fddb0.l -->
+      <action>maincpu.md@0FDDB0=4A2E12FE</action> <!-- FDDB0 - tst.b ($12fe,A6) -->
+      <action>maincpu.mw@0FDDB4=6608</action> <!-- FDDB4 - bne $fddbe -->
+      <action>maincpu.md@0FDDB6=082E0000</action> <!-- FDDB6 - btst #$0,($a68,A6) -->
+      <action>maincpu.md@0FDDBA=0A684E75</action> <!-- FDDBC - rts -->
+      <action>maincpu.md@0FDDBE=70004E75</action> <!-- FDDBE - moveq #$0,D0 / FDDC0 - rts -->
+      <action>maincpu.md@01DC14=4EB9000F</action> <!-- [ Air or Move-type Throw ] -->
+      <action>maincpu.mw@01DC18=DDC2</action> <!-- 1DC14 - jsr $fddc2.l -->
+      <action>maincpu.md@0FDDC2=4A2E12FE</action> <!-- FDDC2 - tst.b ($12fe,A6) -->
+      <action>maincpu.mw@0FDDC6=6608</action> <!-- FDDC6 - bne $fddd0 -->
+      <action>maincpu.md@0FDDC8=082E0001</action> <!-- FDDC8 - btst #$1,($a68,A6) -->
+      <action>maincpu.md@0FDDCC=0A684E75</action> <!-- FDDCE - rts -->
+      <action>maincpu.md@0FDDD0=70004E75</action> <!-- FDDD0 - moveq #$0,D0 / FDDD2 - rts -->
+    </script>
+    <script state="off">
+      <action>maincpu.md@0F6B9A=temp0 </action>
+      <action>maincpu.md@0FDDA0=temp1 </action>
+      <action>maincpu.md@0FDDA4=temp2 </action>
+      <action>maincpu.md@0FDDA8=temp3 </action>
+      <action>maincpu.md@0FDDAC=temp4 </action>
+      <action>maincpu.md@01DAEA=temp5 </action>
+      <action>maincpu.mw@01DAEE=temp6 </action>
+      <action>maincpu.md@0FDDB0=temp7 </action>
+      <action>maincpu.mw@0FDDB4=temp8 </action>
+      <action>maincpu.md@0FDDB6=temp9 </action>
+      <action>maincpu.md@0FDDBA=temp10</action>
+      <action>maincpu.md@0FDDBE=temp11</action>
+      <action>maincpu.md@01DC14=temp12</action>
+      <action>maincpu.mw@01DC18=temp13</action>
+      <action>maincpu.md@0FDDC2=temp14</action>
+      <action>maincpu.mw@0FDDC6=temp15</action>
+      <action>maincpu.md@0FDDC8=temp16</action>
+      <action>maincpu.md@0FDDCC=temp17</action>
+      <action>maincpu.md@0FDDD0=temp18</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Hit Anywhere (Both Players)">
+    <script state="on">
+      <action>temp0 =maincpu.mw@0F6BA6</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mw@0F6BA6=6012</action> <!-- This ROM cheat was made by nolberto82 -->
+    </script>
+    <script state="off">
+      <action>maincpu.mw@0F6BA6=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Desperation Move (Both Players)"> <comment>Desperation moves are always available for all players, including CPU player in 1UP game!</comment>
+    <script state="on">
+      <action>temp0 =maincpu.mb@01D475</action>
+      <action>temp1 =maincpu.mb@01D483</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mb@01D475=00</action> <!-- This ROM cheat was made by syndromtr -->
+      <action>maincpu.mb@01D483=80</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mb@01D475=temp0 </action>
+      <action>maincpu.mb@01D483=temp1 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Always successful in all Bonus Games"> <comment>This cheat must be turned on before selecting a bonus game. Selected bonus game will be succeed.</comment>
+    <script state="on">
+      <action>temp0 =maincpu.mw@17B58</action>
+      <action>temp1 =maincpu.mw@17EBA</action>
+      <action>temp2 =maincpu.md@18376</action>
+      <action>temp3 =maincpu.mw@1837A</action>
+      <action>temp4 =maincpu.mb@1838D</action>
+      <action>temp5 =maincpu.mw@17A7A</action>
+      <action>temp6 =maincpu.mq@182FC</action>
+      <action>temp7 =maincpu.pb@108448</action>
+      <action>temp8 =maincpu.mw@1767C</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mw@17B58=6002</action> <!-- This ROM cheat was made by syndromtr -->
+      <action>maincpu.mw@17EBA=4E71</action>
+      <action>maincpu.md@18376=4EB90001</action>
+      <action>maincpu.mw@1837A=8562</action>
+      <action>maincpu.mb@1838D=00</action>
+      <action>maincpu.mw@17A7A=6002</action>
+      <action>maincpu.mq@182FC=1B7C000004CD600A</action>
+      <action condition="(maincpu.pb@109FC3 == 3C) AND (maincpu.pb@10843B == 03)">maincpu.pb@108448=01</action>
+      <action condition="(maincpu.pb@109FC3 == 3C) AND (maincpu.pb@10843B == 03)">maincpu.mw@1767C=4E71</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mw@17B58=temp0 </action>
+      <action>maincpu.mw@17EBA=temp1 </action>
+      <action>maincpu.md@18376=temp2 </action>
+      <action>maincpu.mw@1837A=temp3 </action>
+      <action>maincpu.mb@1838D=temp4 </action>
+      <action>maincpu.mw@17A7A=temp5 </action>
+      <action>maincpu.mq@182FC=temp6 </action>
+      <action>maincpu.pb@108448=temp7 </action>
+      <action>maincpu.mw@1767C=temp8 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Ending">
+    <parameter>
+      <item value="0x00">Ryo</item>
+      <item value="0x01">Robert</item>
+      <item value="0x02">Eiji</item>
+      <item value="0x03">Jack</item>
+      <item value="0x04">LEE</item>
+      <item value="0x05">King</item>
+      <item value="0x06">Mickey</item>
+      <item value="0x07">John</item>
+      <item value="0x08">Big</item>
+      <item value="0x09">Takuma</item>
+      <item value="0x0A">Yuri</item>
+      <item value="0x0B">Temjin</item>
+      <item value="0x0C">Big(2)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@109F91=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Background">
+    <parameter>
+      <item value="0x01">Ryo</item>
+      <item value="0x02">Robert</item>
+      <item value="0x03">Eiji</item>
+      <item value="0x04">Jack</item>
+      <item value="0x05">LEE</item>
+      <item value="0x06">King</item>
+      <item value="0x07">Mickey</item>
+      <item value="0x08">John</item>
+      <item value="0x09">Big</item>
+      <item value="0x0A">Takuma</item>
+      <item value="0x0B">Yuri</item>
+      <item value="0x0C">Temjin</item>
+      <item value="0x0D">Geese</item>
+      <item value="0x0E">Bonus Stage</item>
+      <item value="0x0F">Bonus Stage 2</item>
+      <item value="0x0F">Blank</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@108401=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Perm Winner">
+    <parameter>
+      <item value="0x90">P1</item>
+      <item value="0x91">P2</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10840A=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@1092ED=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@1092ED=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility"> <comment>Works after you've enabled 'Invincibility [Master Code]'</comment>
+    <script state="on">
+      <action>temp0 =maincpu.pb@10A67E</action>
+      <action>temp1 =maincpu.pb@10A97E</action>
+      <action>temp2 =maincpu.pb@10AA7E</action>
+      <action>temp3 =maincpu.pb@10AB7E</action>
+    </script>
+    <script state="run">
+      <action>maincpu.pb@10A67E=01</action>
+      <action>maincpu.pb@10A97E=01</action>
+      <action>maincpu.pb@10AA7E=01</action>
+      <action>maincpu.pb@10AB7E=01</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10A67E=temp0 </action>
+      <action>maincpu.pb@10A97E=temp1 </action>
+      <action>maincpu.pb@10AA7E=temp2 </action>
+      <action>maincpu.pb@10AB7E=temp3 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Power">
+    <script state="run">
+      <action>maincpu.pb@1094A4=80</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Min. Power">
+    <script state="run">
+      <action>maincpu.pb@1094A4=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain All Power Now!">
+    <script state="on">
+      <action>maincpu.pb@1094A4=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+  <cheat desc="Free player selection-Can be used anytime!"/>
+  <cheat desc="At selection screen, use AFTER selection,"/>
+  <cheat desc="however there are some palette glitches."/>
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Select Character"> <comment>Win causes 'Game Over' when you select Geese</comment>
+    <parameter>
+      <item value="0x01">Ryo Sakazaki</item>
+      <item value="0x02">Robert Garcia</item>
+      <item value="0x03">Eiji Kisaragi</item>
+      <item value="0x04">Jack Turner</item>
+      <item value="0x05">Lee Pai Long</item>
+      <item value="0x06">King</item>
+      <item value="0x07">Mickey Rogers</item>
+      <item value="0x08">John Crawley</item>
+      <item value="0x09">Big</item>
+      <item value="0x0A">Takuma Sakazaki</item>
+      <item value="0x0B">Yuri Sakazaki</item>
+      <item value="0x0C">Temjin</item>
+      <item value="0x0D">Geese Howard</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@1092E3=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@1093ED=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@1093ED=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility"> <comment>Works after you've enabled 'Invincibility [Master Code]'</comment>
+    <script state="on">
+      <action>temp0 =maincpu.pb@10A07E</action>
+      <action>temp1 =maincpu.pb@10A37E</action>
+      <action>temp2 =maincpu.pb@10A47E</action>
+      <action>temp3 =maincpu.pb@10A57E</action>
+    </script>
+    <script state="run">
+      <action>maincpu.pb@10A07E=01</action>
+      <action>maincpu.pb@10A37E=01</action>
+      <action>maincpu.pb@10A47E=01</action>
+      <action>maincpu.pb@10A57E=01</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10A07E=temp0 </action>
+      <action>maincpu.pb@10A37E=temp1 </action>
+      <action>maincpu.pb@10A47E=temp2 </action>
+      <action>maincpu.pb@10A57E=temp3 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Power">
+    <script state="run">
+      <action>maincpu.pb@1095A4=80</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Min. Power">
+    <script state="run">
+      <action>maincpu.pb@1095A4=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain All Power Now!">
+    <script state="on">
+      <action>maincpu.pb@1095A4=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Next fight = Boss Now!">
+    <script state="on">
+      <action>maincpu.pb@108429=0E</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Next fight Special Boss">
+    <script state="on">
+      <action>maincpu.pb@108429=0F</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+  <cheat desc="Free player selection-Can be used anytime!"/>
+  <cheat desc="At selection screen, use AFTER selection,"/>
+  <cheat desc="however there are some palette glitches."/>
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Select Character"> <comment>Win causes 'Game Over' when you select Geese</comment>
+    <parameter>
+      <item value="0x01">Ryo Sakazaki</item>
+      <item value="0x02">Robert Garcia</item>
+      <item value="0x03">Eiji Kisaragi</item>
+      <item value="0x04">Jack Turner</item>
+      <item value="0x05">Lee Pai Long</item>
+      <item value="0x06">King</item>
+      <item value="0x07">Mickey Rogers</item>
+      <item value="0x08">John Crawley</item>
+      <item value="0x09">Big</item>
+      <item value="0x0A">Takuma Sakazaki</item>
+      <item value="0x0B">Yuri Sakazaki</item>
+      <item value="0x0C">Temjin</item>
+      <item value="0x0D">Geese Howard</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@1093E3=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

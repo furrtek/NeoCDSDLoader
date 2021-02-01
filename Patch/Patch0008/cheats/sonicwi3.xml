@@ -1,0 +1,141 @@
+<mamecheat version="1">
+
+  <NGH>097</NGH>
+
+  <cheat desc="Select Character">
+    <parameter>
+      <item value="0x00">P1 Keaton [F4U Corsair] \ P2 Blazers [P61 Black Widow]</item>
+      <item value="0x01">P1 Blazers [P61 Black Widow] \ P2 Keaton [F4U Corsair]</item>
+      <item value="0x02">P1 Hien [Zero Fighter] \ P2 Mao Mao [Seiran(M6A1)]</item>
+      <item value="0x03">P1 Mao Mao [Seiran(M6A1)] \ P2 Hien [Zero Fighter]</item>
+      <item value="0x04">P1 Chaika + Pooshka [IL2 Stormovik] \ P2 Spanky [Polikarpov I-16]</item>
+      <item value="0x05">P1 Spanky [Polikarpov I-16] \ P2 Chaika + Pooshka [IL2 Stormovik]</item>
+      <item value="0x06">P1 Malcolm [DO335 Pfeil] \ P2 Kowful + River [JU-87 Stuka]</item>
+      <item value="0x07">P1 Kowful + River [JU-87 Stuka] \ P2 Malcolm [DO335 Pfeil]</item>
+      <item value="0x08">P1 Alex + Pictus [Whirlwind] \ P2 Ellen + Cindy [Swordfish]</item>
+      <item value="0x09">P1 Ellen + Cindy [Swordfish] \ P2 Alex + Pictus [Whirlwind]</item>
+      <item value="0x0A">P1 Kotomi [Red Rabbit] \ P2 The Man [Diabloon]</item>
+      <item value="0x0B">P1 The Man [Diabloon] \ P2 Kotomi [Red Rabbit]</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1003AB=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Enemies Can't Fire">
+    <script state="run">
+      <action>maincpu.pb@10EA5D=01</action> <!-- Was 10EA57 -->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@10E8A1=05</action> <!-- Was 10E89B -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Bombs">
+    <script state="run">
+      <action>maincpu.pb@10E8C0=03</action> <!-- Was 10E8BA -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@10E8C5=01</action> <!-- Was 10E8BF -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Maximum Power">
+    <script state="run">
+      <action>maincpu.pb@10E8B0=3</action> <!-- Most Characters -->
+      <action condition="maincpu.pb@1003AB==3 || maincpu.pb@1003AB==4">maincpu.pb@10E8B0=2</action> <!-- Mao Mao,Chaika + Pooshka -->
+      <action condition="maincpu.pb@1003AB==5 || maincpu.pb@1003AB==7">maincpu.pb@10E8B0=4</action> <!--  Spanky, Kowful + River -->
+      <action condition="maincpu.pb@1003AB==9">maincpu.pb@10E8B0=1</action> <!-- Ellen + Cindy -->
+      <action condition="maincpu.pb@1003AB==B">maincpu.pb@10E8B0=7</action> <!-- Diabloon -->
+      <action condition="maincpu.pb@1003AB==A">maincpu.pb@10E8B0=2</action> <!-- RedRabbit -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Rapid Fire">
+    <script state="run">
+      <action>maincpu.pb@10EA42=00</action> <!-- Was 10EA3C -->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@10E8F7=05</action> <!-- Was 10E8F1 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Bombs">
+    <script state="run">
+      <action>maincpu.pb@10E916=03</action> <!-- Was 10E910 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@10E91B=01</action> <!-- Was 10E915 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Maximum Power">
+    <script state="run">
+      <action>maincpu.pb@10E906=3</action> <!-- Most Characters -->
+      <action condition="maincpu.pb@1003AB==2 || maincpu.pb@1003AB==5">maincpu.pb@10E906=2</action> <!-- Mao Mao,Chaika + Pooshka -->
+      <action condition="maincpu.pb@1003AB==4 || maincpu.pb@1003AB==6">maincpu.pb@10E906=4</action> <!--  Spanky, Kowful + River -->
+      <action condition="maincpu.pb@1003AB==8">maincpu.pb@10E906=1</action> <!-- Ellen + Cindy -->
+      <action condition="maincpu.pb@1003AB==A">maincpu.pb@10E906=7</action> <!-- Diabloon -->
+      <action condition="maincpu.pb@1003AB==B">maincpu.pb@10E906=2</action> <!-- Red Rabbit -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Rapid Fire">
+    <script state="run">
+      <action>maincpu.pb@10EA48=00</action> <!-- Was 10EA42 -->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="DEBUG DIP - Select Starting Stage"> <comment>After "How to play", select stage with left/right and Button A.</comment>
+    <script state="run">
+      <action>maincpu.pb@10EA33=FF</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10EA33=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

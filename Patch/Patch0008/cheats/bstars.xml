@@ -1,0 +1,134 @@
+<mamecheat version="1">
+
+  <NGH>002</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@10004A=59</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Innings">
+    <script state="run">
+      <action>maincpu.pb@101083=09</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Hit Homeruns"> <comment>Press or hold Bunt button before or during play</comment>
+    <script state="on">
+      <action>temp0 =maincpu.mw@00D608</action>
+      <action>temp1 =maincpu.md@00D60A</action>
+      <action>temp2 =maincpu.md@0FFFE0</action>
+      <action>temp3 =maincpu.md@0FFFE4</action>
+      <action>temp4 =maincpu.md@0FFFE8</action>
+      <action>temp5 =maincpu.md@0FFFEC</action>
+      <action>temp6 =maincpu.md@0FFFF0</action>
+      <action>temp7 =maincpu.md@0FFFF4</action>
+      <action>temp8 =maincpu.mw@0FFFF8</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mw@00D608=4EB9</action> <!-- This ROM cheat was made by nolberto82 -->
+      <action>maincpu.md@00D60A=000FFFE0</action>
+      <action>maincpu.md@0FFFE0=4DF90010</action>
+      <action>maincpu.md@0FFFE4=10000239</action>
+      <action>maincpu.md@0FFFE8=00400010</action>
+      <action>maincpu.md@0FFFEC=FD956708</action>
+      <action>maincpu.md@0FFFF0=13FC0002</action>
+      <action>maincpu.md@0FFFF4=00101070</action>
+      <action>maincpu.mw@0FFFF8=4E75</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mw@00D608=temp0 </action>
+      <action>maincpu.md@00D60A=temp1 </action>
+      <action>maincpu.md@0FFFE0=temp2 </action>
+      <action>maincpu.md@0FFFE4=temp3 </action>
+      <action>maincpu.md@0FFFE8=temp4 </action>
+      <action>maincpu.md@0FFFEC=temp5 </action>
+      <action>maincpu.md@0FFFF0=temp6 </action>
+      <action>maincpu.md@0FFFF4=temp7 </action>
+      <action>maincpu.mw@0FFFF8=temp8 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Strikes">
+    <script state="run">
+      <action>maincpu.pb@10107E=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Set Strikes to 0 Now!">
+    <script state="on">
+      <action>maincpu.pb@10107E=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Set Strikes to 2 Now!">
+    <script state="on">
+      <action>maincpu.pb@10107E=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Balls">
+    <script state="run">
+      <action>maincpu.pb@10107D=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Set Balls to 0 Now!">
+    <script state="on">
+      <action>maincpu.pb@10107D=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Set Balls to 3 Now!">
+    <script state="on">
+      <action>maincpu.pb@10107D=03</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Outs">
+    <script state="run">
+      <action>maincpu.pb@10107C=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Set Outs to 0 Now!">
+    <script state="on">
+      <action>maincpu.pb@10107C=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Set Outs to 2 Now!">
+    <script state="on">
+      <action>maincpu.pb@10107C=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

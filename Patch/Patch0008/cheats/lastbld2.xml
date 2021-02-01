@@ -1,0 +1,324 @@
+<mamecheat version="1">
+
+  <NGH>243</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@10E595=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish this Fight Now!">
+    <script state="on">
+      <action>maincpu.pb@10E595=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+  <cheat desc="The 2 boss cheats must be activated at the selection screen. If"/>
+  <cheat desc="one is activated during the first stage and that you win, the"/>
+  <cheat desc="character boss cheat brings you to the final boss and the final"/>
+  <cheat desc="boss cheat let's you see the ending."/>
+  <cheat desc=" "/>
+
+  <cheat desc="Go to Character Boss Now!">
+    <script state="on">
+      <action>maincpu.pb@10E581=06</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Go to Final Boss Now!">
+    <script state="on">
+      <action>maincpu.pb@10E581=07</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Constant Background">
+    <parameter>
+      <item value="0x00">Shimiji Pass</item>
+      <item value="0x01">Battle of Cloudy Sky</item>
+      <item value="0x02">13 Porttown</item>
+      <item value="0x03">Village of Twilight</item>
+      <item value="0x04">The Graveyard</item>
+      <item value="0x05">Forest of Forgetfulness</item>
+      <item value="0x06">The Night Before 'Yuki-Machi'</item>
+      <item value="0x07">Shrine of the Vanquished</item>
+      <item value="0x08">Boss Stage</item>
+      <item value="0x09">Fire at the Wadamoya</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10E57D=param</action> <!-- Moriya, Kagami, Setsuna -->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10E344)+17E)=02</action>
+      <action>maincpu.pb@((maincpu.pd@10E344)+17F)=00</action> <!-- Poked as bytes for max cheat engine compatability -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pw@((maincpu.pd@10E344)+17E)=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@10E4B2=01</action>
+      <action>maincpu.pb@10E44C=01</action> <!-- Part 1 sorts out the energy bar and Part 2 stops you reacting when hit -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Power">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10E344)+17D)=40</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Rounds Won"> <comment>However, you still can't throw a round to win the match...</comment>
+    <parameter min="0" max="3" step="1"/>
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10E344)+1AD)=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character">
+    <parameter>
+      <item value="0x00">Kaede</item>
+      <item value="0x01">Moriya</item>
+      <item value="0x02">Yuki</item>
+      <item value="0x03">Okina</item>
+      <item value="0x04">Akari</item>
+      <item value="0x05">Juzoh</item>
+      <item value="0x06">Washizuka</item>
+      <item value="0x07">Mukuro</item>
+      <item value="0x08">Amano</item>
+      <item value="0x09">Lee</item>
+      <item value="0x0A">Zantetsu</item>
+      <item value="0x0B">Shigen</item>
+      <item value="0x0C">Kagami</item>
+      <item value="0x0D">Kojiroh</item>
+      <item value="0x0E">Hibiki</item>
+      <item value="0x0F">Setsuna</item>
+      <item value="0x10">Kouryu</item>
+      <item value="0x11">Original Kaede</item>
+      <item value="0x12">Hagure</item>
+      <item value="0x13">Kotetsu</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10BD59=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Playing Style">
+    <parameter>
+      <item value="0x01">Power Mode</item>
+      <item value="0x02">Speed Mode</item>
+      <item value="0x03">EX Mode</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10E344)+17C)=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Colour">
+    <parameter>
+      <item value="0x00">A colour (Power Mode)</item>
+      <item value="0x01">A colour (Speed Mode)</item>
+      <item value="0x02">A colour (EX Mode)</item>
+      <item value="0x03">D colour (Power Mode)</item>
+      <item value="0x04">D colour (Speed Mode)</item>
+      <item value="0x05">D colour (EX Mode)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10BD60=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10E348)+17E)=02</action>
+      <action>maincpu.pb@((maincpu.pd@10E348)+17F)=00</action> <!-- Poked as bytes for max cheat engine compatability -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pw@((maincpu.pd@10E348)+17E)=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@10E4B3=01</action>
+      <action>maincpu.pb@10E450=01</action> <!-- Part 1 sorts out the energy bar and Part 2 stops you reacting when hit -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Power">
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10E348)+17D)=40</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Rounds Won"> <comment>However, you still can't throw a round to win the match...</comment>
+    <parameter min="0" max="3" step="1"/>
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10E348)+1AD)=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character">
+    <parameter>
+      <item value="0x00">Kaede</item>
+      <item value="0x01">Moriya</item>
+      <item value="0x02">Yuki</item>
+      <item value="0x03">Okina</item>
+      <item value="0x04">Akari</item>
+      <item value="0x05">Juzoh</item>
+      <item value="0x06">Washizuka</item>
+      <item value="0x07">Mukuro</item>
+      <item value="0x08">Amano</item>
+      <item value="0x09">Lee</item>
+      <item value="0x0A">Zantetsu</item>
+      <item value="0x0B">Shigen</item>
+      <item value="0x0C">Kagami</item>
+      <item value="0x0D">Kojiroh</item>
+      <item value="0x0E">Hibiki</item>
+      <item value="0x0F">Setsuna</item>
+      <item value="0x10">Kouryu</item>
+      <item value="0x11">Original Kaede</item>
+      <item value="0x12">Hagure</item>
+      <item value="0x13">Kotetsu</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10BD5B=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Playing Style">
+    <parameter>
+      <item value="0x01">Power Mode</item>
+      <item value="0x02">Speed Mode</item>
+      <item value="0x03">EX Mode</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@((maincpu.pd@10E348)+17C)=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Colour">
+    <parameter>
+      <item value="0x00">A colour (Power Mode)</item>
+      <item value="0x01">A colour (Speed Mode)</item>
+      <item value="0x02">A colour (EX Mode)</item>
+      <item value="0x03">D colour (Power Mode)</item>
+      <item value="0x04">D colour (Speed Mode)</item>
+      <item value="0x05">D colour (EX Mode)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10BD61=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Hide Background"> <comment>Activate before match start</comment>
+    <script state="on">
+      <action>temp0=maincpu.rw@05A0EA</action>
+      <action>maincpu.rw@05A0EA=0001</action>
+      <action>temp1=maincpu.rd@05A178</action><!--HUD-->
+      <action>maincpu.rd@05A178=4E714E71</action><!--HUD-->
+      <action>temp2=maincpu.rw@05BC06</action><!--flashing text-->
+      <action>maincpu.rw@05BC06=6032</action><!--flashing text-->
+    </script>
+    <script state="run">
+      <action>temp9=maincpu.rw@10E57C</action> <!--stage-->
+      <action condition="maincpu.pb@10F2D4 != FF">temp9=FF</action> <!--match inactive-->
+      <action condition="temp9 != FF">maincpu.pw@10829E=8F8F</action> <!--BG colour (pink)-->
+      <action condition="temp9 == 0"> <!--Shimiji Pass stage BG layers and solid shadows-->
+        maincpu.pw@108560=0700</action>
+      <action condition="temp9 == 0">maincpu.pq@109064=005B00600065006A
+      </action>
+      <action condition="temp9 == 1"> <!--Battle of Cloudy Sky-->
+        maincpu.pw@108560=0070</action>
+      <action condition="temp9 == 1">maincpu.pq@109054=005B00600065006A
+      </action>
+      <action condition="temp9 == 2"> <!--13 Porttown-->
+        maincpu.pw@108560=0038</action>
+      <action condition="temp9 == 2">maincpu.pq@109050=00420047004C0051
+      </action>
+      <action condition="temp9 == 3"> <!--Village of Twilight-->
+        maincpu.pw@108560=1C00</action>
+      <action condition="temp9 == 3">maincpu.pq@10906C=004E00530058005D
+      </action>
+      <action condition="temp9 == 4"> <!--The Graveyard-->
+        maincpu.pw@108560=004C</action>
+      <action condition="temp9 == 4">maincpu.pq@10904C=00340039003E0043
+      </action>
+      <action condition="temp9 == 5"> <!--Forest of Forgetfulness-->
+        maincpu.pw@108560=0038</action>
+      <action condition="temp9 == 5">maincpu.pq@109050=003A003F00440049
+      </action>
+      <action condition="temp9 == 6"> <!--The Night Before 'Yuki-Machi'-->
+        maincpu.pw@108560=01C0</action>
+      <action condition="temp9 == 6">maincpu.pq@10905C=004D00520057005C
+      </action>
+      <action condition="temp9 == 7"> <!--Shrine of the Vanquished-->
+        maincpu.pw@108560=0700</action>
+      <action condition="temp9 == 7">maincpu.pq@109064=00430048004D0052
+      </action>
+      <action condition="temp9 == 8"> <!--Boss Stage-->
+        maincpu.pw@108560=2018</action>
+      <action condition="temp9 == 8">maincpu.pq@109050=0046004B00500055
+      </action>
+      <action condition="temp9 == 9"> <!--Fire at the Wadamoya-->
+        maincpu.pw@108560=0038</action>
+      <action condition="temp9 == 9">maincpu.pq@109050=00540059005E0063
+      </action>
+    </script>
+    <script state="off">
+      <action>maincpu.rw@05A0EA=temp0</action>
+      <action>maincpu.rd@05A178=temp1</action>
+      <action>maincpu.rw@05BC06=temp2</action>
+    </script>
+  </cheat>
+
+  <cheat desc="No Background Music">
+    <script state="run">
+      <action>audiocpu.pb@FD89=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

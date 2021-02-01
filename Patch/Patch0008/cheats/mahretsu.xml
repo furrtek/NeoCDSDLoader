@@ -1,0 +1,69 @@
+<mamecheat version="1">
+
+  <NGH>004</NGH>
+
+  <cheat desc="Infinite Main Game Time">
+    <script state="run">
+      <action>maincpu.pb@10019D=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Move Time">
+    <script state="run">
+      <action>maincpu.pb@100227=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+  <cheat desc="After the winning hand cheat has been activated, you must wait for"/>
+  <cheat desc="one of the two missing tiles you still need to win before using 'RON'."/>
+  <cheat desc=" "/>
+
+  <!--<cheat desc="Get winning hand Now!">
+    <script state="on">
+      <action>maincpu.pb@10158F=11</action>
+      <action>maincpu.pb@101591=19</action>
+      <action>maincpu.pb@101593=21</action>
+      <action>maincpu.pb@101595=29</action>
+      <action>maincpu.pb@101597=31</action>
+      <action>maincpu.pb@101599=39</action>
+      <action>maincpu.pb@10159B=41</action>
+      <action>maincpu.pb@10159D=42</action>
+      <action>maincpu.pb@10159F=43</action>
+      <action>maincpu.pb@1015A1=44</action>
+      <action>maincpu.pb@1015A3=45</action>
+      <action>maincpu.pb@1015A5=46</action>
+      <action>maincpu.pb@1015A7=47</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc=" "/>
+  <cheat desc="See    mahjonginmame.nm.ru/index.htm     for mahjong rules."/>
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

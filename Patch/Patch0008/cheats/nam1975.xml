@@ -1,0 +1,116 @@
+<mamecheat version="1">
+
+  <NGH>001</NGH>
+
+  <cheat desc="Infinite Continues">
+    <script state="run">
+      <action>maincpu.pb@10A625=64</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="on">
+      <action>temp0 =maincpu.pb@10109E</action>
+    </script>
+    <script state="run">
+      <action condition="(frame % 60 == 0) AND (maincpu.pb@10109E!=temp0 )">maincpu.pb@10109E=89</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Ammo">
+    <script state="run">
+      <action>maincpu.pb@1010E7=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Grenades">
+    <script state="run">
+      <action>maincpu.pb@1010ED=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@1010F0=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Weapon">
+    <parameter>
+      <item value="0x02">Flamethrower</item>
+      <item value="0x08">Bazooka</item>
+      <item value="0x01">Machine Gun</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1010E6=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="on">
+      <action>temp0 =maincpu.pb@10119E</action>
+    </script>
+    <script state="run">
+      <action condition="(frame % 60 == 0) AND (maincpu.pb@10119E!=temp0 )">maincpu.pb@10119E=89</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Ammo">
+    <script state="run">
+      <action>maincpu.pb@1011E7=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Grenades">
+    <script state="run">
+      <action>maincpu.pb@1011ED=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@1011F0=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Weapon">
+    <parameter>
+      <item value="0x02">Flamethrower</item>
+      <item value="0x08">Bazooka</item>
+      <item value="0x01">Machine Gun</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1011E6=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

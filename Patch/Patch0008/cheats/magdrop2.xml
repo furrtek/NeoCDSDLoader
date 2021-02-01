@@ -1,0 +1,108 @@
+<mamecheat version="1">
+
+  <NGH>221</NGH>
+
+  <cheat desc="-------------"/>
+  <cheat desc="PUZZLE MODE"/>
+  <cheat desc="-------------"/>
+
+  <cheat desc="No more Level Gain">
+    <script state="run">
+      <action>maincpu.pb@100A5F=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="---------"/>
+  <cheat desc="VS MODE"/>
+  <cheat desc="---------"/>
+
+  <cheat desc="Unlock Secret Characters"> <comment>Enable to select Devil, Strength and Empress</comment>
+    <script state="on">
+      <action>temp0 =maincpu.pb@101489</action>
+    </script>
+    <script state="run">
+      <action>maincpu.pb@101489=01</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@101489=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Face The Black Clawn">
+    <script state="on">
+      <action>temp0 =maincpu.pb@100073</action>
+    </script>
+    <script state="run">
+      <action>maincpu.pb@100073=00</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@100073=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Starting Stage">
+    <parameter>
+      <item value="0x09">Empress Castle</item>
+      <item value="0x0A">Black Clawn (The Special Ending)</item>
+    </parameter>
+    <script state="run">
+      <action condition="(maincpu.pb@100072==00)">maincpu.pb@100072=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Always has Quota=001"> <comment>One ballon to win</comment>
+    <script state="run">
+      <action condition="(frame % 60 == 0)">maincpu.pb@100A4B=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Quota=200">
+    <script state="run">
+      <action>maincpu.pb@100A4B=C8</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Always has Quota=001"> <comment>One ballon to win</comment>
+    <script state="run">
+      <action condition="(frame % 60 == 0)">maincpu.pb@100A6B=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Quota=200">
+    <script state="run">
+      <action>maincpu.pb@100A6B=C8</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

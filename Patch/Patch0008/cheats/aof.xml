@@ -1,0 +1,222 @@
+<mamecheat version="1">
+
+  <NGH>044</NGH>
+
+  <cheat desc="Infinite Time">  <!-- (Turn OFF on the Bonus Stage!) -->
+    <script state="run">
+      <action>maincpu.pb@108406=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish this Fight Now!">
+    <script state="on">
+      <action>maincpu.pb@108406=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Hit Anywhere (Both Players)">
+    <script state="on">
+      <action>temp0 =maincpu.mw@010CAC</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mw@010CAC=6012</action> <!-- This ROM cheat was made by nolberto82 -->
+    </script>
+    <script state="off">
+      <action>maincpu.mw@010CAC=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Desperation Move (Both Players)"> <comment>Ryo or Robert's desperation move is always available. Perform desperation move with joystick D, DF, F and then key C followed by key A.</comment>
+    <script state="on">
+      <action>temp0 =maincpu.mb@0139AB</action>
+      <action>temp1 =maincpu.mb@0139B9</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mb@0139AB=00</action> <!-- This ROM cheat was made by syndromtr -->
+      <action>maincpu.mb@0139B9=80</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mb@0139AB=temp0 </action>
+      <action>maincpu.mb@0139B9=temp1 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Always successful in all Bonus Games"> <comment>This cheat must be turned on before selecting a bonus game. Selected bonus game will be succeed.</comment>
+    <script state="on">
+      <action>temp0 =maincpu.mw@0EAC8</action>
+      <action>temp1 =maincpu.mw@0DC22</action>
+      <action>temp2 =maincpu.pb@10870F</action>
+      <action>temp3 =maincpu.pb@108448</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mw@0EAC8=600C</action> <!-- This ROM cheat was made by syndromtr -->
+      <action>maincpu.mw@0DC22=600C</action>
+      <action condition="(maincpu.pw@109EAE == F91C) AND (maincpu.pb@10843B == 02)">maincpu.pb@10870F=FF</action>
+      <action condition="(maincpu.pw@109EAE == F91C) AND (maincpu.pb@10843B == 02)">maincpu.pb@108448=01</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mw@0EAC8=temp0 </action>
+      <action>maincpu.mw@0DC22=temp1 </action>
+      <action>maincpu.pb@10870F=temp2 </action>
+      <action>maincpu.pb@108448=temp3 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Perm Winner">
+    <parameter>
+      <item value="0x90">P1</item>
+      <item value="0x91">P2</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10840A=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@1092CD=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@1092CD=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Power">
+    <script state="run">
+      <action>maincpu.pb@1094A4=80</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Min. Power">
+    <script state="run">
+      <action>maincpu.pb@1094A4=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain All Power Now!">
+    <script state="on">
+      <action>maincpu.pb@1094A4=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select C button action"> <comment>The C button does essentially what the A or B button does (outside throw range), depending on which button was pressed last. Eg pressing A, then C will throw a punch for the C press, while pressing B then C will throw a kick for the C action.</comment>
+    <parameter>
+      <item value="0x00">Punch</item>
+      <item value="0x01">Kick</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1094B5=param|(maincpu.pb@1094B5 BAND ~01)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character"> <comment>This cheat switches the character immediately when your character moves but the energy bar character icon and name won't update till the next round.</comment>
+    <parameter>
+      <item value="0x0000">Ryo Sakazaki</item>
+      <item value="0x0001">Robert Garcia</item>
+      <item value="0x0002">Ryuhaku Todo</item>
+      <item value="0x0003">Jack Turner</item>
+      <item value="0x0004">Lee Pai Long</item>
+      <item value="0x0005">King</item>
+      <item value="0x0006">Micky Rodgers</item>
+      <item value="0x0007">John Crawley</item>
+      <item value="0x0008">#Mr. Big</item>
+      <item value="0x0009">#Mr. Karate</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pw@1092C2=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@1093CD=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@1093CD=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Power">
+    <script state="run">
+      <action>maincpu.pb@1095A4=80</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Min. Power">
+    <script state="run">
+      <action>maincpu.pb@1095A4=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain All Power Now!">
+    <script state="on">
+      <action>maincpu.pb@1095A4=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select C button action"> <comment>The C button does essentially what the A or B button does (outside throw range), depending on which button was pressed last. Eg pressing A, then C will throw a punch for the C press, while pressing B then C will throw a kick for the C action.</comment>
+    <parameter>
+      <item value="0x00">Punch</item>
+      <item value="0x01">Kick</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1095B5=param|(maincpu.pb@1095B5 BAND ~01)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character"> <comment>This cheat switches the character immediately when your character moves but the energy bar character icon and name won't update till the next round.</comment>
+    <parameter>
+      <item value="0x0000">Ryo Sakazaki</item>
+      <item value="0x0001">Robert Garcia</item>
+      <item value="0x0002">Ryuhaku Todo</item>
+      <item value="0x0003">Jack Turner</item>
+      <item value="0x0004">Lee Pai Long</item>
+      <item value="0x0005">King</item>
+      <item value="0x0006">Micky Rodgers</item>
+      <item value="0x0007">John Crawley</item>
+      <item value="0x0008">#Mr. Big</item>
+      <item value="0x0009">#Mr. Karate</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pw@1093C2=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->
