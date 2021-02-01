@@ -1,0 +1,5 @@
+Designator,Footprint,X,Y,Layer,Rotation,Comment
+"C1","1206",318,-810,BOT,-180
+"C2","0603",346,-890,BOT,0
+"D1","INOLUX-1",439.685,-89.5276,BOT,0
+"J2","SD-102",359.646,-539.173,TOP,180

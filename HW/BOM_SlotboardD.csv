@@ -1,0 +1,4 @@
+Item #,Ref,Qty,Manufacturer,Part #,Description/Value,Package,Type,Notes
+1,C1,1,,,MLCC type X7R 47uF 6.3V,1206,SMD
+2,C2,1,,,MLCC type X7R 100nF 6.3V,0603,SMD
+3,J2,1,MOLEX,475710001,MicroSD card connector,,SMD

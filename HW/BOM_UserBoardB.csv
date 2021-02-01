@@ -1,0 +1,6 @@
+Item #,Ref,Qty,Manufacturer,Part #,Description/Value,Package,Type,Notes
+1,J1,1,Amphenol,HFW12R-1STE1LF,FFC connector 1mm 12P,,SMD
+2,C1,1,,,MLCC type X7R 10uF 6.3V,1206,SMD
+3,J2,DNP
+4,JP1,DNP
+5,LED,DNP

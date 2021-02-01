@@ -1,6 +1,6 @@
 # Neo CD SD Loader
 
-SD card game loader mod kit for the Neo Geo CD.
+SD card game loader mod kit for the Neo Geo CD - http://www.furrtek.org/sdloader/
 
 * TODO: Add schematics in PDF format
 * TODO: Add links to tools (ASW, gfxcc, flip.exe...)

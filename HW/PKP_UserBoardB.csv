@@ -1,0 +1,12 @@
+Component positions for UserBoardB
+
+Fields: Part ID, Value, Package, Layer, Rotation, X, Y
+Units:  Rotation - degrees, X, Y  - thou
+Notes:  The X, Y value is the centre of package.
+        The origin for these values is the Output Origin.
+        The values are a guide only and must be checked manually when
+        setting up automatic insertion equipment.
+
+Designator,Footprint,X,Y,Layer,Rotation,Comment
+"J1","SFW12R-FLIP",-708.661,-295.276,BOT,0
+"C1","1206",-380.913,-757.874,BOT,180

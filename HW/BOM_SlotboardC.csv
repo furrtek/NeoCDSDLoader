@@ -1,0 +1,6 @@
+Item #,Ref,Qty,Manufacturer,Part #,Description/Value,Package,Type,Notes
+1,C1,1,,,MLCC type X7R 47uF 6.3V,1206,SMD
+2,C2,1,,,MLCC type X7R 100nF 6.3V,0603,SMD
+3,D1,1,INOLUX,IN-S66TBTRGB,RGB LED common anode,,SMD
+4,J1,DNP
+5,J2,1,XUNPU,SD-102,SD card connector,,SMD,LCSC part # C266602
