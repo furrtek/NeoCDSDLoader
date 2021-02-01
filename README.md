@@ -15,7 +15,7 @@ I have absolutely no obligation to share these files. The only two reasons I cho
 1. I don't want the work to be lost.
 2. I want to forget about it and move on to new projects.
 
-To put it simply, '''these files are literally a gift''' which come with a simple rule:
+To put it simply, **these files are literally a gift** which come with a simple rule:
 you can do almost anything you want with them (see LICENSE), but I will NOT provide any kind of support.
 
 Manufacturing issues ? Component sourcing problems ? Software questions ? If the answer isn't in this README,
