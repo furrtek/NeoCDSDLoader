@@ -27,16 +27,6 @@ The PCB files are unbranded. Apart from the "Neo CD SD Loader" logo, all referen
 website were removed.
 
 The assembly files only cover SMD components.
-Back-side and through hole components were soldered manually:
-* Main PCB CPU socket: Modified MILL-MAX 540-44-068-17-400000 SMT PLCC68 socket (bottom plate removed).
-Be VERY careful about those, other models may cause serious connectivity issues (such as MILL-MAX 940-44-068-17-400000 and 3M 8468-21B1-RK-TP).
-* Main PCB CDDA connector: Right-angle 2mm pitch 3-pin header.
-* Full size SD slot PCB: Straight 2.54mm pitch 12-pin header.
-* Micro SD slot PCB: Straight 1.27mm pitch 12-pin header.
-
-PCB are all 2-layers 1.6mm FR4, 6/6mils, min hole 0.3mm, HASL, any color (full size SD slot PCB looks better in black).
-
-FFC: 12 conductors, 1mm pitch, same side contacts, length 200mm. LCSC part C12148 is fine.
 
 ## Main board
 Same one for both SD card slot options. Manual assembly required for the CDDA header and the PLCC68 socket.
@@ -54,6 +44,28 @@ These go together. Manual assembly required, connect together with header mentio
 
 # Software
 
-See `Docs/doc.odt` for details.
+See `Docs/doc.odt` for details about how things work.
 
 MCU firmware built with STM32CubeIDE, BIOS patches built with the macro assembler AS, CPLD bitstream built with Quartus 12.
+
+# How to build
+
+* Have the main board, and one of the UserBoard/SlotBoard pair made with the following specs: 2-layers 1.6mm FR4, 6/6mils, min hole 0.3mm, HASL, any color (full size SD slot PCB looks better in black).
+* Order:
+  * All the components if you're assembling the boards yourself (NOT recommended). See BOM files.
+  * FFC: 12 conductors, 1mm pitch, same side contacts, length 200mm. LCSC part C12148 is fine.
+  * SMT PLCC68 socket: MILL-MAX 540-44-068-17-400000. Be VERY careful about these, other models (such as MILL-MAX 940-44-068-17-400000 and 3M 8468-21B1-RK-TP) may cause serious connectivity issues.
+  * Right-angle 2mm pitch 3-pin header.
+  * For the full size SD card version: Straight 2.54mm pitch 12-pin header.
+  * For the Micro SD card version: Straight 1.27mm pitch 12-pin header.
+* Cut away the bottom plate of the PLCC socket.
+* Solder on to main board with beveled corner in the bottom right when the silkscreen arrow points right.
+* Solder two 3-pin headers in CDDA marked locations on the main board, pins pointing towards edge.
+* Assemble UserBoard and SlotBoard together with the appropriate 12-pin header. Orientation: silkscreen arrows must match and be visible. Space them 2mm+.
+* Clean PLCC socket contacts with IPA (or acetone but be careful with the plastic).
+* Plug main board in console, or power it with +5V via the test point.
+* Connect USB cable (D+, D-, GND) to the 3 unmarked pins.
+* Bridge two pads near MCU together, power up, USB device "STM32 DFU" should be detected.
+* Run program.bat in the `ProdBoot003` folder to program the MCU bootloader.
+* Power off, remove USB cable, clear MCU programming pads.
+* All done ! Follow installation instructions.
