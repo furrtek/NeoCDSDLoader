@@ -276,8 +276,7 @@
     nop
     nop
 
-	;ORG $C16A26
-	;move.l #360,$101B2E			; Reduce splash duration (10s -> 6s)
+
     ORG $C16A26
     jsr     SplashInit          ; Patch up to before $C16A3A
     nop
@@ -288,54 +287,26 @@
     nop
     nop
 
-	;ORG $C16D10
-	;move.l  #$920000,$20(a6)	; Loop start X position
 	ORG $C16D10
 	jsr     SplashStartCurve
 	nop
 
-	;ORG $C16D78
-	;move.l  #$50000,d0			; Loop curve width (oval)
 	ORG $C16D78
 	jsr     SplashLetterCurve
 
 	ORG $C16F12
 	move.b  d2,(4,a6)			; Sprite height bugfix :)
 
-	;ORG $C16F66
-	;dc.w 96						; X position for SD card image
-	;ORG $C16F66+20
-	;dc.w 88						; X position for faces image
-
-	;ORG $C17012
-	;dc.w $FFFF                  ; Disable "C" and "D" letters
-
-	;ORG $C16F97                 ; Final letter X positions
-	;dc.b $48
-	;ORG $C16F97+20
-	;dc.b $48+28
-	;ORG $C16F97+40
-	;dc.b $48+54
-	;ORG $C16F97+60
-	;dc.b $48+83
-	;ORG $C16F97+80
-	;dc.b $48+94
-	;ORG $C16F97+100
-	;dc.b $48+121
-	;ORG $C16F97+120
-	;dc.b $48+147
-
-	;ORG $C17036
-	;dc.w $F4					; "D" final X position
-
-    ;ORG $C20080
-	;BINCLUDE "gfxdata\sdcard.map"		; Replaces CD image
 	ORG $C16EF4
 	jsr     SplashMapSprite     ; Patch MapSprite to switch between CD and SD card sprite map
     nop                         ; Patch up to before $C16F02
     nop
     nop
     nop
+    
+    ORG $C0C6C6
+    jmp     InstallPalettes
+
 
     ORG $C209AE
 	BINCLUDE "gfxdata\menu_font.pal"	; Replaces palette (0) used for fix
@@ -344,10 +315,6 @@
 	; Palette (2) is used for msgbox text, leave it alone
     ORG $C20A0E
 	BINCLUDE "gfxdata\menu_font_hl.pal"	; Replaces palette (3) used for fix
-	;ORG $C20A4E
-	;BINCLUDE "gfxdata\finger.pal"		; Replaces faces palette (5)
-    ORG $C20A8E
-	BINCLUDE "gfxdata\sdcard.pal" 		; Replaces CD palette (7)
     ORG $C20AAE
 	BINCLUDE "gfxdata\tile_scroll_bg.pal" 	; Replaces CD player bg palette (8)
     ORG $C20ACE
@@ -378,9 +345,19 @@
     ORG $C5FEB0                                ; Overwrite bank #0: $C5FEB0+(0*$2000)=$C5FEB0
 FixBankZero:
 	BINCLUDE "gfxdata\fix_alphabet_bank.bin"   ; Replace with un-shittized standard font
+	
+FixSizeCheckA:
+    IF FixSizeCheckA > $C5FEB0+$2000
+        FATAL "\aFix file #1 is larger than 8kB !"
+    ENDIF
 
 	ORG $C69EB0 				               ; Overwrite bank #5: $C5FEB0+(5*$2000)=$C69EB0
 	BINCLUDE "gfxdata\fix_menu_bank.bin"	   ; Replace with menu font & pictos
+	
+FixSizeCheckB:
+    IF FixSizeCheckB > $C69EB0+$2000
+        FATAL "\aFix file #2 is larger than 8kB !"
+    ENDIF
 
     IFDEF DEBUGBUILD
 	ORG $C6DEB0 				               ; Overwrite bank #7: $C5FEB0+(7*$2000)=$C6DEB0
@@ -390,4 +367,7 @@ FixBankZero:
 	; DataSprites = $C6FEB0
     ORG $C6FEB0
 	BINCLUDE "gfxdata\sprites.bin"
-
+SpriteDataEnd:
+    IF SpriteDataEnd > $C6FEB0+(4*64*128)
+        FATAL "\aSprite data overflows banks 0~3 !"
+    ENDIF

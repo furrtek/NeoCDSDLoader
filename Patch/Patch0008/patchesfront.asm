@@ -289,48 +289,16 @@
     nop
     nop
 
-	;ORG $C1727A
-	;move.l  #$920000,$20(a6)	; OK Loop start X position
     ORG $C1727A
 	jsr     SplashStartCurve
 	nop
 
-	;ORG $C172E2
-	;move.l  #$50000,d0			; OK Loop curve width (oval)
     ORG $C172E2
 	jsr     SplashLetterCurve
 
 	ORG $C1747C
-	move.b  d2,(4,a6)			; OK Sprite height bugfix :)
+	move.b  d2,(4,a6)			; Sprite height bugfix :)
 
-	;ORG $C174D0
-	;dc.w 96						; OK X position for SD card image
-	;ORG $C174D0+20
-	;dc.w 88						; OK X position for faces image
-
-	;ORG $C1757C
-	;dc.w $FFFF                  ; OK Disable "C" and "D" letters
-
-	;ORG $C17501                 ; Final letter X positions
-	;dc.b $48
-	;ORG $C17501+20
-	;dc.b $48+28
-	;ORG $C17501+40
-	;dc.b $48+54
-	;ORG $C17501+60
-	;dc.b $48+83
-	;ORG $C17501+80
-	;dc.b $48+94
-	;ORG $C17501+100
-	;dc.b $48+121
-	;ORG $C17501+120
-	;dc.b $48+147
-
-	;ORG $C175A0
-	;dc.w $F4					; OK "D" final X position
-
-    ;ORG $C20072
-	;BINCLUDE "gfxdata\sdcard.map"		; OK Replaces CD image
 	ORG $C1745E
 	jsr     SplashMapSprite     ; Patch MapSprite to switch between CD and SD card sprite map
     nop                         ; Patch up to before $C1746C
@@ -338,17 +306,17 @@
     nop
     nop
 
+    ORG $C0CF02
+    jmp     InstallPalettes
+
+
     ORG $C209A0
-	BINCLUDE "gfxdata\menu_font.pal"	; OK Replaces palette (0) used for fix
+	BINCLUDE "gfxdata\menu_font.pal"	; Replaces palette (0) used for fix
     ORG $C209C0
 	BINCLUDE "gfxdata\menu_picto.pal"	; Replaces palette (1) used for fix
 	; Palette (2) is used for msgbox text, leave it alone
     ORG $C20A00
 	BINCLUDE "gfxdata\menu_font_hl.pal"	; Replaces palette (3) used for fix
-	;ORG $C20A4E
-	;BINCLUDE "gfxdata\finger.pal"		; Replaces faces palette (5)
-    ORG $C20A80
-	BINCLUDE "gfxdata\sdcard.pal" 		; Replaces CD palette (7)
     ORG $C20AA0
 	BINCLUDE "gfxdata\tile_scroll_bg.pal" 	; Replaces CD player bg palette (8)
     ORG $C20AC0
@@ -401,4 +369,7 @@ FixSizeCheckB:
 	; DataSprites = $C6FEB0
     ORG $C6FEB0
 	BINCLUDE "gfxdata\sprites.bin"
-
+SpriteDataEnd:
+    IF SpriteDataEnd > $C6FEB0+(4*64*128)
+        FATAL "\aSprite data overflows banks 0~3 !"
+    ENDIF
