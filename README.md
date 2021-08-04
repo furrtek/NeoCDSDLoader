@@ -63,9 +63,9 @@ MCU firmware built with STM32CubeIDE, BIOS patches built with the macro assemble
 * Solder two 3-pin headers in CDDA marked locations on the main board, pins pointing towards edge.
 * Assemble UserBoard and SlotBoard together with the appropriate 12-pin header. Orientation: silkscreen arrows must match and be visible. Space them 2mm+.
 * Clean PLCC socket contacts with IPA (or acetone but be careful with the plastic).
-* Plug main board in console, or power it with +5V via the test point.
-* Connect USB cable (D+, D-, GND) to the 3 unmarked pins.
-* Bridge two pads near MCU together, power up, USB device "STM32 DFU" should be detected.
+* Plug main board in console, or power it with +5V via a wire to the 5V rail (C1 for example).
+* Connect USB cable (in order: > D+, D-, GND) to the 3 unmarked holes next to one of the CDDA footprints.
+* Bridge the two half-circle pads near the MCU together, power up, USB device "STM32 BOOTLOADER" should be detected.
 * Run program.bat in the `ProdBoot003` folder to program the MCU bootloader.
 * Power off, remove USB cable, clear MCU programming pads.
 * All done ! Follow installation instructions.
