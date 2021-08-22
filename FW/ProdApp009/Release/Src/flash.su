@@ -1,0 +1,5 @@
+flash.c:30:6:SetFlashAddress	16	static
+flash.c:42:6:CmdFlash	32	static
+flash.c:50:6:WriteFlash	24	static
+flash.c:61:10:ReadMem	16	static
+flash.c:84:10:EraseFlash	32	static

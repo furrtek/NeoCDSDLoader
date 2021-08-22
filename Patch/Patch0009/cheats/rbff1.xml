@@ -1,0 +1,237 @@
+<mamecheat version="1">
+
+  <NGH>095</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@106AA8=9A</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish this Round Now!"> <comment>Disable Infinite Time before activating this cheat</comment>
+    <script state="on">
+      <action>maincpu.pb@106AA8=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Starting Fight">
+    <parameter>
+      <item value="0x01">Fight 1</item>
+      <item value="0x02">Fight 2</item>
+      <item value="0x03">Fight 3</item>
+      <item value="0x04">Fight 4</item>
+      <item value="0x05">Fight 5</item>
+      <item value="0x06">Fight 6</item>
+      <item value="0x07">Fight 7</item>
+      <item value="0x08">Fight 8</item>
+      <item value="0x09">Fight 9</item>
+      <item value="0x0A">Fight 10</item>
+      <item value="0x0B">Fight 11</item>
+      <item value="0x0C">Fight 12</item>
+      <item value="0x0D">Boss (Last Fight)</item>
+    </parameter>
+    <script state="run">
+      <action condition="(maincpu.pb@106A37==01)">maincpu.pb@106A37=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Left Wall always Solid"> <comment>No leftwards 'Out of Bounds' possible, this cheat will not rebuild collapsed walls!</comment>
+    <script state="run">
+      <action>maincpu.pb@10969F=0A</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Right Wall always Solid"> <comment>No rightwards 'Out of Bounds' possible, this cheat will not rebuild collapsed walls!</comment>
+    <script state="run">
+      <action>maincpu.pb@1096A1=0A</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Left Wall 1hit collapse">
+    <script state="on">
+      <action>maincpu.pb@10969F=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Right Wall 1hit collapse">
+    <script state="on">
+      <action>maincpu.pb@1096A1=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+  <cheat desc="Once you activate Easy Supers you can do all the SDMs of any character"/>
+  <cheat desc="(even the hidden SDMs), all you have to do usually is during play"/>
+  <cheat desc="press DOWN, DOWN + A (DM), DOWN, DOWN + C (SDM), some characters that"/>
+  <cheat desc="have more than 2 SDMs can use the B or D buttons as well."/>
+  <cheat desc=" "/>
+
+  <cheat desc="Always has Easy Supers">
+    <script state="run">
+      <action>maincpu.pb@10E001=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@100489=C0</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@100489=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Power">
+    <script state="run">
+      <action>maincpu.pb@1004BA=3C</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character"> <comment>Free player selection - Activate between rounds or after selection.</comment>
+    <parameter>
+      <item value="0x01">Terry Bogard</item>
+      <item value="0x02">Andy Bogard</item>
+      <item value="0x03">Joe Higashi</item>
+      <item value="0x04">Mai Shiranui</item>
+      <item value="0x05">Geese Howard</item>
+      <item value="0x06">Sokaku Mochizuki</item>
+      <item value="0x07">Bob Wilson</item>
+      <item value="0x08">Hon-Fu</item>
+      <item value="0x09">Blue Mary</item>
+      <item value="0x0A">Franco Bash</item>
+      <item value="0x0B">Ryuji Yamazaki</item>
+      <item value="0x0C">Jin Chonshu</item>
+      <item value="0x0D">Jin Chonrei</item>
+      <item value="0x0E">Duck King</item>
+      <item value="0x0F">Kim Kaphwan</item>
+      <item value="0x10">Billy Kane</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@106A25=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Colour">
+    <parameter>
+      <item value="0x00">A Colour</item>
+      <item value="0x01">D Colour</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@106A2C=param|(maincpu.pb@106A2C BAND ~01)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@100589=C0</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@100589=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Power">
+    <script state="run">
+      <action>maincpu.pb@1005BA=3C</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character"> <comment>Free player selection - Activate between rounds or after selection.</comment>
+    <parameter>
+      <item value="0x01">Terry Bogard</item>
+      <item value="0x02">Andy Bogard</item>
+      <item value="0x03">Joe Higashi</item>
+      <item value="0x04">Mai Shiranui</item>
+      <item value="0x05">Geese Howard</item>
+      <item value="0x06">Sokaku Mochizuki</item>
+      <item value="0x07">Bob Wilson</item>
+      <item value="0x08">Hon-Fu</item>
+      <item value="0x09">Blue Mary</item>
+      <item value="0x0A">Franco Bash</item>
+      <item value="0x0B">Ryuji Yamazaki</item>
+      <item value="0x0C">Jin Chonshu</item>
+      <item value="0x0D">Jin Chonrei</item>
+      <item value="0x0E">Duck King</item>
+      <item value="0x0F">Kim Kaphwan</item>
+      <item value="0x10">Billy Kane</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@106A27=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Colour">
+    <parameter>
+      <item value="0x00">A Colour</item>
+      <item value="0x01">D Colour</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@106A2D=param|(maincpu.pb@106A2D BAND ~01)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="No Background Music">
+    <script state="run">
+      <action>audiocpu.pb@FE1A=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Hide Background"> <comment>Activate before match start; works in round 1 only</comment>
+    <script state="on">
+      <action>temp0=maincpu.rd@00375C</action>
+    </script>
+    <script state="run">
+      <action>maincpu.rd@00375C=temp0</action>
+      <action condition="(maincpu.pb@106AA2 == 38 and maincpu.pb@106A39 == 01)">maincpu.pb@106AA2=33</action><!--HUD-->
+      <action condition="(maincpu.pb@106AA2 != 00 and maincpu.pb@106AA3 == 00 and maincpu.pb@106A39 == 01)">maincpu.rd@00375C=4E714E71</action><!--activate only during match--><!--solid shadows-->
+      <action condition="(maincpu.pb@106AA2 != 00 and maincpu.pb@106AA3 == 00 and maincpu.pb@106A39 == 01)">maincpu.pb@1065E3=00</action><!--BG layers-->
+      <action condition="(maincpu.pb@106AA2 != 00 and maincpu.pb@106AA3 == 00 and maincpu.pb@106A39 == 01)">maincpu.pb@1065E5=01</action><!--BG layers-->
+      <action condition="(maincpu.pb@106AA2 != 00 and maincpu.pb@106AA3 == 00 and maincpu.pb@106A39 == 01)">maincpu.pw@401FFE=8F8F</action><!--BG colour (pink)-->
+    </script>
+    <script state="off">
+      <action>maincpu.rd@00375C=temp0</action>
+      <action>maincpu.pb@106AA2=38</action>
+      <action>maincpu.pb@1065E3=maincpu.pb@1065E2 band 0F</action>
+      <action>maincpu.pb@1065E5=maincpu.pb@1065E4 band 0F</action>
+      <action>maincpu.pw@401FFE=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

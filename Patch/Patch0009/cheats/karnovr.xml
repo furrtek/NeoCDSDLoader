@@ -1,0 +1,100 @@
+<mamecheat version="1">
+
+  <NGH>066</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@103A70=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@1037B7=FF</action>
+      <action>maincpu.pb@1037B8=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character"> <comment>Free player selection-Can be used anytime! May cause some glitches however.</comment>
+    <parameter>
+      <item value="0x00">Ray</item>
+      <item value="0x01">Feilin</item>
+      <item value="0x02">Ryoko</item>
+      <item value="0x03">Matlock</item>
+      <item value="0x04">Samchay</item>
+      <item value="0x05">Lee</item>
+      <item value="0x06">Mizoguchi</item>
+      <item value="0x07">Jean</item>
+      <item value="0x08">Marstorius</item>
+      <item value="0x09">Yungmie</item>
+      <item value="0x0A">Zazie</item>
+      <item value="0x0B">Clown</item>
+      <item value="0x0C">Karnov</item>
+      <item value="0x0D">Bull</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@103671=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@1039B7=FF</action>
+      <action>maincpu.pb@1039B8=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character"> <comment>Free player selection-Can be used anytime! May cause some glitches however.</comment>
+    <parameter>
+      <item value="0x00">Ray</item>
+      <item value="0x01">Feilin</item>
+      <item value="0x02">Ryoko</item>
+      <item value="0x03">Matlock</item>
+      <item value="0x04">Samchay</item>
+      <item value="0x05">Lee</item>
+      <item value="0x06">Mizoguchi</item>
+      <item value="0x07">Jean</item>
+      <item value="0x08">Marstorius</item>
+      <item value="0x09">Yungmie</item>
+      <item value="0x0A">Zazie</item>
+      <item value="0x0B">Clown</item>
+      <item value="0x0C">Karnov</item>
+      <item value="0x0D">Bull</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@103871=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

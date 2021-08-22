@@ -1,0 +1,2 @@
+init_spi.c:24:6:MX_I2S1_Init	24	static
+init_spi.c:48:6:MX_SPI2_Init	56	static

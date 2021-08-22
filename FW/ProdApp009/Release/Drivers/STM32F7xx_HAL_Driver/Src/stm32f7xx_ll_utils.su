@@ -1,0 +1,7 @@
+stm32f7xx_ll_utils.c:466:20:UTILS_SetFlashLatency.part.0	0	static
+stm32f7xx_ll_utils.c:669:20:UTILS_EnablePLLAndSwitchSystem	24	static
+stm32f7xx_ll_utils.c:220:6:LL_Init1msTick	4	static
+stm32f7xx_ll_utils.c:236:6:LL_mDelay	8	static
+stm32f7xx_ll_utils.c:313:6:LL_SetSystemCoreClock	0	static
+stm32f7xx_ll_utils.c:335:13:LL_PLL_ConfigSystemClock_HSI	16	static
+stm32f7xx_ll_utils.c:393:13:LL_PLL_ConfigSystemClock_HSE	16	static

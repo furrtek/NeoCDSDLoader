@@ -1,0 +1,5 @@
+update.c:36:10:find_update	352	static
+update.c:57:10:CheckUpdateFile	48	static
+update.c:100:10:CPLDUpdate	32	static
+update.c:152:10:DumpSystemROM	592	static
+update.c:207:10:DoUpdate	680	static

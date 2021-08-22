@@ -1,0 +1,79 @@
+<mamecheat version="1">
+
+  <NGH>080</NGH>
+
+  <cheat desc="Infinite Bonus Time">
+    <script state="run">
+      <action>maincpu.pb@1085F5=59</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Faster Round Progression"> <comment>Turn OFF before you reach the GOAL though, otherwise you will cycle around.</comment>
+    <script state="run">
+      <action>maincpu.pb@10446F=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Display the Correct Answer">
+    <script state="run">
+      <output format="Correct Answer : %c">
+        <argument>(maincpu.pb@(10446B))+0x41</argument>
+      </output>
+    </script>
+  </cheat>
+
+  <cheat desc="Answer A always correct">
+    <script state="run">
+      <action>maincpu.pb@10446B=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Answer ends quiz Now!">
+    <script state="on">
+      <action>maincpu.pb@103C70=01</action>
+      <action>maincpu.pb@103C72=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@10150A=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@10158A=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

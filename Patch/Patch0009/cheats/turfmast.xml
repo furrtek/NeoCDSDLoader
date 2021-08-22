@@ -1,0 +1,181 @@
+<mamecheat version="1">
+
+  <NGH>200</NGH>
+
+  <cheat desc="Select Shot Power">
+    <parameter>
+      <item value="0x04">1 Line (Green)</item>
+      <item value="0x08">2 Lines (Green)</item>
+      <item value="0x0C">3 Lines (Green)</item>
+      <item value="0x10">4 Lines (Green)</item>
+      <item value="0x14">5 Lines (Green)</item>
+      <item value="0x18">6 Lines (Green)</item>
+      <item value="0x1C">7 Lines (Green)</item>
+      <item value="0x20">8 Lines (Green)</item>
+      <item value="0x24">9 Lines (Green)</item>
+      <item value="0x28">10 Lines (Green)</item>
+      <item value="0x32">50% (Off Green)</item>
+      <item value="0x3C">60% (Off Green)</item>
+      <item value="0x46">70% (Off Green)</item>
+      <item value="0x50">80% (Off Green)</item>
+      <item value="0x5A">90% (Off Green)</item>
+      <item value="0x64">100% (Off Green)</item>
+      <item value="0x7F">Maximum (Tee Shot)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@106FE7=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Club">
+    <parameter>
+      <item value="0x00">1W (260 Yards)</item>
+      <item value="0x01">3W (240 Yards)</item>
+      <item value="0x02">4W (230 Yards)</item>
+      <item value="0x03">1I (220 Yards)</item>
+      <item value="0x04">3I (200 Yards)</item>
+      <item value="0x05">4I (190 Yards)</item>
+      <item value="0x06">5I (180 Yards)</item>
+      <item value="0x07">6I (170 Yards)</item>
+      <item value="0x08">7I (160 Yards)</item>
+      <item value="0x09">8I (150 Yards)</item>
+      <item value="0x0A">9I (140 Yards)</item>
+      <item value="0x0B">PW (120 Yards)</item>
+      <item value="0x0C">SW (100 Yards)</item>
+      <item value="0x0D">PT (28 Yards)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@106FDF=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Wind Power">
+    <parameter>
+      <item value="0x00">No Wind</item>
+      <item value="0x13">Full Wind</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@106FE1=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Wind Direction">
+    <parameter>
+      <item value="0x00">NORTH</item>
+      <item value="0x01">NNE</item>
+      <item value="0x02">NE</item>
+      <item value="0x03">NEE</item>
+      <item value="0x04">EAST</item>
+      <item value="0x05">SEE</item>
+      <item value="0x06">SE</item>
+      <item value="0x07">SSE</item>
+      <item value="0x08">SOUTH</item>
+      <item value="0x09">SSW</item>
+      <item value="0x0A">SW</item>
+      <item value="0x0B">SWW</item>
+      <item value="0x0C">WEST</item>
+      <item value="0x0D">NWW</item>
+      <item value="0x0E">NW</item>
+      <item value="0x0F">NNW</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@106FE3=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Time">
+    <script state="run">
+      <action condition="(frame % 60 == 0)">maincpu.pb@101255=1E</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Strokes">
+    <script state="run">
+      <action>maincpu.pb@107006=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Holes">
+    <script state="run">
+      <action>maincpu.pb@10D572=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character">
+    <parameter>
+      <item value="0x00">Young Hero   (USA)</item>
+      <item value="0x01">Power Golfer (BRA)</item>
+      <item value="0x02">Shot Maker   (GER)</item>
+      <item value="0x03">Putt Master  (JAP)</item>
+      <item value="0x04">Veteran      (AUS)</item>
+      <item value="0x05">Technician   (GBR)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@107005=param</action> <!-- Fernand Almeida  (*....) -->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Time">
+    <script state="run">
+      <action condition="(frame % 60 == 0)">maincpu.pb@1005F5=1E</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Strokes">
+    <script state="run">
+      <action>maincpu.pb@10702C=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Holes">
+    <script state="run">
+      <action>maincpu.pb@10D5D2=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character">
+    <parameter>
+      <item value="0x00">Young Hero   (USA)</item>
+      <item value="0x01">Power Golfer (BRA)</item>
+      <item value="0x02">Shot Maker   (GER)</item>
+      <item value="0x03">Putt Master  (JAP)</item>
+      <item value="0x04">Veteran      (AUS)</item>
+      <item value="0x05">Technician   (GBR)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10702B=param</action> <!-- Fernand Almeida  (*....) -->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

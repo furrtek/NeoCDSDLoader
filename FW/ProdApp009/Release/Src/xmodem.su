@@ -1,0 +1,4 @@
+xmodem.c:32:6:HandleXModem	8	static
+xmodem.c:58:6:XModemRX	32	static
+xmodem.c:105:6:XModemTX	40	static
+xmodem.c:136:6:XModemInit	16	static

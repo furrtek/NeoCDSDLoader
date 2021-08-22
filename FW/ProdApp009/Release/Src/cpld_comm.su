@@ -1,0 +1,8 @@
+cpld_comm.c:29:6:TickMCUCLK	8	static
+cpld_comm.c:36:6:SetMCUData	0	static
+cpld_comm.c:40:10:ReadCPLDData	0	static,ignoring_inline_asm
+cpld_comm.c:81:6:WriteCPLDData	4	static,ignoring_inline_asm
+cpld_comm.c:128:6:SetMCUBusInput	0	static
+cpld_comm.c:132:6:SetMCUBusOutput	0	static
+cpld_comm.c:136:6:SetRunLoader	24	static
+cpld_comm.c:161:6:SetRunStock	16	static

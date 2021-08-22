@@ -1,0 +1,3 @@
+files.c:32:10:ASCIICompare	24	static
+files.c:48:10:search_ext	24	static
+files.c:77:9:listfiles	992	static

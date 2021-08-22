@@ -1,0 +1,186 @@
+<mamecheat version="1">
+
+  <NGH>040</NGH>
+
+  <cheat desc="Invincibility">
+    <script state="on">
+      <action>temp0 =maincpu.md@0007E0</action>
+      <action>temp1 =maincpu.md@0007E4</action>
+      <action>temp2 =maincpu.md@0007E8</action>
+      <action>temp3 =maincpu.mw@0007EC</action>
+      <action>temp4 =maincpu.md@0007EE</action>
+      <action>temp5 =maincpu.md@0007F2</action>
+      <action>temp6 =maincpu.md@005E0C</action>
+    </script>
+    <script state="run">
+      <action>maincpu.md@0007E0=B5FC0010</action>
+      <action>maincpu.md@0007E4=2D6C620A</action> <!-- 1st + 2nd = cmpa.l #$102d6c,A2 [Player or Enemy ?] / bhi $7f2 -->
+      <action>maincpu.md@0007E8=4A69008A</action> <!-- tst.w ($8a,A1) [Item or others ?] -->
+      <action>maincpu.mw@0007EC=6B04</action> <!-- bmi $7f2 -->
+      <action>maincpu.md@0007EE=70FF4E75</action> <!-- moveq #$ff,D0 / ret [No Hit] -->
+      <action>maincpu.md@0007F2=70004E75</action> <!-- moveq #$00,D0 / ret [Hit] -->
+      <action>maincpu.md@005E0C=6000A9D2</action> <!-- bra $7e0 -->
+    </script>
+    <script state="off">
+      <action>maincpu.md@0007E0=temp0 </action>
+      <action>maincpu.md@0007E4=temp1 </action>
+      <action>maincpu.md@0007E8=temp2 </action>
+      <action>maincpu.mw@0007EC=temp3 </action>
+      <action>maincpu.md@0007EE=temp4 </action>
+      <action>maincpu.md@0007F2=temp5 </action>
+      <action>maincpu.md@005E0C=temp6 </action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@1001AF=03</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@102CF3=06</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Permanent Weapons">
+    <script state="run">
+      <action>maincpu.pb@102D1E=10</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Ninja Time">
+    <script state="run">
+      <action>maincpu.pb@102D5F=3C</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Old Man Time">
+    <script state="run">
+      <action>maincpu.pb@102D60=3C</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Dog Time">
+    <script state="run">
+      <action>maincpu.pb@102D61=3C</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Standard Weapon">
+    <script state="on">
+      <action>maincpu.pb@102D29=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Get Blue Sphere">
+    <script state="on">
+      <action>maincpu.pb@102D29=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Get Pink Sphere">
+    <script state="on">
+      <action>maincpu.pb@102D29=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Get Yellow Sphere">
+    <script state="on">
+      <action>maincpu.pb@102D29=03</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@1001B1=03</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@102DF3=06</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Permanent Weapons">
+    <script state="run">
+      <action>maincpu.pb@102E1E=10</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Ninja Time">
+    <script state="run">
+      <action>maincpu.pb@102E5F=3C</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Old Man Time">
+    <script state="run">
+      <action>maincpu.pb@102E60=3C</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Dog Time">
+    <script state="run">
+      <action>maincpu.pb@102E61=3C</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Standard Weapon">
+    <script state="on">
+      <action>maincpu.pb@102E29=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Get Blue Sphere">
+    <script state="on">
+      <action>maincpu.pb@102E29=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Get Pink Sphere">
+    <script state="on">
+      <action>maincpu.pb@102E29=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Get Yellow Sphere">
+    <script state="on">
+      <action>maincpu.pb@102E29=03</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

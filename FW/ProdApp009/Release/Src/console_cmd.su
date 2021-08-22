@@ -1,0 +1,4 @@
+console_cmd.c:41:6:LoadReplyFIFO	8	static
+console_cmd.c:51:6:SetStatus	4	static
+console_cmd.c:57:6:load_CD_sector	24	static
+console_cmd.c:99:6:ExecCmd	376	static

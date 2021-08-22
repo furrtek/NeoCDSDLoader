@@ -1,0 +1,3 @@
+cue_sheet.c:34:10:ParseCueSheet	104	static
+cue_sheet.c:162:10:OpenDataTrack	280	static
+cue_sheet.c:190:10:OpenAudioTrack	280	static

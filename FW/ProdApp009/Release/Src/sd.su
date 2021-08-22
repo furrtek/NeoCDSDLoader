@@ -1,0 +1,4 @@
+sd.c:61:9:SPI_Send	0	static
+sd.c:69:9:SD_WaitNotBusy	24	static
+sd.c:80:9:SD_Cmd	32	static
+sd.c:147:10:SD_Init	56	static

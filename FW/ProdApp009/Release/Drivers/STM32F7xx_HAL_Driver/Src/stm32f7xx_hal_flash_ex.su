@@ -1,0 +1,5 @@
+stm32f7xx_hal_flash_ex.c:158:19:HAL_FLASHEx_Erase	32	static,ignoring_inline_asm
+stm32f7xx_hal_flash_ex.c:231:19:HAL_FLASHEx_Erase_IT	8	static,ignoring_inline_asm
+stm32f7xx_hal_flash_ex.c:287:19:HAL_FLASHEx_OBProgram	24	static
+stm32f7xx_hal_flash_ex.c:386:6:HAL_FLASHEx_OBGetConfig	0	static
+stm32f7xx_hal_flash_ex.c:672:6:FLASH_Erase_Sector	0	static,ignoring_inline_asm

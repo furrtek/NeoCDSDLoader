@@ -1,0 +1,4 @@
+util.c:29:6:DMAResetRegisters	0	static
+util.c:38:6:SetMode	24	static,ignoring_inline_asm
+util.c:92:6:delay_us	0	static
+util.c:97:10:BCDtoHex	0	static

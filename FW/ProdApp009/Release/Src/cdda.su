@@ -1,0 +1,5 @@
+cdda.c:48:6:CDDA_Stop.part.0	16	static,ignoring_inline_asm
+cdda.c:44:6:rewind_audio	0	static
+cdda.c:48:6:CDDA_Stop	0	static
+cdda.c:152:6:CDDA_Refill	48	static
+cdda.c:81:6:CDDA_Play	24	static,ignoring_inline_asm

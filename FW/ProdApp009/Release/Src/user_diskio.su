@@ -1,0 +1,7 @@
+user_diskio.c:59:9:USER_status	0	static
+user_diskio.c:299:9:USER_ioctl	0	static
+user_diskio.c:53:9:USER_initialize	8	static
+user_diskio.c:64:9:USER_read	32	static,ignoring_inline_asm
+user_diskio.c:241:9:USER_write	40	static
+user_diskio.c:309:7:ff_convert	0	static
+user_diskio.c:318:7:ff_wtoupper	0	static

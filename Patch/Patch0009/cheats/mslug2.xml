@@ -1,0 +1,377 @@
+<mamecheat version="1">
+
+  <NGH>241</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@1013B4=3C</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="Next mission: 1">
+    <script state="on">
+      <action>maincpu.pb@10C352=0</action> Was 10C31F
+    </script>
+  </cheat>
+  <cheat desc="Next mission: 2">
+    <script state="on">
+      <action>maincpu.pb@10C352=1</action>
+    </script>
+  </cheat>
+  <cheat desc="Next mission: 3">
+    <script state="on">
+      <action>maincpu.pb@10C352=2</action>
+    </script>
+  </cheat>
+  <cheat desc="Next mission: 4">
+    <script state="on">
+      <action>maincpu.pb@10C352=3</action>
+    </script>
+  </cheat>
+  <cheat desc="Next mission: 5">
+    <script state="on">
+      <action>maincpu.pb@10C352=4</action>
+    </script>
+  </cheat>
+  <cheat desc="Next mission: 6">
+    <script state="on">
+      <action>maincpu.pb@10C352=5</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc="Finish Current Mission"> <comment>Missions 1-3-4 do not have sub-sections.</comment>
+    <script state="on">
+      <action condition="(maincpu.pw@101346 == F6D4)">maincpu.pb@10C31D=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="See End Sequence Now!">
+    <script state="on">
+      <action condition="(maincpu.pw@101346 == F6D4)">maincpu.pb@10C31D=FF</action>
+      <action condition="(maincpu.pw@101346 == F6D4)">maincpu.pb@10C31F=06</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@101276=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Bombs">
+    <script state="run">
+      <action>maincpu.pb@10C350=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Ammo">
+    <script state="run">
+      <action>maincpu.pb@10C355=FF</action> <!-- Was 10C34D -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Cannon">
+    <script state="run">
+      <action>maincpu.pb@10E8A1=0A</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@101517=77</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Vehicle Energy">
+    <script state="run">
+      <action>maincpu.pb@10E89B=30</action>
+    </script>
+  </cheat>
+
+  <!-- Only works in Chinatown <cheat desc="P1 Fat">
+    <script state="run">
+      <action>maincpu.pb@101525=2</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc="P1 Select Weapon">
+    <parameter>
+      <item value="0x01">Normal Gun</item>
+      <item value="0x02">Shotgun</item>
+      <item value="0x03">Rocket Launcher</item>
+      <item value="0x04">Flamethrower</item>
+      <item value="0x05">Machine Gun</item>
+      <item value="0x06">Laser</item>
+    </parameter>
+    <script state="run">
+      <action condition="(param==01)">maincpu.pb@10C34E=FF</action> <!-- Was 10C34E -->
+      <action condition="(param==01)">maincpu.pb@101525=00</action> <!-- Was 101525 -->
+      <action condition="(param==02)">maincpu.pb@10C34E=00</action>
+      <action condition="(param==02)">maincpu.pb@101525=01</action>
+      <action condition="(param==03)">maincpu.pb@10C34E=01</action>
+      <action condition="(param==03)">maincpu.pb@101525=01</action>
+      <action condition="(param==04)">maincpu.pb@10C34E=02</action>
+      <action condition="(param==04)">maincpu.pb@101525=01</action>
+      <action condition="(param==05)">maincpu.pb@10C34E=03</action>
+      <action condition="(param==05)">maincpu.pb@101525=01</action>
+      <action condition="(param==06)">maincpu.pb@10C34E=04</action>
+      <action condition="(param==06)">maincpu.pb@101525=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Use Gun">
+    <script state="run">
+      <action>maincpu.pb@10C34E=FF</action>
+      <action>maincpu.pb@101525=00</action>
+    </script>
+  </cheat>
+  <cheat desc="P1 Use Shotgun">
+    <script state="run">
+      <action>maincpu.pb@10C34E=00</action>
+      <action>maincpu.pb@101525=01</action>
+    </script>
+  </cheat>
+  <cheat desc="P1 Use Rocket Launcher">
+    <script state="run">
+      <action>maincpu.pb@10C34E=01</action>
+      <action>maincpu.pb@101525=01</action>
+    </script>
+  </cheat>
+  <cheat desc="P1 Use Flamethrower">
+    <script state="run">
+      <action>maincpu.pb@10C34E=02</action>
+      <action>maincpu.pb@101525=01</action>
+    </script>
+  </cheat>
+  <cheat desc="P1 Use Machine Gun">
+    <script state="run">
+      <action>maincpu.pb@10C34E=03</action>
+      <action>maincpu.pb@101525=01</action>
+    </script>
+  </cheat>
+  <cheat desc="P1 Use Laser">
+    <script state="on">
+      <action>maincpu.pb@10C34E=04</action>
+      <action>maincpu.pb@101525=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Rapid Fire">
+    <script state="run">
+      <action>maincpu.pb@10E7D9=00|(maincpu.pb@10E7D9 BAND ~10)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@10131E=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Bombs">
+    <script state="run">
+      <action>maincpu.pb@10C351=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Ammo">
+    <script state="run">
+      <action>maincpu.pb@10C357=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Cannon">
+    <script state="run">
+      <action>maincpu.pb@10E8C5=0A</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@1015BF=77</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Vehicle Energy">
+    <script state="run">
+      <action>maincpu.pb@10E8BF=30</action>
+    </script>
+  </cheat>
+
+  <!-- Only works in Chinatown <cheat desc="P2 Fat">
+    <script state="run">
+      <action>maincpu.pb@1015CD=2</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc="P2 Select Weapon">
+    <parameter>
+      <item value="0x01">Normal Gun</item>
+      <item value="0x02">Shotgun</item>
+      <item value="0x03">Rocket Launcher</item>
+      <item value="0x04">Flamethrower</item>
+      <item value="0x05">Machine Gun</item>
+      <item value="0x06">Laser</item>
+    </parameter>
+    <script state="run">
+      <action condition="(param==01)">maincpu.pb@10C347=FF</action>
+      <action condition="(param==01)">maincpu.pb@1015CD=00</action>
+      <action condition="(param==02)">maincpu.pb@10C347=00</action>
+      <action condition="(param==02)">maincpu.pb@1015CD=01</action>
+      <action condition="(param==03)">maincpu.pb@10C347=01</action>
+      <action condition="(param==03)">maincpu.pb@1015CD=01</action>
+      <action condition="(param==04)">maincpu.pb@10C347=02</action>
+      <action condition="(param==04)">maincpu.pb@1015CD=01</action>
+      <action condition="(param==05)">maincpu.pb@10C347=03</action>
+      <action condition="(param==05)">maincpu.pb@1015CD=01</action>
+      <action condition="(param==06)">maincpu.pb@10C347=04</action>
+      <action condition="(param==06)">maincpu.pb@1015CD=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Rapid Fire">
+    <script state="run">
+      <action>maincpu.pb@10E7DF=00|(maincpu.pb@10E7DF BAND ~10)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Enable Pause Menu and Debug Menu"> <comment>Enable it on the soldier/character selection screen. Press '3' twice for Debug Menu.</comment>
+    <script state="on">
+      <action>maincpu.pb@10FD82=00</action>
+      <action>maincpu.pb@101099=01</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=80</action>
+      <action>maincpu.pb@101099=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="DEBUG DIPS OPTIONS"/>
+
+  <cheat desc="DEBUG DIP - Invincibility">
+    <script state="run">
+      <action>maincpu.pw@10F000=8000|(maincpu.pw@10F000 BAND ~8000)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pw@10F000=0000|(maincpu.pw@10F000 BAND ~8000)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="DEBUG DIP - View debug information"> <comment>Once you have turned this on, the only immediate effect turning it off will be that the text won't update any more</comment>
+    <script state="run">
+      <action>maincpu.pw@10F000=0100|(maincpu.pw@10F000 BAND ~0100)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pw@10F000=0000|(maincpu.pw@10F000 BAND ~0100)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="DEBUG DIP - Unknown"> <comment>Answers on a postcard please....or better post it on the cheat forums</comment>
+    <script state="run">
+      <action>maincpu.pw@10F000=0200|(maincpu.pw@10F000 BAND ~0200)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pw@10F000=0000|(maincpu.pw@10F000 BAND ~0200)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="DEBUG DIP - 1st plane check"> <comment>Shows the walkable ground, makes the foreground choppy as it scrolls when activated. May linger around if not turned off proper.</comment>
+    <script state="run">
+      <action>maincpu.pw@10F000=0800|(maincpu.pw@10F000 BAND ~0800)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pw@10F000=0000|(maincpu.pw@10F000 BAND ~0800)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="DEBUG DIP - 2nd plane check"> <comment>makes the background choppy as it scrolls when activated.</comment>
+    <script state="run">
+      <action>maincpu.pw@10F000=1000|(maincpu.pw@10F000 BAND ~1000)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pw@10F000=0000|(maincpu.pw@10F000 BAND ~1000)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="DEBUG DIP - View attack hitbox">
+    <script state="run">
+      <action>maincpu.pw@10F000=2000|(maincpu.pw@10F000 BAND ~2000)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pw@10F000=0000|(maincpu.pw@10F000 BAND ~2000)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="DEBUG DIP - View body hitbox">
+    <script state="run">
+      <action>maincpu.pw@10F000=4000|(maincpu.pw@10F000 BAND ~4000)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pw@10F000=0000|(maincpu.pw@10F000 BAND ~4000)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="DEBUG DIP - Infinite Grenades">
+    <script state="run">
+      <action>maincpu.pw@10F000=0004|(maincpu.pw@10F000 BAND ~0004)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pw@10F000=0000|(maincpu.pw@10F000 BAND ~0004)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="DEBUG DIP - Infinite Ammo">
+    <script state="run">
+      <action>maincpu.pw@10F000=0008|(maincpu.pw@10F000 BAND ~0008)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pw@10F000=0000|(maincpu.pw@10F000 BAND ~0008)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="DEBUG DIP - Show Respawn Position"> <comment>A sprite appears, showing the player's respawn point.</comment>
+    <script state="run">
+      <action>maincpu.pw@10F000=0002|(maincpu.pw@10F000 BAND ~0002)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pw@10F000=0000|(maincpu.pw@10F000 BAND ~0002)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="DEBUG DIP - Press D to destroy all onscreen enemies"> <comment>no score bonuses</comment>
+    <script state="run">
+      <action>maincpu.pw@10F000=0001|(maincpu.pw@10F000 BAND ~0001)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pw@10F000=0000|(maincpu.pw@10F000 BAND ~0001)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

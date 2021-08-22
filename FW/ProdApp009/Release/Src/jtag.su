@@ -1,0 +1,17 @@
+jtag.c:49:6:JTAG_SIR.constprop	24	static
+jtag.c:70:10:JTAG_SDR.constprop	32	static
+jtag.c:29:6:JTAG_Tick	8	static
+jtag.c:37:6:JTAG_Reset	16	static
+jtag.c:49:6:JTAG_SIR	32	static
+jtag.c:70:10:JTAG_SDR	40	static
+jtag.c:95:6:JTAG_SetAddress	32	static
+jtag.c:101:10:JTAG_Code	32	static
+jtag.c:111:6:JTAG_Erase	8	static
+jtag.c:125:6:JTAG_Enable	8	static
+jtag.c:130:6:JTAG_Disable	8	static
+jtag.c:137:6:JTAG_Run	16	static
+jtag.c:142:6:JTAG_StartProgram	8	static
+jtag.c:148:6:JTAG_Program	48	static
+jtag.c:155:6:JTAG_StartRead	8	static
+jtag.c:161:10:JTAG_Verify	56	static
+jtag.c:180:6:JTAG_ProgramDone	8	static
