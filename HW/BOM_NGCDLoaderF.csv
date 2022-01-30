@@ -1,0 +1,14 @@
+Item #,Ref,Qty,Manufacturer,Part #,Description/Value,Package,Type,Notes
+1,"C1,C4,C5,C16",4,,,MLCC type X7R 4.7uF,1206,SMD,
+2,"C2,C3,C6-C15,C18",13,,,MLCC type X7R 100nF,0603,SMD,
+3,"C17",1,,,MLCC type X7R 10uF,1206,SMD,
+4,"R1,R2,R3",3,,,SMD resistor 1~5% 10kohm,0603,SMD,
+5,"RN1-RN13",13,Bourns,CAY10-101J4LF,Individual x4 resistor network 100ohm,0804,SMD,
+6,"U1",1,Microchip,MIC5357-SGYMME,LDO dual voltage regulator 3.3V-1.8V,MSOP-8,SMD,Part code SGYMME is important
+7,"U2,U3,U4",3,,74LVC16245,16-bit bus transceiver,TSSOP-48,SMD,Must be LVC series
+8,"U5",1,Altera/Intel,5M240ZT100C5N,Max V CPLD,TQFP-100,SMD,
+9,"U6",1,SST,SST39VF402C-70-4C-EKE,4Mbit NOR Flash,TSOP-48,SMD,
+10,"U7",1,ST Microelectronics,STM32F730R8T6,STM32 ARM MCU,LQFP-64,SMD,
+11,"U8",1,,74HCT125,Quad bus buffer,TSSOP14,SMD,Must be HCT series
+12,"J1",1,Amphenol,HFW12R-1STE1H1LF,FFC connector 1mm 12P,,SMD,
+13,"X1",1,Murata,CSTNE8M00G550000R0,Resonator 8.000MHz,,SMD,

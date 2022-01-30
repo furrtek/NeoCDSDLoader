@@ -29,18 +29,22 @@ website were removed.
 The assembly files only cover SMD components.
 
 ## Main board
-Same one for both SD card slot options. Manual assembly required for the CDDA header and the PLCC68 socket.
-* `HW/NGCDLoaderE`: GERBERs, BOM and pick & place files.
+Same for all SD card slot options. Manual assembly required for the CDDA header pins and the PLCC68 socket.
+* `HW/NGCDLoaderE`: GERBERs, BOM and pick & place files (top-loading console version).
+* `HW/NGCDLoaderF`: GERBERs, BOM and pick & place files (front-loading console version).
 
-## Full size SD card slot assembly
+## Full size SD card slot assembly for top-loading consoles
 These go together. Manual assembly required, connect together with header mentionned above.
 * `HW/UserBoardB`: Support board - GERBERs, BOM and pick & place files.
 * `HW/SlotBoardC`: Slot board - GERBERs, BOM and pick & place files.
 
-## MicroSD card slot assembly
+## MicroSD card slot assembly for top-loading consoles
 These go together. Manual assembly required, connect together with header mentionned above.
 * `HW/UserBoardD`: Support board - GERBERs, no assembly files, done by hand.
 * `HW/SlotBoardD`: Slot board - GERBERs, BOM and pick & place files.
+
+## MicroSD card slot for front-loading consoles
+* `HW/SlotBoardE`: Single slot board - GERBERs, BOM and pick & place files.
 
 # Software
 
