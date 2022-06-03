@@ -1,0 +1,36 @@
+Error code format, only valid for fw0.9 and above.
+These probably won't help you much if you didn't dive in the source code.
+ _____________________
+|NEO CD SD LOADER     |
+|Error code:          |
+|TT-CCPP-RRRR         |
+|                     |
+|       XX MYYYY UZZZZ|
+'---------------------'
+
+XX = BIOS ID (different values for Top 1/2, Top 3, and Front)
+YYYY = Menu version
+ZZZZ = MCU firmware version (FFFF if can't be read)
+
+TT = 1 if timeout occured (MCU didn't reply in time), 0 if not
+CC = Last MCU command sent
+PP = Last 1st MCU parameter sent
+RRRR = Last two bytes read from MCU
+
+MCU command summary (see doc.odt for details):
+00: Comm test, never used in normal operation
+01: Get loader hardware infos, only used in "about" screen
+02: Get SD card status / set LED color, used periodically in menu
+03: Trigger update, force MCU to perform full update
+04: Reset console, used when exiting loader to normal CD menu
+05: Reset and init SD Card, used at startup or when SD card inserted
+06: Get game list
+07: Select game to load
+08: Load CD sector
+09: CDDA command
+0A: Dump BIOS to SD card, never used in normal operation
+0B: Get save RAM file list
+0C: Save RAM to SD card
+0D: Load RAM from SD card
+0E: Never used
+0F: Never used
