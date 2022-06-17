@@ -1,0 +1,435 @@
+<mamecheat version="1">
+
+  <NGH>090</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@10C109=9A</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish this Round"> <comment>Disable Infinite Time before activating this cheat</comment>
+    <script state="on">
+      <action>maincpu.pb@10C109=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Starting Stage"> <comment>Note the Backgrounds are not linked directly to the Stages</comment>
+    <parameter min="1" max="12" step="1"/>
+    <script state="run">
+      <action condition="(maincpu.pb@10E216==00)">maincpu.pb@10E216=(param-1)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Background"> <comment>Set this on the 'VS' screen</comment>
+    <parameter>
+      <item value="0x00">Genesis</item>
+      <item value="0x01">Jurassic Period</item>
+      <item value="0x02">The Ice Ace</item>
+      <item value="0x03">The Stone Age</item>
+      <item value="0x04">The Megalithic Age</item>
+      <item value="0x05">The Dark Age</item>
+      <item value="0x06">Genroku Period</item>
+      <item value="0x07">The Industrial Revolution</item>
+      <item value="0x08">Great War Period</item>
+      <item value="0x09">The Period</item>
+      <item value="0x0A">Blackness Castle</item>
+      <item value="0x0B">Final Stage</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@10B005=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Round Count">
+    <parameter>
+      <item value="0x01">1 Round</item>
+      <item value="0x03">3 Rounds</item>
+      <item value="0x05">5 Rounds</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10B051=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Fight Before the Round Starts">
+    <script state="on">
+      <action>temp0 =maincpu.mw@01D1B4</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mw@01D1B4=0000</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mw@01D1B4=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Ending">
+    <parameter>
+      <item value="0x103C0001">Dragon</item>
+      <item value="0x103C0002">Hanzou</item>
+      <item value="0x103C0003">Muscle</item>
+      <item value="0x103C0004">J. Carn</item>
+      <item value="0x103C0005">Janne</item>
+      <item value="0x103C0006">Rasputin</item>
+      <item value="0x103C0007">Fuuma</item>
+      <item value="0x103C0008">Brocken</item>
+      <item value="0x103C0009">Shura</item>
+      <item value="0x103C000A">Ryoko</item>
+      <item value="0x103C000B">C. Kidd</item>
+      <item value="0x103C000C">Mudman</item>
+      <item value="0x103C000D">Erick</item>
+      <item value="0x103C000E">J. Max</item>
+      <item value="0x103C000F">Jack</item>
+      <item value="0x103C0010">Ryofu</item>
+      <item value="0x103C0011">Zeus</item>
+      <item value="0x103C0012">Neo-Dio</item>
+      <item value="0x103C0013">Goku</item>
+    </parameter>
+    <script state="on">
+      <action>temp0 =maincpu.md@02006E</action>
+    </script>
+    <script state="run">
+      <action>maincpu.md@02006E=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.md@02006E=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pw@10600C=C0C0</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P1 Drain All Energy">
+    <script state="on">
+      <action>maincpu.pw@10600C=0000</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc="P1 Always Maximum Power">
+    <script state="run">
+      <action>maincpu.pd@106A16=00DF00DF</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P1 Always Minimum Power">
+    <script state="run">
+      <action>maincpu.pd@106A16=00000000</action>
+    </script>
+  </cheat>-->
+
+  <!--<cheat desc="P1 Drain All Power">
+    <script state="on">
+      <action>maincpu.pd@106A16=00000000</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc="P1 Partial Invincibility"> <comment>No protection against throws</comment>
+    <script state="run">
+      <action>maincpu.pw@1060D6=0009</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character (Character Selection Screen)">
+    <parameter>
+      <item value="0x11">Zeus</item>
+      <item value="0x12">Neo-Dio</item>
+      <item value="0x13">Goku</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@10B070=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character (Between Rounds)">
+    <parameter>
+      <item value="0x01">Dragon</item>
+      <item value="0x02">Hanzou</item>
+      <item value="0x03">Muscle</item>
+      <item value="0x04">J. Carn</item>
+      <item value="0x05">Janne</item>
+      <item value="0x06">Rasputin</item>
+      <item value="0x07">Fuuma</item>
+      <item value="0x08">Brocken</item>
+      <item value="0x09">Shura</item>
+      <item value="0x0A">Ryoko</item>
+      <item value="0x0B">C. Kidd</item>
+      <item value="0x0C">Mudman</item>
+      <item value="0x0D">Erick</item>
+      <item value="0x0E">J. Max</item>
+      <item value="0x0F">Jack</item>
+      <item value="0x10">Ryofu</item>
+      <item value="0x11">Zeus</item>
+      <item value="0x12">Neo-Dio</item>
+      <item value="0x13">Goku</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@106004=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pw@10610C=C0C0</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P2 Drain All Energy">
+    <script state="on">
+      <action>maincpu.pw@10610C=0000</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc="P2 Always Maximum Power">
+    <script state="run">
+      <action>maincpu.pd@106B16=00DF00DF</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P2 Always Minimum Power">
+    <script state="run">
+      <action>maincpu.pd@106B16=00000000</action>
+    </script>
+  </cheat>-->
+
+  <!--<cheat desc="P2 Drain All Power">
+    <script state="on">
+      <action>maincpu.pd@106B16=00000000</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc="P2 Partial Invincibility"> <comment>No protection against throws</comment>
+    <script state="run">
+      <action>maincpu.pw@1061D6=0009</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character (Character Selection Screen)">
+    <parameter>
+      <item value="0x11">Zeus</item>
+      <item value="0x12">Neo-Dio</item>
+      <item value="0x13">Goku</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@10B071=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character (Between Rounds)">
+    <parameter>
+      <item value="0x01">Dragon</item>
+      <item value="0x02">Hanzou</item>
+      <item value="0x03">Muscle</item>
+      <item value="0x04">J. Carn</item>
+      <item value="0x05">Janne</item>
+      <item value="0x06">Rasputin</item>
+      <item value="0x07">Fuuma</item>
+      <item value="0x08">Brocken</item>
+      <item value="0x09">Shura</item>
+      <item value="0x0A">Ryoko</item>
+      <item value="0x0B">C. Kidd</item>
+      <item value="0x0C">Mudman</item>
+      <item value="0x0D">Erick</item>
+      <item value="0x0E">J. Max</item>
+      <item value="0x0F">Jack</item>
+      <item value="0x10">Ryofu</item>
+      <item value="0x11">Zeus</item>
+      <item value="0x12">Neo-Dio</item>
+      <item value="0x13">Goku</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@106104=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+  <cheat desc="-------- Player VS CPU ------------"/>
+  <cheat desc="If there's a draw after final round you lose."/>
+
+  <cheat desc="P1 Never Wins vs. CPU">
+    <script state="run">
+      <action>maincpu.pb@10C123=00|(maincpu.pb@10C123 BAND ~0F)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always Wins vs. CPU"> <comment>You've to play the round</comment>
+    <script state="run">
+      <action>maincpu.pb@10C123=0F</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Wins vs. CPU = 0">
+    <script state="on">
+      <action>maincpu.pb@10C123=00|(maincpu.pb@10C123 BAND ~0F)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Wins vs. CPU = 1">
+    <script state="on">
+      <action>maincpu.pb@10C123=01|(maincpu.pb@10C123 BAND ~0F)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Wins vs. CPU = 2">
+    <script state="on">
+      <action>maincpu.pb@10C123=03|(maincpu.pb@10C123 BAND ~0F)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Wins vs. CPU = 3">
+    <script state="on">
+      <action>maincpu.pb@10C123=07|(maincpu.pb@10C123 BAND ~0F)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Never Wins vs. CPU">
+    <script state="run">
+      <action>maincpu.pb@10C123=00|(maincpu.pb@10C123 BAND ~F0)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always Wins vs. CPU"> <comment>You've to play the round</comment>
+    <script state="run">
+      <action>maincpu.pb@10C123=F0</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Wins vs. CPU = 0">
+    <script state="on">
+      <action>maincpu.pb@10C123=00|(maincpu.pb@10C123 BAND ~F0)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Wins vs. CPU = 1">
+    <script state="on">
+      <action>maincpu.pb@10C123=10|(maincpu.pb@10C123 BAND ~F0)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Wins vs. CPU = 2">
+    <script state="on">
+      <action>maincpu.pb@10C123=30|(maincpu.pb@10C123 BAND ~F0)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Wins vs. CPU = 3">
+    <script state="on">
+      <action>maincpu.pb@10C123=70|(maincpu.pb@10C123 BAND ~F0)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+  <cheat desc="-------- Player VS Player ---------"/>
+  <cheat desc="If there's a draw after final round both players lose."/>
+
+  <cheat desc="P1 Never Wins vs. P2">
+    <script state="run">
+      <action>maincpu.pb@10C122=00|(maincpu.pb@10C122 BAND ~0F)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always Wins vs. P2"> <comment>You've to play the round</comment>
+    <script state="run">
+      <action>maincpu.pb@10C122=0F</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Wins vs. P2 = 0">
+    <script state="on">
+      <action>maincpu.pb@10C122=00|(maincpu.pb@10C122 BAND ~0F)</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P1 Set Wins = 1">
+    <script state="on">
+      <action>maincpu.pb@10C122=01|(maincpu.pb@10C122 BAND ~0F)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Set Wins = 2">
+    <script state="on">
+      <action>maincpu.pb@10C122=03|(maincpu.pb@10C122 BAND ~0F)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Set Wins = 3">
+    <script state="on">
+      <action>maincpu.pb@10C122=07|(maincpu.pb@10C122 BAND ~0F)</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Never Wins vs. P1">
+    <script state="run">
+      <action>maincpu.pb@10C122=00|(maincpu.pb@10C122 BAND ~F0)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always Wins vs. P1"> <comment>You've to play the round</comment>
+    <script state="run">
+      <action>maincpu.pb@10C122=F0</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Wins vs. P1 = 0">
+    <script state="on">
+      <action>maincpu.pb@10C122=00|(maincpu.pb@10C122 BAND ~F0)</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P2 Set Wins = 1">
+    <script state="on">
+      <action>maincpu.pb@10C122=10|(maincpu.pb@10C122 BAND ~F0)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Set Wins = 2">
+    <script state="on">
+      <action>maincpu.pb@10C122=30|(maincpu.pb@10C122 BAND ~F0)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Set Wins = 3">
+    <script state="on">
+      <action>maincpu.pb@10C122=70|(maincpu.pb@10C122 BAND ~F0)</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

@@ -1,0 +1,257 @@
+<mamecheat version="1">
+
+  <NGH>069</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@105680=9A</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish this Round Now!"> <comment>Disable Infinite Time before activating this cheat</comment>
+    <script state="on">
+      <action>maincpu.pb@105680=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Perm. Background"> <comment>Name in brackets is the fighter you'd normally encounter on that Level</comment>
+    <parameter>
+      <item value="0x01">Sound Beach (Terry)</item>
+      <item value="0x02">Howard Arena (Andy)</item>
+      <item value="0x03">National Park (Joe)</item>
+      <item value="0x04">East Side Park (Mai)</item>
+      <item value="0x05">Geese Tower (Geese)</item>
+      <item value="0x06">Dream Amusement Park (Sokaku)</item>
+      <item value="0x07">Pao Pao Cafe 2 (Bob)</item>
+      <item value="0x08">Port Town (Hon-Fu)</item>
+      <item value="0x09">Pioneer Plaza (Mary)</item>
+      <item value="0x0A">South Town Airport (Franco)</item>
+      <item value="0x0B">South Station (Yamazaki)</item>
+      <item value="0x0C">Delta Park (???)</item>
+      <item value="0x0D">Delta Park(2) (???)</item>
+      <item value="0x0E">Delta Park(3) (Chonshu, Chonrei)</item>
+      <item value="0x0F">Geese Tower(2)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@105627=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+  <cheat desc="Once you activate Easy Supers you can do"/>
+  <cheat desc="all the SDMs of any character (even the"/>
+  <cheat desc="hidden SDMs), all you have to do usually is"/>
+  <cheat desc="during play press down, down + A (DM),"/>
+  <cheat desc="down, down + C (SDM), some characters that"/>
+  <cheat desc="have more than 2 SDMs can use the B or D"/>
+  <cheat desc="buttons as well."/>
+  <cheat desc=" "/>
+
+  <cheat desc="Always have Easy Supers">
+    <script state="run">
+      <action>maincpu.pb@10E001=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@100489=78</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain all Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@100489=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Eliminate SDM Conditions"> <comment>Should allow you to use SDMs in the same manner as DMs (ie. low life only, no special conditions)</comment>
+    <script state="on">
+      <action>temp0 =maincpu.md@044B46</action>
+      <action>temp1 =maincpu.md@031D24</action>
+    </script>
+    <script state="run">
+      <action>maincpu.pb@108A84=FF</action>
+      <action>maincpu.md@044B46=4E714E71</action>
+      <action>maincpu.md@031D24=4E714E71</action>
+      <action>maincpu.pb@108A86=FF</action>
+    </script>
+    <script state="off">
+      <action>maincpu.md@044B46=temp0 </action>
+      <action>maincpu.md@031D24=temp1 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite SDMs"> <comment>This will make it so that you can do your SDM more than once a round</comment>
+    <script state="run">
+      <action>maincpu.pb@1004A2=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Rounds Won = 2  Now!">
+    <script state="on">
+      <action>maincpu.pb@105666=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character"> <comment>Free player selection, Use between rounds</comment>
+    <parameter>
+      <item value="0x01">Terry Bogard</item>
+      <item value="0x02">Andy Bogard</item>
+      <item value="0x03">Joe Higashi</item>
+      <item value="0x04">Mai Shiranui</item>
+      <item value="0x05">Geese Howard</item>
+      <item value="0x06">Sokaku</item>
+      <item value="0x07">Bob Wilson</item>
+      <item value="0x08">Hon Fu</item>
+      <item value="0x09">Blue Mary</item>
+      <item value="0x0A">Franco Bash</item>
+      <item value="0x0B">Ryuji Yamazaki</item>
+      <item value="0x0C">Jin Chonrei</item>
+      <item value="0x0D">Jin Chonshu</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10561D=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Colour">
+    <parameter>
+      <item value="0x00">A colour</item>
+      <item value="0x01">D colour</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@105624=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@100589=78</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain all Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@100589=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Eliminate SDM Conditions"> <comment>Should allow you to use SDMs in the same manner as DMs (ie. low life only, no special conditions)</comment>
+    <script state="on">
+      <action>temp0 =maincpu.md@044B46</action>
+      <action>temp1 =maincpu.md@031D24</action>
+    </script>
+    <script state="run">
+      <action>maincpu.pb@108A85=FF</action>
+      <action>maincpu.md@044B46=4E714E71</action>
+      <action>maincpu.md@031D24=4E714E71</action>
+      <action>maincpu.pb@108A87=FF</action>
+    </script>
+    <script state="off">
+      <action>maincpu.md@044B46=temp0 </action>
+      <action>maincpu.md@031D24=temp1 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite SDMs"> <comment>This will make it so that you can do your SDM more than once a round</comment>
+    <script state="run">
+      <action>maincpu.pb@1005A2=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Rounds Won = 2  Now!">
+    <script state="on">
+      <action>maincpu.pb@105667=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character"> <comment>Free player selection, Use between rounds</comment>
+    <parameter>
+      <item value="0x01">Terry Bogard</item>
+      <item value="0x02">Andy Bogard</item>
+      <item value="0x03">Joe Higashi</item>
+      <item value="0x04">Mai Shiranui</item>
+      <item value="0x05">Geese Howard</item>
+      <item value="0x06">Sokaku</item>
+      <item value="0x07">Bob Wilson</item>
+      <item value="0x08">Hon Fu</item>
+      <item value="0x09">Blue Mary</item>
+      <item value="0x0A">Franco Bash</item>
+      <item value="0x0B">Ryuji Yamazaki</item>
+      <item value="0x0C">Jin Chonrei</item>
+      <item value="0x0D">Jin Chonshu</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10561F=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Colour">
+    <parameter>
+      <item value="0x00">A colour</item>
+      <item value="0x01">D colour</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@105625=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="No Background Music">
+    <script state="run">
+      <action>audiocpu.pb@FE2D=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Hide Background"> <comment>Activate before match start; works in round 1 only</comment>
+    <script state="on">
+      <action>temp0=maincpu.rd@00371C</action>
+    </script>
+    <script state="run">
+      <action>maincpu.rd@00371C=temp0</action>
+      <action condition="(maincpu.pb@10567A != 00 and maincpu.pb@10567B == 00 and maincpu.pb@10562D == 01)">maincpu.rd@00371C=4E714E71</action><!-- activate only during match --><!-- solid shadows -->
+      <action condition="(maincpu.pb@10567A != 00 and maincpu.pb@10567B == 00 and maincpu.pb@10562D == 01)">maincpu.pb@1051E3=00</action><!-- BG layers -->
+      <action condition="(maincpu.pb@10567A != 00 and maincpu.pb@10567B == 00 and maincpu.pb@10562D == 01)">maincpu.pb@1051E5=01</action><!-- BG layers -->
+      <action condition="(maincpu.pb@10567A != 00 and maincpu.pb@10567B == 00 and maincpu.pb@10562D == 01)">maincpu.pw@100916=0001</action><!-- HUD -->
+      <action condition="(maincpu.pb@10567A != 00 and maincpu.pb@10567B == 00 and maincpu.pb@10562D == 01)">maincpu.pw@401FFE=8F8F</action><!-- BG colour (pink) -->
+    </script>
+    <script state="off">
+      <action>maincpu.rd@00371C=temp0</action>
+      <action>maincpu.pb@1051E3=maincpu.pb@1051E2 band 0F</action>
+      <action>maincpu.pb@1051E5=maincpu.pb@1051E4 band 0F</action>
+      <action>maincpu.pw@401FFE=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

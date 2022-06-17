@@ -1,0 +1,132 @@
+<mamecheat version="1">
+
+  <NGH>021</NGH>
+
+  <cheat desc="P1 Infinite Continues">
+    <script state="run">
+      <action>maincpu.pb@10090C=64</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Minimum Piece Speed">
+    <script state="run">
+      <action>maincpu.pb@100642=00</action>
+      <action>maincpu.pb@100643=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Max L Ball">
+    <script state="run">
+      <action>maincpu.pb@100904=0C</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Perm. Next Shape"> <comment>Use this during Play Only!</comment>
+    <parameter>
+      <item value="0x00">Red</item>
+      <item value="0x01">Purple</item>
+      <item value="0x02">Orange</item>
+      <item value="0x03">Blue</item>
+      <item value="0x04">Yellow</item>
+      <item value="0x05">Green</item>
+      <item value="0x06">Cyan</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@100673=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Temp. Next Shape"> <comment>Use this during Play Only!</comment>
+    <parameter>
+      <item value="0x00">Red</item>
+      <item value="0x01">Purple</item>
+      <item value="0x02">Orange</item>
+      <item value="0x03">Blue</item>
+      <item value="0x04">Yellow</item>
+      <item value="0x05">Green</item>
+      <item value="0x06">Cyan</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@100673=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Continues">
+    <script state="run">
+      <action>maincpu.pb@100C1C=64</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Minimum Piece Speed">
+    <script state="run">
+      <action>maincpu.pb@100952=00</action>
+      <action>maincpu.pb@100953=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Max L Ball">
+    <script state="run">
+      <action>maincpu.pb@100C14=0C</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Perm. Next Shape"> <comment>Use this during Play Only!</comment>
+    <parameter>
+      <item value="0x00">Red</item>
+      <item value="0x01">Purple</item>
+      <item value="0x02">Orange</item>
+      <item value="0x03">Blue</item>
+      <item value="0x04">Yellow</item>
+      <item value="0x05">Green</item>
+      <item value="0x06">Cyan</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@100983=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Temp. Next Shape"> <comment>Use this during Play Only!</comment>
+    <parameter>
+      <item value="0x00">Red</item>
+      <item value="0x01">Purple</item>
+      <item value="0x02">Orange</item>
+      <item value="0x03">Blue</item>
+      <item value="0x04">Yellow</item>
+      <item value="0x05">Green</item>
+      <item value="0x06">Cyan</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@100983=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

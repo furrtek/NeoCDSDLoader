@@ -1,0 +1,301 @@
+<mamecheat version="1">
+
+  <NGH>222</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@108368=61</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Backdrop"> <comment>Changes between matches</comment>
+    <parameter>
+      <item value="0x00">Arie</item>
+      <item value="0x01">Obama</item>
+      <item value="0x02">Kuchinotsu</item>
+      <item value="0x03">Koga</item>
+      <item value="0x04">Kushiyama</item>
+      <item value="0x05">Dohsaki</item>
+      <item value="0x06">Funatsu</item>
+      <item value="0x07">Fukae</item>
+      <item value="0x08">Kusenbutake</item>
+      <item value="0x09">Amakusa Castle (vs Amakusa)</item>
+      <item value="0x0A">Amakusa Castle (vs Zankuro)</item>
+      <item value="0x0B">Amakusa Castle (vs Rival)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@108B2B=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@108443=FC</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@108443=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Power">
+    <script state="run">
+      <action>maincpu.pb@10844C=40</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always has Pwr Gauge">
+    <script state="run">
+      <action>maincpu.pb@108558=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Never has Pwr Gauge">
+    <script state="run">
+      <action>maincpu.pb@108558=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Rounds Won">
+    <parameter min="0" max="2" step="1"/>
+    <script state="run">
+      <action>maincpu.pb@108462=(param)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character"> <comment>Use this in-between rounds</comment>
+    <parameter>
+      <item value="0x00">Haohmaru</item>
+      <item value="0x01">Nakoruru</item>
+      <item value="0x02">Rimururu</item>
+      <item value="0x03">Hanzo Hattori</item>
+      <item value="0x04">Galford</item>
+      <item value="0x05">Kyoshiro Senryou</item>
+      <item value="0x06">Ukyo Tachibana</item>
+      <item value="0x07">Genjuro Kibagami</item>
+      <item value="0x08">Kubikiri Basara</item>
+      <item value="0x09">Shizumaru Hisame</item>
+      <item value="0x0A">Gaira Kafuin</item>
+      <item value="0x0B">Amakusa Shirou Tokisada</item>
+      <item value="0x0C">Jubei Yagyu</item>
+      <item value="0x0D">#Zankuro Minazuki</item>
+      <item value="0x0E">Charlotte</item>
+      <item value="0x0F">Tam Tam</item>
+      <item value="0x10">Kazuki Kazama</item>
+      <item value="0x11">Sogetsu Kazama</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@108322=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Colour">
+    <parameter>
+      <item value="0x00">A Colour</item>
+      <item value="0x01">B Colour</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10832A=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Playing Style">
+    <parameter>
+      <item value="0x00">Slash</item>
+      <item value="0x01">Bust</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@108324=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character Difficulty">
+    <parameter>
+      <item value="0x00">Beginners Class</item>
+      <item value="0x01">Medium Grade</item>
+      <item value="0x02">Upper Grade</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@108326=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Control">
+    <parameter>
+      <item value="0xFF">Human Control</item>
+      <item value="0x00">CPU Control</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@108320=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@108643=FC</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@108643=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Power">
+    <script state="run">
+      <action>maincpu.pb@10864C=40</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always has Pwr Gauge">
+    <script state="run">
+      <action>maincpu.pb@108758=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Never has Pwr Gauge">
+    <script state="run">
+      <action>maincpu.pb@108758=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Rounds Won"> <comment>Use this in-between rounds</comment>
+    <parameter min="0" max="2" step="1"/>
+    <script state="run">
+      <action>maincpu.pb@108662=(param)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character">
+    <parameter>
+      <item value="0x00">Haohmaru</item>
+      <item value="0x01">Nakoruru</item>
+      <item value="0x02">Rimururu</item>
+      <item value="0x03">Hanzo Hattori</item>
+      <item value="0x04">Galford</item>
+      <item value="0x05">Kyoshiro Senryou</item>
+      <item value="0x06">Ukyo Tachibana</item>
+      <item value="0x07">Genjuro Kibagami</item>
+      <item value="0x08">Kubikiri Basara</item>
+      <item value="0x09">Shizumaru Hisame</item>
+      <item value="0x0A">Gaira Kafuin</item>
+      <item value="0x0B">Amakusa Shirou Tokisada</item>
+      <item value="0x0C">Jubei Yagyu</item>
+      <item value="0x0D">#Zankuro Minazuki</item>
+      <item value="0x0E">Charlotte</item>
+      <item value="0x0F">Tam Tam</item>
+      <item value="0x10">Kazuki Kazama</item>
+      <item value="0x11">Sogetsu Kazama</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@108323=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Colour">
+    <parameter>
+      <item value="0x00">A Colour</item>
+      <item value="0x01">B Colour</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10832B=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Playing Style">
+    <parameter>
+      <item value="0x00">Slash</item>
+      <item value="0x01">Bust</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@108325=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Difficulty">
+    <parameter>
+      <item value="0x00">Beginners Class</item>
+      <item value="0x01">Medium Grade</item>
+      <item value="0x02">Upper Grade</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@108327=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Control">
+    <parameter>
+      <item value="0xFF">Human Control</item>
+      <item value="0x00">CPU Control</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@108321=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Hide Background"> <comment>Activate before match start</comment>
+    <script state="on">
+      <action>temp0=maincpu.rw@003140</action>
+      <action>maincpu.rw@003140=4E71</action>
+      <action>temp1=maincpu.rw@00314C</action>
+      <action>maincpu.rw@00314C=4E71</action>
+      <action>temp2=maincpu.rd@003152</action><!-- solid shadows -->
+      <action>maincpu.rd@003152=4E714E71</action><!-- solid shadows -->
+      <action>temp3=maincpu.rd@028CFE</action><!-- HUD -->
+      <action>maincpu.rd@028CFE=60464E71</action><!-- HUD -->
+    </script>
+    <script state="run">
+      <action condition="maincpu.pw@1080C4 == B">maincpu.pw@108314=0000</action><!-- activate only during match --><!-- flashing text -->
+      <action condition="maincpu.pw@1080C4 == B">maincpu.pb@109179=02</action><!-- BG layers -->
+      <action condition="maincpu.pw@1080C4 == B">maincpu.pd@109180=8F8F8F8F</action><!-- BG colour (pink) -->
+      <action condition="maincpu.pw@1080C4 == B">maincpu.pb@10C72E=00</action><!-- flickering lifebars -->
+    </script>
+    <script state="off">
+      <action>maincpu.rw@003140=temp0</action>
+      <action>maincpu.rw@00314C=temp1</action>
+      <action>maincpu.rd@003152=temp2</action>
+      <action>maincpu.rd@028CFE=temp3</action>
+    </script>
+  </cheat>
+
+  <cheat desc="No Background Music">
+    <script state="run">
+      <action>audiocpu.pb@FDE0=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

@@ -1,0 +1,242 @@
+<mamecheat version="1">
+
+  <NGH>092</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="on">
+      <action>temp0 =maincpu.md@00B9F8</action>
+    </script>
+    <script state="run">
+      <action>maincpu.md@00B9F8=1D7C0099</action>
+    </script>
+    <script state="off">
+      <action>maincpu.md@00B9F8=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Unlock Secret Characters" tempvariables="10">
+    <script state="on">
+      <action>temp0 =maincpu.md@01278A</action>
+      <action>temp1 =maincpu.mw@01278E</action>
+      <action>temp2 =maincpu.md@0127A8</action>
+      <action>temp3 =maincpu.mw@0127AC</action>
+      <action>temp4 =maincpu.md@02F520</action>
+      <action>temp5 =maincpu.md@02F524</action>
+      <action>temp6 =maincpu.md@02F528</action>
+      <action>temp7 =maincpu.md@02F52C</action>
+      <action>temp8 =maincpu.md@02F530</action>
+      <action>temp9 =maincpu.mw@02F534</action>
+    </script>
+    <script state="run">
+      <action>maincpu.md@01278A=4EB90002</action>
+      <action>maincpu.mw@01278E=F520</action> <!-- 1st + 2nd = jsr $2f520.l -->
+      <action>maincpu.md@0127A8=4EB90002</action> <!-- 3rd $ 4th = jsr $2f52a.l -->
+      <action>maincpu.mw@0127AC=F52A</action>
+      <action>maincpu.md@02F520=53106A10</action> <!-- subq.b #1,(A0) / bpl $2f534 -->
+      <action>maincpu.md@02F524=10BC000B</action> <!-- move.b #$b,(A0) -->
+      <action>maincpu.md@02F528=600A5210</action> <!-- bra $2f534 / addq.b #1,(A0) -->
+      <action>maincpu.md@02F52C=0C100C0B</action> <!-- cmpi.b #$b,(A0) -->
+      <action>maincpu.md@02F530=63024210</action> <!-- bls $2f534 / clr.b (A0) -->
+      <action>maincpu.mw@02F534=4E75</action> <!-- rts -->
+    </script>
+    <script state="off">
+      <action>maincpu.md@01278A=temp0 </action>
+      <action>maincpu.mw@01278E=temp1 </action>
+      <action>maincpu.md@0127A8=temp2 </action>
+      <action>maincpu.mw@0127AC=temp3 </action>
+      <action>maincpu.md@02F520=temp4 </action>
+      <action>maincpu.md@02F524=temp5 </action>
+      <action>maincpu.md@02F528=temp6 </action>
+      <action>maincpu.md@02F52C=temp7 </action>
+      <action>maincpu.md@02F530=temp8 </action>
+      <action>maincpu.mw@02F534=temp9 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Invincibility" tempvariables="16">
+    <parameter>
+      <item value="0x01">P1 Only</item>
+      <item value="0x02">P2 Only</item>
+    </parameter>
+    <script state="on">
+      <action>temp0 =maincpu.md@02FCB4</action>
+      <action>temp1 =maincpu.md@02F540</action>
+      <action>temp2 =maincpu.mw@02F544</action>
+      <action>temp3 =maincpu.md@02F546</action>
+      <action>temp4 =maincpu.md@02F54A</action>
+      <action>temp5 =maincpu.md@039222</action>
+      <action>temp6 =maincpu.mw@039226</action>
+      <action>temp7 =maincpu.md@03927E</action>
+      <action>temp8 =maincpu.mw@039282</action>
+      <action>temp9 =maincpu.md@0392E6</action>
+      <action>temp10=maincpu.mw@0392EA</action>
+      <action>temp11=maincpu.md@02F54E</action>
+      <action>temp12=maincpu.mw@02F552</action>
+      <action>temp13=maincpu.md@02F554</action>
+      <action>temp14=maincpu.md@02F558</action>
+      <action>temp15=maincpu.md@02F55C</action>
+    </script>
+    <script state="run">
+      <action condition="(param==01)">maincpu.md@02FCB4=6000F88A</action>
+      <action condition="(param==01)">maincpu.md@02F540=BDEDD094</action> <!-- [ Direct attack (Punch, Kick, Firearm etc) ] -->
+      <action condition="(param==01)">maincpu.mw@02F544=6604</action> <!-- 2FCB4 - bra $2f540 / 2F540 - cmpa.l (-$2f6c,A5),A6 / 2F544 - bne $2f54a -->
+      <action condition="(param==01)">maincpu.md@02F546=70014E75</action> <!-- 2F546 - moveq #$1,D0 / rts [No Hit] -->
+      <action condition="(param==01)">maincpu.md@02F54A=70004E75</action> <!-- 2F54A - moveq #$0,D0 / rts [Hit] -->
+      <action condition="(param==01)">maincpu.md@039222=4EB90002</action> <!-- [ Catch or throw - call player check routine ] -->
+      <action condition="(param==01)">maincpu.mw@039226=F54E</action> <!-- 39222 - jsr $2f54e.l -->
+      <action condition="(param==01)">maincpu.md@03927E=4EB90002</action> <!-- [ Air throw (Jiraia) - call player check routine ] -->
+      <action condition="(param==01)">maincpu.mw@039282=F54E</action> <!-- 3927E - jsr $2f54e.l -->
+      <action condition="(param==01)">maincpu.md@0392E6=4EB90002</action> <!-- [ Kamituki (Manto Ace) - call player check routine ] -->
+      <action condition="(param==01)">maincpu.mw@0392EA=F54E</action> <!-- 392E6 - jsr $2f54e.l -->
+      <action condition="(param==01)">maincpu.md@02F54E=B7EDD094</action> <!-- [ Player check routine ] -->
+      <action condition="(param==01)">maincpu.mw@02F552=6708</action> <!-- 2F54E - cmpa.l (-$2f6c,A5),A3 -->
+      <action condition="(param==01)">maincpu.md@02F554=082B0007</action> <!-- 2F552 - beq $2f55c -->
+      <action condition="(param==01)">maincpu.md@02F558=00124E75</action> <!-- 2F554 - btst #$7,($12,A3) / rts [Enable] -->
+      <action condition="(param==01)">maincpu.md@02F55C=70014E75</action> <!-- 2F55C - moveq #$1,D0 / rts [Disable] -->
+      <action condition="(param==02)">maincpu.md@02FCB4=6000F88A</action>
+      <action condition="(param==02)">maincpu.md@02F540=BDEDD098</action> <!-- [ Direct Attack (Punch, Kick, Firearm etc) ] -->
+      <action condition="(param==02)">maincpu.mw@02F544=6604</action> <!-- 2FCB4 - bra $2f540 / 2F540 - cmpa.l (-$2f68,A5),A6 / 2F544 - bne $2f54a -->
+      <action condition="(param==02)">maincpu.md@02F546=70014E75</action> <!-- 2F546 - moveq #$1,D0 / rts [No Hit] -->
+      <action condition="(param==02)">maincpu.md@02F54A=70004E75</action> <!-- 2F54A - moveq #$0,D0 / rts [Hit] -->
+      <action condition="(param==02)">maincpu.md@039222=4EB90002</action> <!-- [ Catch or throw - call player check routine ] -->
+      <action condition="(param==02)">maincpu.mw@039226=F54E</action> <!-- 39222 - jsr $2f54e.l -->
+      <action condition="(param==02)">maincpu.md@03927E=4EB90002</action> <!-- [ Air throw (Jiraia) - call player check routine ] -->
+      <action condition="(param==02)">maincpu.mw@039282=F54E</action> <!-- 3927E - jsr $2f54e.l -->
+      <action condition="(param==02)">maincpu.md@0392E6=4EB90002</action> <!-- [ Kamituki (Manto Ace) - call player check routine ] -->
+      <action condition="(param==02)">maincpu.mw@0392EA=F54E</action> <!-- 392E6 - jsr $2f54e.l -->
+      <action condition="(param==02)">maincpu.md@02F54E=B7EDD098</action> <!-- [ Player check routine ] -->
+      <action condition="(param==02)">maincpu.mw@02F552=6708</action> <!-- 2F54E - cmpa.l (-$2f68,A5),A3 -->
+      <action condition="(param==02)">maincpu.md@02F554=082B0007</action> <!-- 2F552 - beq $2f55c -->
+      <action condition="(param==02)">maincpu.md@02F558=00124E75</action> <!-- 2F554 - btst #$7,($12,A3) / rts [Enable] -->
+      <action condition="(param==02)">maincpu.md@02F55C=70014E75</action> <!-- 2F55C - moveq #$1,D0 / rts [Disable] -->
+    </script>
+    <script state="off">
+      <action>maincpu.md@02FCB4=temp0 </action>
+      <action>maincpu.md@02F540=temp1 </action>
+      <action>maincpu.mw@02F544=temp2 </action>
+      <action>maincpu.md@02F546=temp3 </action>
+      <action>maincpu.md@02F54A=temp4 </action>
+      <action>maincpu.md@039222=temp5 </action>
+      <action>maincpu.mw@039226=temp6 </action>
+      <action>maincpu.md@03927E=temp7 </action>
+      <action>maincpu.mw@039282=temp8 </action>
+      <action>maincpu.md@0392E6=temp9 </action>
+      <action>maincpu.mw@0392EA=temp10</action>
+      <action>maincpu.md@02F54E=temp11</action>
+      <action>maincpu.mw@02F552=temp12</action>
+      <action>maincpu.md@02F554=temp13</action>
+      <action>maincpu.md@02F558=temp14</action>
+      <action>maincpu.md@02F55C=temp15</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@(maincpu.pd@105094)+56=64</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@(maincpu.pd@105094)+56=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Magic">
+    <script state="run">
+      <action>maincpu.pb@(maincpu.pd@105094)+6E=3C</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always No Magic">
+    <script state="run">
+      <action>maincpu.pb@(maincpu.pd@105094)+6E=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character"> <comment>Use these cheats on the selection screen only!!</comment>
+    <parameter>
+      <item value="0x08">Manto Ace</item>
+      <item value="0x09">Karakuri</item>
+      <item value="0x0A">Jyashinsai</item>
+      <item value="0x0B">Lucifeller</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@102E17=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@(maincpu.pd@105098)+56=64</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain All Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@(maincpu.pd@105098)+56=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Magic">
+    <script state="run">
+      <action>maincpu.pb@(maincpu.pd@105098)+6E=3C</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always No Magic">
+    <script state="run">
+      <action>maincpu.pb@(maincpu.pd@105098)+6E=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character">
+    <parameter>
+      <item value="0x08">Manto Ace</item>
+      <item value="0x09">Karakuri</item>
+      <item value="0x0A">Jyashinsai</item>
+      <item value="0x0B">Lucifeller</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@102E18=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="No Background Music">
+    <script state="run">
+      <action>audiocpu.pb@FE2D=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->
