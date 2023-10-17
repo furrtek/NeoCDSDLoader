@@ -1,0 +1,130 @@
+<mamecheat version="1">
+
+  <NGH>094</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@10648B=63</action> <!-- Was 1062E1 -->
+    </script>
+  </cheat>
+
+  <cheat desc="Finish this Round Now!"> <comment>Disable Infinite Time before activating this cheat</comment>
+    <script state="on">
+      <action>maincpu.pb@10648B=00</action> <!-- Was 1062E1 -->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@102E41=64</action> <!-- Was 102D09 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain All Energy Now">
+    <script state="on">
+      <action>maincpu.pb@102E41=00</action> <!-- Was 102D09 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character"> <comment>Free player selection-Use on ANY selection screen. BUT Ohga vs. Ohga doesn't work!</comment>
+    <parameter>
+      <item value="0x00">Gowcaizer</item>
+      <item value="0x01">Captain</item>
+      <item value="0x02">Karin</item>
+      <item value="0x03">Fudomaru</item>
+      <item value="0x04">Marion</item>
+      <item value="0x05">Shaia</item>
+      <item value="0x06">Shenlong</item>
+      <item value="0x07">Kyosuke</item>
+      <item value="0x08">Stinger</item>
+      <item value="0x09">Brider</item>
+      <item value="0x0A">Platonic Twins</item>
+      <item value="0x0B">Ohga</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@10464D=param</action>
+    </script>
+  </cheat>
+
+  <!-- <cheat desc="P1 Desperation moves always available">
+    <script state="run">
+      <action>maincpu.pb@10315F=80|(maincpu.pb@10315F BAND ~80)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10315F=00|(maincpu.pb@10315F BAND ~80)</action>
+    </script>
+  </cheat> -->
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@103717=64</action> <!-- Was 1035BF -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain All Energy Now">
+    <script state="on">
+      <action>maincpu.pb@103717=00</action> <!-- Was 1035BF -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character"> <comment>Free player selection-Use on ANY selection screen. BUT Ohga vs. Ohga doesn't work!</comment>
+    <parameter>
+      <item value="0x00">Gowcaizer</item>
+      <item value="0x01">Captain</item>
+      <item value="0x02">Karin</item>
+      <item value="0x03">Fudomaru</item>
+      <item value="0x04">Marion</item>
+      <item value="0x05">Shaia</item>
+      <item value="0x06">Shenlong</item>
+      <item value="0x07">Kyosuke</item>
+      <item value="0x08">Stinger</item>
+      <item value="0x09">Brider</item>
+      <item value="0x0A">Platonic Twins</item>
+      <item value="0x0B">Ohga</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@10467D=param</action>
+    </script>
+  </cheat>
+
+  <!-- <cheat desc="P2 Desperation moves always available">
+    <script state="run">
+      <action>maincpu.pb@103A15=80|(maincpu.pb@103A15 BAND ~80)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@103A15=00|(maincpu.pb@103A15 BAND ~80)</action>
+    </script>
+  </cheat> -->
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

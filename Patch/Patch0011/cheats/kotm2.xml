@@ -1,0 +1,168 @@
+<mamecheat version="1">
+
+  <NGH>039</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@1013D2=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Invincibility"> <comment>Debug DIP 2-?</comment>
+    <script state="on">
+      <action>temp0 =maincpu.pb@100001</action>
+    </script>
+    <script state="run">
+      <action>maincpu.pb@100001=02|(maincpu.pb@100001 BAND ~02)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@100001=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Starting Battle">
+    <parameter>
+      <item value="0x01">Battle 1 American City</item>
+      <item value="0x02">Battle 2 French City</item>
+      <item value="0x03">Battle 3 Grand Canyon</item>
+      <item value="0x04">Battle 4 Desert</item>
+      <item value="0x05">Battle 5 Sea Bed</item>
+      <item value="0x06">Battle 6 Lava Zone</item>
+      <item value="0x07">Battle 7 Hide-Out</item>
+    </parameter>
+    <script state="on">
+      <action>temp0 =maincpu.md@0027EE</action>
+      <action>temp1 =maincpu.md@00C204</action>
+      <action>temp2 =maincpu.md@00C208</action>
+    </script>
+    <script state="run">
+      <action condition="(param==01)">maincpu.md@0027EE=4E714E71</action>
+      <action condition="(param==01)">maincpu.md@00C204=3B7C0000</action>
+      <action condition="(param==01)">maincpu.md@00C208=FCE66038</action>
+      <action condition="(param==02)">maincpu.md@0027EE=4E714E71</action>
+      <action condition="(param==02)">maincpu.md@00C204=3B7C0002</action>
+      <action condition="(param==02)">maincpu.md@00C208=FCE66038</action>
+      <action condition="(param==03)">maincpu.md@0027EE=4E714E71</action>
+      <action condition="(param==03)">maincpu.md@00C204=3B7C0003</action>
+      <action condition="(param==03)">maincpu.md@00C208=FCE66038</action>
+      <action condition="(param==04)">maincpu.md@0027EE=4E714E71</action>
+      <action condition="(param==04)">maincpu.md@00C204=3B7C0004</action>
+      <action condition="(param==04)">maincpu.md@00C208=FCE66038</action>
+      <action condition="(param==05)">maincpu.md@0027EE=4E714E71</action>
+      <action condition="(param==05)">maincpu.md@00C204=3B7C0001</action>
+      <action condition="(param==05)">maincpu.md@00C208=FCE66038</action>
+      <action condition="(param==06)">maincpu.md@0027EE=4E714E71</action>
+      <action condition="(param==06)">maincpu.md@00C204=3B7C0005</action>
+      <action condition="(param==06)">maincpu.md@00C208=FCE66038</action>
+      <action condition="(param==07)">maincpu.md@0027EE=4E714E71</action>
+      <action condition="(param==07)">maincpu.md@00C204=3B7C0006</action>
+      <action condition="(param==07)">maincpu.md@00C208=FCE66038</action>
+    </script>
+    <script state="off">
+      <action>maincpu.md@0027EE=temp0 </action>
+      <action>maincpu.md@00C204=temp1 </action>
+      <action>maincpu.md@00C208=temp2 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Drain Boss Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@101617=00</action>
+      <action>maincpu.pb@101917=00</action>
+      <action>maincpu.pb@101717=00</action>
+      <action>maincpu.pb@101697=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@1013B8=09</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@101417=40</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Enable Max Power Now!">
+    <script state="on">
+      <action>maincpu.pb@1013E3=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character">
+    <parameter>
+      <item value="0x00">Super Geon</item>
+      <item value="0x01">Atomic Guy</item>
+      <item value="0x02">Cyber Woo</item>
+      <item value="0x04">#Huge Frogger (some glitches)#</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1013DC=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@1013B9=09</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@101517=40</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Enable Max Power Now!">
+    <script state="on">
+      <action>maincpu.pb@1014E3=02</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character">
+    <parameter>
+      <item value="0x00">Super Geon</item>
+      <item value="0x01">Atomic Guy</item>
+      <item value="0x02">Cyber Woo</item>
+      <item value="0x04">#Huge Frogger (some glitches)#</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1014DC=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

@@ -1,0 +1,110 @@
+<mamecheat version="1">
+
+  <NGH>011</NGH>
+
+  <cheat desc="Infinite Continues">
+    <script state="run">
+      <action>maincpu.pb@10FD89=64</action>
+      <action>maincpu.pb@101032=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@10181F=08</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Weapon">
+    <parameter>
+      <item value="0x0F">Machine Gun</item>
+      <item value="0x00">Pistol</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@101856=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Pistol Ammo">
+    <script state="run">
+      <action>maincpu.pw@1017F6=0999</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite M. Gun Ammo">
+    <script state="run">
+      <action>maincpu.pw@101854=0999</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Knife Power">
+    <script state="run">
+      <action>maincpu.pb@101878=10</action>
+    </script>
+  </cheat>
+
+  <cheat desc="One Hit Kills">
+    <script state="on">
+      <action>temp0 =maincpu.mw@003334</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mw@003334=4229</action> <!-- This ROM cheat was made by syndromtr -->
+    </script>
+    <script state="off">
+      <action>maincpu.mw@003334=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Starting Mission">
+    <parameter>
+      <item value="0x01">Mission 1</item>
+      <item value="0x02">Mission 2</item>
+      <item value="0x03">End Sequence</item>
+    </parameter>
+    <script state="on">
+      <action>temp0=maincpu.mq@0D16</action>
+    </script>
+    <script state="run">
+      <action condition="param==01">maincpu.mq@0D16=temp0</action>
+      <action condition="param==02">maincpu.mq@0D16=4EF900013C540000</action> <!-- This ROM cheat was made by syndromtr -->
+      <action condition="param==03">maincpu.mq@0D16=4EF900007E4C0000</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mq@0D16=temp0</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Rapid Punch"> <comment>All Button A operations (punch-knife stab-fire) will be rapid.</comment>
+    <script state="run">
+      <action>maincpu.pb@10FD96=00|(maincpu.pb@10FD96 BAND ~10)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->
