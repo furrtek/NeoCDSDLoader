@@ -1,0 +1,215 @@
+<mamecheat version="1">
+
+  <NGH>018</NGH>
+
+  <cheat desc="Infinite Continues">
+    <script state="run">
+      <action>maincpu.pb@103E78=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@10D002=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Char Select Time">
+    <script state="run">
+      <action>maincpu.pb@103D72=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Starting Stage">
+    <parameter>
+      <item value="0x00">Stage 1</item>
+      <item value="0x01">Stage 2-1</item>
+      <item value="0x02">Stage 2-2</item>
+      <item value="0x03">Stage 2-3</item>
+      <item value="0x04">Stage 3-1</item>
+      <item value="0x05">Stage 3-2</item>
+      <item value="0x06">Stage 4</item>
+      <item value="0x07">Stage 5-1</item>
+      <item value="0x08">Stage 5-2</item>
+      <item value="0x09">Stage 5-3</item>
+      <item value="0x0A">Stage 5-4</item>
+      <item value="0x0B">Stage 5-5</item>
+      <item value="0x0C">Final Boss</item>
+    </parameter>
+    <script state="run">
+      <action condition="maincpu.pb@100091==00">maincpu.pb@100091=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish This Stage Now!">
+    <script state="on">
+      <action>maincpu.pb@1001BE=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="See End Sequence Now!"> <comment>You can use this cheat in demo mode or any stage</comment>
+    <script state="on">
+      <action>maincpu.pb@100051=04</action>
+      <action>maincpu.pb@1001BE=05</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="Mostly One Hit Kills"> <comment>To kill the Boss, you must hit him 2-3 times</comment>
+    <script state="run">
+      <action>maincpu.pb@1004A1=00</action>
+      <action>maincpu.pb@100521=00</action>
+      <action>maincpu.pb@100621=00</action>
+      <action>maincpu.pb@100321=00</action>
+      <action>maincpu.pb@1003A1=00</action>
+      <action>maincpu.pb@100421=00</action>
+      <action>maincpu.pb@1005A1=00</action>
+      <action>maincpu.pb@100921=00</action>
+      <action>maincpu.pb@1008A1=00</action>
+      <action>maincpu.pb@1009A1=00</action>
+      <action>maincpu.pb@100821=00</action>
+      <action>maincpu.pb@1006A1=00</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@100230=09</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@100221=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility"> <comment>You have to turn this cheat OFF to progress to the next flipscreen!!!</comment>
+    <script state="run">
+      <action>maincpu.pw@100266=00B2</action>
+      <action>maincpu.pb@10020F=10|(maincpu.pb@10020F BAND ~10)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pw@100266=00B2</action>
+      <action>maincpu.pb@10020F=00|(maincpu.pb@10020F BAND ~10)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 No Auto Weapon Drop"> <comment>Weapon does not fall automatically from your hand</comment>
+    <script state="run">
+      <action>maincpu.pw@100277=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Weapon">
+    <parameter>
+      <item value="0x01">Knife</item>
+      <item value="0x02">Bottle</item>
+      <item value="0x03">Broken Bottle</item>
+      <item value="0x04">Dynamite</item>
+      <item value="0x05">Stick</item>
+      <item value="0x06">Gun</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10022D=param</action>
+      <action>maincpu.pb@100276=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Character">
+    <parameter>
+      <item value="0x00">Ryu</item>
+      <item value="0x01">Duke</item>
+      <item value="0x02">Billy</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@103D35=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@1002B0=09</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@1002A1=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility"> <comment>You have to turn this cheat OFF to progress to the next flipscreen!!!</comment>
+    <script state="run">
+      <action>maincpu.pw@1002E6=00B2</action>
+      <action>maincpu.pb@10028F=10|(maincpu.pb@10028F BAND ~10)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pw@1002E6=00B2</action>
+      <action>maincpu.pb@10028F=00|(maincpu.pb@10028F BAND ~10)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 No Auto Weapon Drop"> <comment>Weapon does not fall automatically from your hand</comment>
+    <script state="run">
+      <action>maincpu.pw@1002F7=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Weapon">
+    <parameter>
+      <item value="0x01">Knife</item>
+      <item value="0x02">Bottle</item>
+      <item value="0x03">Broken Bottle</item>
+      <item value="0x04">Dynamite</item>
+      <item value="0x05">Stick</item>
+      <item value="0x06">Gun</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1002AD=param</action>
+      <action>maincpu.pb@1002F6=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Character">
+    <parameter>
+      <item value="0x00">Ryu</item>
+      <item value="0x01">Duke</item>
+      <item value="0x02">Billy</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@103D55=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

@@ -1,0 +1,315 @@
+<mamecheat version="1">
+
+  <NGH>058</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@10092A=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish Round Now!">
+    <script state="on">
+      <action>maincpu.pb@10092A=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Always Enable Special Move">
+    <script state="on">
+      <action>temp0 =maincpu.mb@024103</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mb@024103=02</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mb@024103=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Unlock Ryo Sakazaki">
+    <script state="on">
+      <action>temp0 =maincpu.mw@02094E</action>
+      <action>temp1 =maincpu.mw@020BD2</action>
+    </script>
+    <script state="run">
+      <action>maincpu.pb@10E063=FF</action>
+      <action>maincpu.mw@02094E=4E71</action>
+      <action>maincpu.mw@020BD2=4E71</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mw@02094E=temp0 </action>
+      <action>maincpu.mw@020BD2=temp1 </action>
+    </script>
+  </cheat>
+
+  <cheat desc="Always have Easy Supers" tempvariables="34"> <comment>For all characters; Back, Forward, A+C performs Desperation Move.</comment>
+    <script state="on">
+      <action>temp0 =maincpu.mq@038BBA</action>
+      <action>temp1 =maincpu.md@038BC2</action>
+      <action>temp2 =maincpu.mq@038C52</action>
+      <action>temp3 =maincpu.md@038C5A</action>
+      <action>temp4 =maincpu.mq@038D00</action>
+      <action>temp5 =maincpu.md@038D08</action>
+      <action>temp6 =maincpu.mq@038D78</action>
+      <action>temp7 =maincpu.md@038D80</action>
+      <action>temp8 =maincpu.mq@038DFC</action>
+      <action>temp9 =maincpu.md@038E04</action>
+      <action>temp10=maincpu.mq@038E66</action>
+      <action>temp11=maincpu.md@038E6E</action>
+      <action>temp12=maincpu.mq@038EEC</action>
+      <action>temp13=maincpu.md@038EF4</action>
+      <action>temp14=maincpu.mq@038F80</action>
+      <action>temp15=maincpu.md@038F88</action>
+      <action>temp16=maincpu.mq@039014</action>
+      <action>temp17=maincpu.md@03901C</action>
+      <action>temp18=maincpu.mq@0390A6</action>
+      <action>temp19=maincpu.md@0390AE</action>
+      <action>temp20=maincpu.mq@039142</action>
+      <action>temp21=maincpu.md@03914A</action>
+      <action>temp22=maincpu.mq@0391CA</action>
+      <action>temp23=maincpu.md@0391D2</action>
+      <action>temp24=maincpu.mq@03923E</action>
+      <action>temp25=maincpu.md@039246</action>
+      <action>temp26=maincpu.mq@0392D6</action>
+      <action>temp27=maincpu.md@0392DE</action>
+      <action>temp28=maincpu.mq@039390</action>
+      <action>temp29=maincpu.md@039398</action>
+      <action>temp30=maincpu.mq@039430</action>
+      <action>temp31=maincpu.md@039438</action>
+    </script>
+    <script state="run">
+      <action>temp32=0F0400000C0F030C</action> <!-- This ROM cheat was made by syndromtr -->
+      <action>temp33=F00EFF09</action>
+      <action>maincpu.mq@038BBA=temp32</action>
+      <action>maincpu.md@038BC2=temp33</action>
+      <action>maincpu.mq@038C52=temp32</action>
+      <action>maincpu.md@038C5A=temp33</action>
+      <action>maincpu.mq@038D00=temp32</action>
+      <action>maincpu.md@038D08=temp33</action>
+      <action>maincpu.mq@038D78=temp32</action>
+      <action>maincpu.md@038D80=temp33</action>
+      <action>maincpu.mq@038DFC=temp32</action>
+      <action>maincpu.md@038E04=temp33</action>
+      <action>maincpu.mq@038E66=temp32</action>
+      <action>maincpu.md@038E6E=temp33</action>
+      <action>maincpu.mq@038EEC=temp32</action>
+      <action>maincpu.md@038EF4=temp33</action>
+      <action>maincpu.mq@038F80=temp32</action>
+      <action>maincpu.md@038F88=temp33</action>
+      <action>maincpu.mq@039014=temp32</action>
+      <action>maincpu.md@03901C=temp33</action>
+      <action>maincpu.mq@0390A6=temp32</action>
+      <action>maincpu.md@0390AE=temp33</action>
+      <action>maincpu.mq@039142=temp32</action>
+      <action>maincpu.md@03914A=temp33</action>
+      <action>maincpu.mq@0391CA=temp32</action>
+      <action>maincpu.md@0391D2=temp33</action>
+      <action>maincpu.mq@03923E=temp32</action>
+      <action>maincpu.md@039246=temp33</action>
+      <action>maincpu.mq@0392D6=temp32</action>
+      <action>maincpu.md@0392DE=temp33</action>
+      <action>maincpu.mq@039390=temp32</action>
+      <action>maincpu.md@039398=temp33</action>
+      <action>maincpu.mq@039430=temp32</action>
+      <action>maincpu.md@039438=temp33</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mq@038BBA=temp0 </action>
+      <action>maincpu.md@038BC2=temp1 </action>
+      <action>maincpu.mq@038C52=temp2 </action>
+      <action>maincpu.md@038C5A=temp3 </action>
+      <action>maincpu.mq@038D00=temp4 </action>
+      <action>maincpu.md@038D08=temp5 </action>
+      <action>maincpu.mq@038D78=temp6 </action>
+      <action>maincpu.md@038D80=temp7 </action>
+      <action>maincpu.mq@038DFC=temp8 </action>
+      <action>maincpu.md@038E04=temp9 </action>
+      <action>maincpu.mq@038E66=temp10</action>
+      <action>maincpu.md@038E6E=temp11</action>
+      <action>maincpu.mq@038EEC=temp12</action>
+      <action>maincpu.md@038EF4=temp13</action>
+      <action>maincpu.mq@038F80=temp14</action>
+      <action>maincpu.md@038F88=temp15</action>
+      <action>maincpu.mq@039014=temp16</action>
+      <action>maincpu.md@03901C=temp17</action>
+      <action>maincpu.mq@0390A6=temp18</action>
+      <action>maincpu.md@0390AE=temp19</action>
+      <action>maincpu.mq@039142=temp20</action>
+      <action>maincpu.md@03914A=temp21</action>
+      <action>maincpu.mq@0391CA=temp22</action>
+      <action>maincpu.md@0391D2=temp23</action>
+      <action>maincpu.mq@03923E=temp24</action>
+      <action>maincpu.md@039246=temp25</action>
+      <action>maincpu.mq@0392D6=temp26</action>
+      <action>maincpu.md@0392DE=temp27</action>
+      <action>maincpu.mq@039390=temp28</action>
+      <action>maincpu.md@039398=temp29</action>
+      <action>maincpu.mq@039430=temp30</action>
+      <action>maincpu.md@039438=temp31</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@10049A=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain all Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@10049A=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Rapid Fire - Quick Punch">
+    <script state="run">
+      <!--<action>maincpu.pb@10FD96=00|(maincpu.pb@10FD96 BAND ~10)</action>-->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Rapid Fire - Quick Kick">
+    <script state="run">
+      <!--<action>maincpu.pb@10FD96=00|(maincpu.pb@10FD96 BAND ~20)</action>-->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Rapid Fire - Strong Punch">
+    <script state="run">
+      <!--<action>maincpu.pb@10FD96=00|(maincpu.pb@10FD96 BAND ~40)</action>-->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Rapid Fire - Strong Kick">
+    <script state="run">
+      <!--<action>maincpu.pb@10FD96=00|(maincpu.pb@10FD96 BAND ~80)</action>-->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Play Ryo Sakazaki"> <comment>Free player selection - Use it on the selection screen.</comment>
+    <script state="on">
+      <action>maincpu.pb@101593=10</action> <!-- Was 101E93 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 See Endsequence Now!"> <comment>Set it ingame, in a Round.
+  NOTE: If ONLY ONE credit is used; then after the endsequence all characters' quotes are also displayed.</comment>
+    <script state="on">
+      <action condition="(maincpu.pw@100010 == 49D8) AND ((maincpu.pb@100034 BAND 01) == 01)">temp0=01</action>
+      <action condition="(temp0 == 01)">maincpu.pb@10049A=01</action>
+      <action condition="(temp0 == 01)">maincpu.pb@10059A=00</action>
+      <action condition="(temp0 == 01)">maincpu.pw@10092A=0001</action>
+      <action condition="(temp0 == 01)">maincpu.pb@100058=01</action>
+      <action condition="(temp0 == 01)">maincpu.pb@10B2F3=10</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@10059A=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain all Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@10059A=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Rapid Fire - Quick Punch">
+    <script state="run">
+      <!--<action>maincpu.pb@10FD9C=00|(maincpu.pb@10FD9C BAND ~10)</action>-->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Rapid Fire - Quick Kick">
+    <script state="run">
+      <!--<action>maincpu.pb@10FD9C=00|(maincpu.pb@10FD9C BAND ~20)</action>-->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Rapid Fire - Strong Punch">
+    <script state="run">
+      <!--<action>maincpu.pb@10FD9C=00|(maincpu.pb@10FD9C BAND ~40)</action>-->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Rapid Fire - Strong Kick">
+    <script state="run">
+      <!--<action>maincpu.pb@10FD9C=00|(maincpu.pb@10FD9C BAND ~80)</action>-->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Play Ryo Sakazaki"> <comment>Free player selection - Use it on the selection screen.</comment>
+    <script state="on">
+      <action>maincpu.pb@101693=10</action> <!-- Was 101F93 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 See Endsequence Now!"> <comment>Set it ingame, in a Round.
+  NOTE: If ONLY ONE credit is used; then after the endsequence all characters' quotes are also displayed.</comment>
+    <script state="on">
+      <action condition="(maincpu.pw@100010 == 49D8) AND ((maincpu.pb@100034 BAND 02) == 02)">temp0=01</action>
+      <action condition="(temp0 == 01)">maincpu.pb@10059A=01</action>
+      <action condition="(temp0 == 01)">maincpu.pb@10049A=00</action>
+      <action condition="(temp0 == 01)">maincpu.pw@10092A=0001</action>
+      <action condition="(temp0 == 01)">maincpu.pb@100059=01</action>
+      <action condition="(temp0 == 01)">maincpu.pb@10B2F3=10</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="No Background Music">
+    <script state="run">
+      <action>audiocpu.pb@FE2D=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Hide Background"> <comment>Activate before match start</comment>
+    <script state="run">
+      <action>maincpu.pb@1051E1=maincpu.pb@1051E0 band 7F</action>
+      <action>maincpu.pw@401FFE=0000</action>
+      <action condition="((maincpu.pb@100003 band 9F) gt 90 and (maincpu.pb@100003 band 40) == 00)">maincpu.pb@1051E1=10</action><!-- activate only during match --><!-- BG layers -->
+      <action condition="((maincpu.pb@100003 band 9F) gt 90 and (maincpu.pb@100003 band 40) == 00)">maincpu.pb@100920=20</action><!-- HUD -->
+      <action condition="((maincpu.pb@100003 band 9F) gt 90 and (maincpu.pb@100003 band 40) == 00)">maincpu.pb@10092B=3C</action><!-- HUD -->
+      <action condition="((maincpu.pb@100003 band 9F) gt 90 and (maincpu.pb@100003 band 40) == 00)">maincpu.pb@1041D9=40</action><!-- flashing text -->
+      <action condition="((maincpu.pb@100003 band 9F) gt 90 and (maincpu.pb@100003 band 40) == 00)">maincpu.pw@1041DA=00</action><!-- solid shadows -->
+      <action condition="((maincpu.pb@100003 band 9F) gt 90 and (maincpu.pb@100003 band 40) == 00)">maincpu.pw@401FFE=8F8F</action><!-- BG colour (pink) -->
+    </script>
+    <script state="off">
+      <action>maincpu.pb@100920=40</action>
+      <action>maincpu.pb@1051E1=maincpu.pb@1051E0 band 7F</action>
+      <action>maincpu.pw@401FFE=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

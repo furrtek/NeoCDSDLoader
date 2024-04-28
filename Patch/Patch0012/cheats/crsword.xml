@@ -1,0 +1,150 @@
+<mamecheat version="1">
+
+  <NGH>037</NGH>
+
+  <cheat desc="Invincibility">
+    <script state="on">
+      <action>temp0 =maincpu.md@01DBC0</action>
+      <action>temp1 =maincpu.md@01DBC4</action>
+      <action>temp2 =maincpu.md@01DBC8</action>
+      <action>temp3 =maincpu.md@01DBCC</action>
+      <action>temp4 =maincpu.md@01DFC6</action>
+      <action>temp5 =maincpu.md@01E030</action>
+    </script>
+    <script state="run">
+      <action>maincpu.md@01DBC0=B1FC0010</action>
+      <action>maincpu.md@01DBC4=40806304</action> <!-- 1st + 2nd = cmpa.l #$104080,A0 [Player or Enemy ?] / bls $1dbcc -->
+      <action>maincpu.md@01DBC8=70014E75</action> <!-- moveq #$1,D1 / ret [Hit] -->
+      <action>maincpu.md@01DBCC=70004E75</action> <!-- moveq #$0,D0 / ret [No Hit] -->
+      <action>maincpu.md@01DFC6=6000FBF8</action> <!-- Normal Attack [jsr $1dbc0] -->
+      <action>maincpu.md@01E030=6000FB8E</action> <!-- Magic Attack [jsr $1dbc0] -->
+    </script>
+    <script state="off">
+      <action>maincpu.md@01DBC0=temp0 </action>
+      <action>maincpu.md@01DBC4=temp1 </action>
+      <action>maincpu.md@01DBC8=temp2 </action>
+      <action>maincpu.md@01DBCC=temp3 </action>
+      <action>maincpu.md@01DFC6=temp4 </action>
+      <action>maincpu.md@01E030=temp5 </action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Continues">
+    <script state="run">
+      <action>maincpu.pb@106023=64</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@10405B=32</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Maximum weapon power">
+    <script state="run">
+      <action>maincpu.pb@104052=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Magic">
+    <script state="run">
+      <action>maincpu.pb@10405C=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Money">
+    <script state="run">
+      <action>maincpu.pb@104066=FF</action>
+      <action>maincpu.pb@104067=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Rapid Fire">
+    <script state="run">
+      <!--<action>maincpu.pb@10FD96=00|(maincpu.pb@10FD96 BAND ~10)</action>-->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Continues">
+    <script state="run">
+      <action>maincpu.pb@106043=64</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@1040DB=32</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Maximum weapon power">
+    <script state="run">
+      <action>maincpu.pb@1040D2=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Magic">
+    <script state="run">
+      <action>maincpu.pb@1040DC=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Money">
+    <script state="run">
+      <action>maincpu.pb@1040E6=FF</action>
+      <action>maincpu.pb@1040E7=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Rapid Fire">
+    <script state="run">
+      <!--<action>maincpu.pb@10FD9C=00|(maincpu.pb@10FD9C BAND ~10)</action>-->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Sound Test">
+    <parameter min="1" max="255" step="1"/>
+    <script state="change">
+      <action>maincpu.pw@1002A2=A702</action>
+      <action>maincpu.pw@1002A4=A702</action>
+      <action>maincpu.pb@1002A6=param</action>
+      <action>maincpu.pb@1002A7=FF</action>
+      <action>maincpu.pb@1002A8=param</action>
+      <action>maincpu.pw@1002A2=A902</action>
+      <action>maincpu.pw@1002A4=A902</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

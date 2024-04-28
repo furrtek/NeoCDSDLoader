@@ -1,0 +1,235 @@
+<mamecheat version="1">
+
+  <NGH>083</NGH>
+
+  <cheat desc="Select Next Round Now!">
+    <parameter>
+      <item value="0x01">Round 4</item>
+      <item value="0x02">Round 8</item>
+      <item value="0x03">Round 12</item>
+      <item value="0x04">Round 16</item>
+      <item value="0x05">Round 20</item>
+      <item value="0x06">Round 24</item>
+      <item value="0x07">Round 28</item>
+      <item value="0x08">Round 30</item>
+      <item value="0x09">End Sequence</item>
+    </parameter>
+    <script state="change">
+      <action condition="(param==01)">maincpu.pb@102271=02</action>
+      <action condition="(param==01)">maincpu.pb@102273=02</action>
+      <action condition="(param==02)">maincpu.pb@102271=06</action>
+      <action condition="(param==02)">maincpu.pb@102273=06</action>
+      <action condition="(param==03)">maincpu.pb@102271=0A</action>
+      <action condition="(param==03)">maincpu.pb@102273=0A</action>
+      <action condition="(param==04)">maincpu.pb@102271=0E</action>
+      <action condition="(param==04)">maincpu.pb@102273=0E</action>
+      <action condition="(param==05)">maincpu.pb@102271=12</action>
+      <action condition="(param==05)">maincpu.pb@102273=12</action>
+      <action condition="(param==06)">maincpu.pb@102271=16</action>
+      <action condition="(param==06)">maincpu.pb@102273=16</action>
+      <action condition="(param==07)">maincpu.pb@102271=1A</action>
+      <action condition="(param==07)">maincpu.pb@102273=1A</action>
+      <action condition="(param==08)">maincpu.pb@102271=1C</action>
+      <action condition="(param==08)">maincpu.pb@102273=1C</action>
+      <action condition="(param==09)">maincpu.pb@102271=20</action>
+      <action condition="(param==09)">maincpu.pb@102273=20</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Quick Finish Cheat"> <comment>It's best to activate the Quick Finish cheat when at least one wall has decended, just complete 3 matching colours to drop the whole screen!</comment>
+    <script state="on">
+      <action>maincpu.pb@105A9D=00</action>
+      <action>maincpu.pb@105AB1=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <!--<cheat desc="P1 Select Help Line">
+    <parameter>
+      <item value="0x01">Enabled</item>
+      <item value="0x00">Disabled</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@108287=param</action>
+    </script>
+  </cheat>-->
+  <cheat desc="P1 Enable Help Line">
+    <script state="on">
+      <action>maincpu.pb@108287=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Perm. Current Bubble">
+    <parameter>
+      <item value="0x00">Blue</item>
+      <item value="0x01">Red</item>
+      <item value="0x02">Yellow</item>
+      <item value="0x03">Green</item>
+      <item value="0x04">Purple</item>
+      <item value="0x05">Orange</item>
+      <item value="0x06">Black</item>
+      <item value="0x07">Grey</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10821F=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Perm. Next Bubble">
+    <parameter>
+      <item value="0x00">Blue</item>
+      <item value="0x01">Red</item>
+      <item value="0x02">Yellow</item>
+      <item value="0x03">Green</item>
+      <item value="0x04">Purple</item>
+      <item value="0x05">Orange</item>
+      <item value="0x06">Black</item>
+      <item value="0x07">Grey</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10823D=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Temp. Current Bubble">
+    <parameter>
+      <item value="0x00">Blue</item>
+      <item value="0x01">Red</item>
+      <item value="0x02">Yellow</item>
+      <item value="0x03">Green</item>
+      <item value="0x04">Purple</item>
+      <item value="0x05">Orange</item>
+      <item value="0x06">Black</item>
+      <item value="0x07">Grey</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@10821F=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Temp. Next Bubble">
+    <parameter>
+      <item value="0x00">Blue</item>
+      <item value="0x01">Red</item>
+      <item value="0x02">Yellow</item>
+      <item value="0x03">Green</item>
+      <item value="0x04">Purple</item>
+      <item value="0x05">Orange</item>
+      <item value="0x06">Black</item>
+      <item value="0x07">Grey</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@10823D=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <!--<cheat desc="P2 Select Help Line">
+    <parameter>
+      <item value="0x01">Enabled</item>
+      <item value="0x00">Disabled</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@108323=param</action>
+    </script>
+  </cheat>-->
+  <cheat desc="P2 Enable Help Line">
+    <script state="on">
+      <action>maincpu.pb@108323=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Perm. Current Bubble">
+    <parameter>
+      <item value="0x00">Blue</item>
+      <item value="0x01">Red</item>
+      <item value="0x02">Yellow</item>
+      <item value="0x03">Green</item>
+      <item value="0x04">Purple</item>
+      <item value="0x05">Orange</item>
+      <item value="0x06">Black</item>
+      <item value="0x07">Grey</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1082BB=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Perm. Next Bubble">
+    <parameter>
+      <item value="0x00">Blue</item>
+      <item value="0x01">Red</item>
+      <item value="0x02">Yellow</item>
+      <item value="0x03">Green</item>
+      <item value="0x04">Purple</item>
+      <item value="0x05">Orange</item>
+      <item value="0x06">Black</item>
+      <item value="0x07">Grey</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1082D9=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Temp. Current Bubble">
+    <parameter>
+      <item value="0x00">Blue</item>
+      <item value="0x01">Red</item>
+      <item value="0x02">Yellow</item>
+      <item value="0x03">Green</item>
+      <item value="0x04">Purple</item>
+      <item value="0x05">Orange</item>
+      <item value="0x06">Black</item>
+      <item value="0x07">Grey</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@1082BB=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Temp. Next Bubble">
+    <parameter>
+      <item value="0x00">Blue</item>
+      <item value="0x01">Red</item>
+      <item value="0x02">Yellow</item>
+      <item value="0x03">Green</item>
+      <item value="0x04">Purple</item>
+      <item value="0x05">Orange</item>
+      <item value="0x06">Black</item>
+      <item value="0x07">Grey</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@1082D9=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

@@ -1,0 +1,180 @@
+<mamecheat version="1">
+
+  <NGH>061</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@1067A4=00</action>
+      <action>maincpu.pb@1067A3=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish this Game Now!"> <comment>May be a slight delay</comment>
+    <script state="on">
+      <action>maincpu.pb@1067A4=00</action>
+      <action>maincpu.pb@1067A3=30</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Current Round"> <comment>0=Reg. Qualify - 6=Final</comment>
+    <parameter min="0" max="6" step="1"/>
+    <script state="change">
+      <action>maincpu.pb@1044CC=(param)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Next Round"> <comment>0=Reg. Qualify - 6=Final</comment>
+    <parameter min="0" max="6" step="1"/>
+    <script state="change">
+      <action>maincpu.pb@1044CC=(param)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Always win Toss"> <comment>Coin shows eagle side</comment>
+    <script state="run">
+      <action>maincpu.pb@100884=07</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Always win Penalty">
+    <script state="run">
+      <action>maincpu.pd@108714=00060000|(maincpu.pd@108714 BAND ~00FF00FF)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select PowerUp"> <comment>Choose one of these at the beginning of the game.</comment>
+    <parameter>
+      <item value="0x00">Full Team</item>
+      <item value="0x01">Attack</item>
+      <item value="0x02">Defense</item>
+      <item value="0x03">Speed</item>
+      <item value="0x04">Teamwork</item>
+      <item value="0x05">Ace Striker</item>
+      <item value="0x06">Goalkeeper</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@104484=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Score always 0">
+    <script state="run">
+      <action>maincpu.pb@1044C4=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Score always 99">
+    <script state="run">
+      <action>maincpu.pb@1044C4=63</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P1 Set score = 0 Now!">
+    <script state="on">
+      <action>maincpu.pb@1044C4=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Set score = 99 Now!">
+    <script state="on">
+      <action>maincpu.pb@1044C4=63</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc="P1 Select Score Now!">
+    <parameter min="0" max="99" step="1"/>
+    <script state="change">
+      <action>maincpu.pb@1044C4=(param)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Always win Toss"> <comment>Coin shows face side</comment>
+    <script state="run">
+      <action>maincpu.pb@100884=04</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Always win Penalty">
+    <script state="run">
+      <action>maincpu.pd@108714=00000006|(maincpu.pd@108714 BAND ~00FF00FF)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select PowerUp"> <comment>Choose one of these at the beginning of the game.</comment>
+    <parameter>
+      <item value="0x00">Full Team</item>
+      <item value="0x01">Attack</item>
+      <item value="0x02">Defense</item>
+      <item value="0x03">Speed</item>
+      <item value="0x04">Teamwork</item>
+      <item value="0x05">Ace Striker</item>
+      <item value="0x06">Goalkeeper</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1044A4=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Score always = 0">
+    <script state="run">
+      <action>maincpu.pb@1044C8=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Score always = 99">
+    <script state="run">
+      <action>maincpu.pb@1044C8=63</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P2 Set score = 0 Now!">
+    <script state="on">
+      <action>maincpu.pb@1044C8=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Set score = 99 Now!">
+    <script state="on">
+      <action>maincpu.pb@1044C8=63</action>
+    </script>
+  </cheat>-->
+
+  <cheat desc="P2 Select Score Now!">
+    <parameter min="0" max="99" step="1"/>
+    <script state="change">
+      <action>maincpu.pb@1044C8=(param)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->
