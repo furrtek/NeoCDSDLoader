@@ -1,0 +1,172 @@
+<mamecheat version="1">
+
+  <NGH>047</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@10092A=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish Round Now!">
+    <script state="on">
+      <action>maincpu.pb@10092A=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Always Enable Special Move">
+    <script state="on">
+      <action>temp0 =maincpu.mb@01A3F7</action>
+    </script>
+    <script state="run">
+      <action>maincpu.mb@01A3F7=02</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mb@01A3F7=temp0 </action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@1003CB=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Drain all Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@1003CB=00</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P1 Select Character"> <comment>Free player selection - Use on the selection screen. If it doesn't work, then press F3 in order to reset the machine.</comment>
+    <parameter>
+      <item value="0x09">Billy Kane</item>
+      <item value="0x0A">Axel Hawk</item>
+      <item value="0x0B">Laurence Blood</item>
+      <item value="0x0C">Wolfgang Krauser</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@102693=param</action>
+    </script>
+  </cheat>-->
+  <cheat desc="P1 Play Billy Kane">
+    <script state="on">
+      <action>maincpu.pb@101C93=09</action> <!-- Was 102693 -->
+    </script>
+  </cheat>
+  <cheat desc="P1 Play Axel Hawk">
+    <script state="on">
+      <action>maincpu.pb@101C93=0A</action>
+    </script>
+  </cheat>
+  <cheat desc="P1 Play Laurence Blood">
+    <script state="on">
+      <action>maincpu.pb@101C93=0B</action>
+    </script>
+  </cheat>
+  <cheat desc="P1 Play Wolfgang Krauser">
+    <script state="on">
+      <action>maincpu.pb@101C93=0C</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@1004CB=60</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Drain all Energy Now!">
+    <script state="on">
+      <action>maincpu.pb@1004CB=00</action>
+    </script>
+  </cheat>
+
+  <!--<cheat desc="P2 Select Character"> <comment>Free player selection - Use on the selection screen. If it doesn't work, then press F3 in order to reset the machine.</comment>
+    <parameter>
+      <item value="0x09">Billy Kane</item>
+      <item value="0x0A">Axel Hawk</item>
+      <item value="0x0B">Laurence Blood</item>
+      <item value="0x0C">Wolfgang Krauser</item>
+    </parameter>
+    <script state="change">
+      <action>maincpu.pb@102793=param</action>
+    </script>
+  </cheat>-->
+  <cheat desc="P2 Play Billy Kane">
+    <script state="on">
+      <action>maincpu.pb@102793=09</action>
+    </script>
+  </cheat>
+  <cheat desc="P2 Play Axel Hawk">
+    <script state="on">
+      <action>maincpu.pb@102793=0A</action>
+    </script>
+  </cheat>
+  <cheat desc="P2 Play Laurence Blood">
+    <script state="on">
+      <action>maincpu.pb@102793=0B</action>
+    </script>
+  </cheat>
+  <cheat desc="P2 Play Wolfgang Krauser">
+    <script state="on">
+      <action>maincpu.pb@102793=0C</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="No Background Music">
+    <script state="run">
+      <action>audiocpu.pb@FE2D=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Hide Background"> <comment>Activate before match start</comment>
+    <script state="run">
+      <action>maincpu.pb@1051C9=maincpu.pb@1051C8 band 7F bor 10</action>
+      <action>maincpu.pw@401FFE=0000</action>
+      <action condition="(maincpu.pb@100002 == 43)">maincpu.pb@100920=20</action><!-- HUD -->
+      <action condition="(maincpu.pb@100002 == 43)">maincpu.pb@10092B=3C</action><!-- HUD -->
+      <action condition="(maincpu.pb@100002 == 43 and (maincpu.pb@100003 band 80) != 00)">maincpu.pb@1051C9=10</action><!-- activate only during match --><!-- BG layers -->
+      <action condition="(maincpu.pb@100002 == 43 and (maincpu.pb@100003 band 80) != 00)">maincpu.pb@1041C1=40</action><!-- flashing text -->
+      <action condition="(maincpu.pb@100002 == 43 and (maincpu.pb@100003 band 80) != 00)">maincpu.pw@1041C3=00</action><!-- solid shadows -->
+      <action condition="(maincpu.pb@100002 == 43 and (maincpu.pb@100003 band 80) != 00)">maincpu.pw@401FFE=8F8F</action><!-- BG colour (pink) -->
+    </script>
+    <script state="off">
+      <action>maincpu.pb@100920=40</action>
+      <action>maincpu.pb@1051C9=maincpu.pb@1051C8 band 7F bor 10</action>
+      <action>maincpu.pw@401FFE=0000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

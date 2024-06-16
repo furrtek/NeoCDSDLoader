@@ -1,0 +1,202 @@
+<mamecheat version="1">
+
+  <NGH>201</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@106EB3=3C</action> <!-- Was 106E93 -->
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Tank Gas">
+    <script state="run">
+      <action>maincpu.pb@100607=30</action> <!-- Was 1005E7 -->
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Tank Cannon">
+    <script state="run">
+      <action>maincpu.pb@100630=0A</action> <!-- Was 100610 -->
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Vehicle Cannon">
+    <script state="run">
+      <action>maincpu.pw@10062E=0001</action> <!-- Was 10060E -->
+    </script>
+  </cheat>
+
+  <cheat desc="Tank Invincibility">
+    <script state="run">
+      <action>maincpu.pb@1005E5=FF</action> <!-- Was 1005C5 -->
+    </script>
+  </cheat>
+
+  <cheat desc="Select Starting Mission">
+    <parameter min="1" max="6" step="1"/>
+    <script state="run">
+      <action condition="(maincpu.pb@10E3B7==00)">maincpu.pb@10E3B7=(param-1)</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Hit Anywhere">
+    <script state="on">
+      <action>maincpu.mw@285FC=4EF9</action>
+      <action>maincpu.mw@28600=0200</action>
+      <action>maincpu.mq@00200=B3FC00100440670C</action>
+      <action>maincpu.mq@00208=D1FC0000000A4EF9</action>
+      <action>maincpu.mq@00210=00028618D1FC0000</action>
+      <action>maincpu.mq@00218=000A4EF900028602</action>
+    </script>
+    <script state="off">
+      <action>maincpu.mw@285FC=D1FC</action>
+      <action>maincpu.mw@28600=000A</action>
+      <action>maincpu.mq@00200=0000000000000000</action>
+      <action>maincpu.mq@00208=0000000000000000</action>
+      <action>maincpu.mq@00210=0000000000000000</action>
+      <action>maincpu.mq@00218=0000000000000000</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish Current Mission">
+    <script state="on">
+      <action condition="(maincpu.pb@106ECA == 00)">maincpu.pb@106ED2=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="See End Sequence Now!">
+    <script state="on">
+      <action condition="(maincpu.pb@106ECA == 00)">maincpu.pb@106ED0=05</action>
+      <action condition="(maincpu.pb@106ECA == 00)">maincpu.pb@106ED2=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@100397=03</action> <!-- Was 100377 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Bombs">
+    <script state="run">
+      <action>maincpu.pb@1004E0=0A</action> <!-- Was 1004C0 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@1004A5=40</action> <!-- Was 100485 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Weapon">
+    <parameter>
+      <item value="0x00">Normal Gun</item>
+      <item value="0x01">Shotgun</item>
+      <item value="0x02">Flamer</item>
+      <item value="0x03">Rocket Launcher</item>
+      <item value="0x04">Machine Gun</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@1004B1=param</action> <!-- Weapon -->
+      <action>maincpu.pb@1004C2=FF</action> <!-- Infinite Ammo -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Rapid Fire">
+    <script state="run">
+      <action>maincpu.pb@106ED2=00|(maincpu.pb@106ED2 BAND ~10)</action> <!-- Was 106EB2 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P1 No bomb throwing wait"> <comment>You can normally have to wait for the bombs to explode before you can throw anymore</comment>
+    <script state="run">
+      <action>maincpu.pd@1004E1=00000000|(maincpu.pd@1004E1 BAND ~FF0000FF)</action> <!-- Was 1004C1 -->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Lives">
+    <script state="run">
+      <action>maincpu.pb@100437=03</action> <!-- Was 100417 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Bombs">
+    <script state="run">
+      <action>maincpu.pb@100580=0A</action> <!-- Was 100560 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@100545=40</action> <!-- Was 100525 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Weapon">
+    <parameter>
+      <item value="0x00">Normal Gun</item>
+      <item value="0x01">Shotgun</item>
+      <item value="0x02">Flamer</item>
+      <item value="0x03">Rocket Launcher</item>
+      <item value="0x04">Machine Gun</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@100551=param</action> <!-- Weapon -->
+      <action>maincpu.pb@100562=FF</action> <!-- Infinite Ammo -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Rapid Fire">
+    <script state="run">
+      <action>maincpu.pb@106ED8=00|(maincpu.pb@106ED8 BAND ~10)</action> <!-- Was 106EB8 -->
+    </script>
+  </cheat>
+
+  <cheat desc="P2 No bomb throwing wait"> <comment>You can normally have to wait for the bombs to explode before you can throw anymore</comment>
+    <script state="run">
+      <action>maincpu.pd@100581=00000000|(maincpu.pd@100581 BAND ~FF0000FF)</action> <!-- Was 100561 -->
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Turn All Sound Off"> <comment>This will turn ALL sound off the next time you shoot, turn it OFF when the sound dies and the sfx will return but the background music will be gone!</comment>
+    <script state="run">
+      <action>audiocpu.pb@F81C=00</action>
+    </script>
+    <script state="off">
+      <action>audiocpu.pb@F81C=10</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

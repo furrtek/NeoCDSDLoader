@@ -1,0 +1,203 @@
+<mamecheat version="1">
+
+  <NGH>065</NGH>
+
+  <cheat desc="Infinite Set Time">
+    <script state="run">
+      <action>maincpu.pb@10008D=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Finish Set Now!">
+    <script state="on">
+      <action>maincpu.pb@10008D=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Court"> <comment>Use this on the Court 'Selection' Screen enable the one you want once it's chosen itself.</comment>
+    <parameter>
+      <item value="0x00">Beach</item>
+      <item value="0x01">Lawn</item>
+      <item value="0x02">Tiles</item>
+      <item value="0x03">Concrete</item>
+      <item value="0x04">Clay</item>
+      <item value="0x05">Stadium</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@100324=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select CPU Team"> <comment>Enable these before chosing your character disable once it gets to court select.</comment>
+    <parameter>
+      <item value="0x01">Japan</item>
+      <item value="0x02">Spain</item>
+      <item value="0x03">USA</item>
+      <item value="0x04">Korea</item>
+      <item value="0x05">Italy</item>
+      <item value="0x06">Germany</item>
+    </parameter>
+    <script state="run">
+      <action condition="(param==01)">maincpu.pb@1004FC=10</action>
+      <action condition="(param==01)">maincpu.pb@1004FE=00</action>
+      <action condition="(param==02)">maincpu.pb@1004FC=10</action>
+      <action condition="(param==02)">maincpu.pb@1004FE=01</action>
+      <action condition="(param==03)">maincpu.pb@1004FC=10</action>
+      <action condition="(param==03)">maincpu.pb@1004FE=02</action>
+      <action condition="(param==04)">maincpu.pb@1004FC=10</action>
+      <action condition="(param==04)">maincpu.pb@1004FE=03</action>
+      <action condition="(param==05)">maincpu.pb@1004FC=10</action>
+      <action condition="(param==05)">maincpu.pb@1004FE=04</action>
+      <action condition="(param==06)">maincpu.pb@1004FC=10</action>
+      <action condition="(param==06)">maincpu.pb@1004FE=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Points to Win Match"> <comment>Select the score that you would like to play to. The round will end when a player reaches the point goal or the time is up, so use in conjunction with the 'Infinite Time' cheat for the Best Effect.</comment>
+    <parameter min="5" max="99" step="1"/>
+    <script state="run">
+      <action>maincpu.pb@1000FF=tobcd(param)</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@1000FF=12</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Round Length"> <comment>Select the length (in seconds) that you would like the round to last. The round will end when a player reaches the point goal or the time is up.</comment>
+    <parameter min="10" max="99" step="1"/>
+    <script state="run">
+      <action>maincpu.pb@10FD88=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD88=1E</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Credit Insert Time"> <comment>Disables the timer which forces the player start button upon inserting a credit.</comment>
+    <script state="run">
+      <action>maincpu.pb@10FDDA=30</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Selection Time Limit"> <comment>Disables the timer which forces selection on the VS. Type Select, Character Select, Court Select screens. You will need to disable this cheat on the VS. CPU Court Select, as the game relies on this timer running out to force selection.</comment>
+    <script state="run">
+      <action>maincpu.pb@100090=9</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@100090=0</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Select Player Mode"> <comment>Allows CPU to play against CPU</comment>
+    <parameter>
+      <item value="0x00">P1 vs CPU</item>
+      <item value="0x01">P1 vs P2</item>
+      <item value="0x02">CPU vs P2</item>
+      <item value="0x03">CPU vs CPU</item>
+    </parameter>
+    <script state="run">
+      <action condition="param==00 OR ( maincpu.pb@10008D==00 AND param==03 )">maincpu.pb@100801=00</action>
+      <action condition="param==00 OR ( maincpu.pb@10008D==00 AND param==03 )">maincpu.pb@100881=03</action>
+      <action condition="maincpu.pb@10008D!=00 AND param==01">maincpu.pb@100801=00</action>
+      <action condition="maincpu.pb@10008D!=00 AND param==01">maincpu.pb@100881=01</action>
+      <action condition="maincpu.pb@10008D!=00 AND param==02">maincpu.pb@100801=02</action>
+      <action condition="maincpu.pb@10008D!=00 AND param==02">maincpu.pb@100881=01</action>
+      <action condition="maincpu.pb@10008D!=00 AND param==03">maincpu.pb@100801=02</action>
+      <action condition="maincpu.pb@10008D!=00 AND param==03">maincpu.pb@100881=03</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P1 Score always = 0">
+    <script state="run">
+      <action>maincpu.pb@100873=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Score always = 99">
+    <script state="run">
+      <action>maincpu.pb@100873=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Set score = 0 Now!">
+    <script state="on">
+      <action>maincpu.pb@100873=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Set score = 99 Now!">
+    <script state="on">
+      <action>maincpu.pb@100873=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Score Now!">
+    <parameter min="0" max="99" step="1"/>
+    <script state="change">
+      <action>maincpu.pb@100873=tobcd(param)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Score always = 0">
+    <script state="run">
+      <action>maincpu.pb@1008F3=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Score always = 99">
+    <script state="run">
+      <action>maincpu.pb@1008F3=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Set score = 0 Now!">
+    <script state="on">
+      <action>maincpu.pb@1008F3=00</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Set score = 99 Now!">
+    <script state="on">
+      <action>maincpu.pb@1008F3=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Score Now!">
+    <parameter min="0" max="99" step="1"/>
+    <script state="change">
+      <action>maincpu.pb@1008F3=tobcd(param)</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

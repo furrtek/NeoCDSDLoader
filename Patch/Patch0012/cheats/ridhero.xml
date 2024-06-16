@@ -1,0 +1,84 @@
+<mamecheat version="1">
+
+  <NGH>006</NGH>
+
+  <cheat desc="Infinite Continues">
+    <script state="run">
+      <action>maincpu.pb@10FD89=64</action>
+      <action>maincpu.pb@100114=FF</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Time in WGP"> <comment>In story mode this will make you lose the Seaside Street Time Trial race every time</comment>
+    <script state="run">
+      <action>maincpu.pb@1000F8=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Time in Story">
+    <script state="run">
+      <action>maincpu.pb@10011B=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Turbos">
+    <script state="run">
+      <action>maincpu.pb@100F79=04</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Win every race as 1st">
+    <script state="run">
+      <action>maincpu.pb@100F89=01</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Always ride at Maximum Speed"> <comment>Turn it OFF if you are stuck in a crash position</comment>
+    <script state="run">
+      <action>maincpu.pb@100F52=01</action>
+      <action>maincpu.pb@100F53=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Get Maximum Speed Boost Now!">
+    <script state="on">
+      <action>maincpu.pb@100F52=01</action> <!-- Use this with an Activation Key for the best effect -->
+      <action>maincpu.pb@100F53=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc="Infinite Money Story Mode">
+    <script state="run">
+      <action>maincpu.pb@100C1C=99</action>
+      <action>maincpu.pb@100C1D=99</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->

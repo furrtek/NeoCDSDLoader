@@ -1,0 +1,102 @@
+<mamecheat version="1">
+
+  <NGH>014</NGH>
+
+  <cheat desc="Infinite Time">
+    <script state="run">
+      <action>maincpu.pb@101562=63</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@102019=40</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@10202E=03</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Infinite Attack Items">
+    <script state="run">
+      <action>maincpu.pb@10153F=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P1 Select Special Attack">
+    <parameter>
+      <item value="0x00">None</item>
+      <item value="0x01">A</item>
+      <item value="0x02">B</item>
+      <item value="0x03">C</item>
+      <item value="0x04">D</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10153E=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="P2 Infinite Energy">
+    <script state="run">
+      <action>maincpu.pb@102119=40</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Invincibility">
+    <script state="run">
+      <action>maincpu.pb@10212E=03</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Infinite Attack Items">
+    <script state="run">
+      <action>maincpu.pb@101541=05</action>
+    </script>
+  </cheat>
+
+  <cheat desc="P2 Select Special Attack">
+    <parameter>
+      <item value="0x00">None</item>
+      <item value="0x01">A</item>
+      <item value="0x02">B</item>
+      <item value="0x03">C</item>
+      <item value="0x04">D</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@101540=param</action>
+    </script>
+  </cheat>
+
+  <cheat desc=" "/>
+
+  <cheat desc="Select Cartridge/NeoGeo Type"> <comment>Use in conjunction with the 'Skip Boot Animations' cheat for the best effect, then enable it and reset. The Arcade (MVS) setting may open up other aspects of the game or it may even make the game unplayable especially if you need a coin slot.</comment>
+    <parameter>
+      <item value="0x00">Home (NEOGEO)</item>
+	  <item value="0x80">Arcade (MVS)</item>
+    </parameter>
+    <script state="run">
+      <action>maincpu.pb@10FD82=param</action>
+    </script>
+    <script state="off">
+      <action>maincpu.pb@10FD82=00</action>
+    </script>	
+  </cheat>
+
+  <cheat desc="Skip Boot Animations"> <comment>Allows a quicker start-up</comment>
+    <script state="run">
+      <action condition="(maincpu.rw@C14C38==6418)">maincpu.rw@C14C38=4E71</action>
+      <action condition="(maincpu.rw@C14C3E==CEC4)">maincpu.rw@C14C3E=CEDC</action>
+    </script>
+    <script state="off">
+      <action condition="(maincpu.rw@C14C38==4E71)">maincpu.rw@C14C38=6418</action>	
+      <action condition="(maincpu.rw@C14C3E==CEDC)">maincpu.rw@C14C3E=CEC4</action>
+    </script>
+  </cheat>
+
+</mamecheat>
+<!-- Cheat file downloaded from http://www.mamecheat.co.uk, see cheat.txt for list of contributors. -->
