@@ -21,6 +21,8 @@ you can do almost anything you want with them (see LICENSE), but ***I will NOT p
 Manufacturing issues ? Component sourcing problems ? Software questions ? If the answer isn't in this README,
 in `Docs/doc.odt`, or in source code comments, sorry but you're on your own.
 
+If you chose to ignore this paragraph and decide to send me an e-mail starting with something like "I know you don't provide any help except for clients, but..." like several already have, you'll regret it.
+
 # Hardware
 
 The PCB files are unbranded. Apart from the "Neo CD SD Loader" logo, all references to my name and my
@@ -63,10 +65,10 @@ MCU firmware built with STM32CubeIDE, BIOS patches built with the macro assemble
   * For the full size SD card version: Straight 2.54mm pitch 12-pin header.
   * For the Micro SD card version: Straight 1.27mm pitch 12-pin header.
 * Cut away the bottom plate of the PLCC socket.
-* Solder on to main board with beveled corner in the bottom right when the silkscreen arrow points right.
-* Solder two 3-pin headers in CDDA marked locations on the main board, pins pointing towards edge.
-* Assemble UserBoard and SlotBoard together with the appropriate 12-pin header. Orientation: silkscreen arrows must match and be visible. Space them 2mm+.
-* Clean PLCC socket contacts with IPA (or acetone but be careful with the plastic).
+* Solder on to main board with beveled corner in the bottom right with the silkscreen arrow pointing to the right.
+* Solder two 3-pin headers in CDDA marked locations on the main board, pins pointing outwards.
+* Assemble UserBoard and SlotBoard together with the appropriate 12-pin header. Orientation: silkscreen arrows must match and be visible. Space boards 2mm+ to allow bending.
+* Clean PLCC socket contacts with IPA.
 * Plug main board in console, or power it with +5V via a wire to the 5V rail (C1 for example).
 * Connect USB cable (in order: > D+, D-, GND) to the 3 unmarked holes next to one of the CDDA footprints.
 * Bridge the two half-circle pads near the MCU together, power up, USB device "STM32 BOOTLOADER" should be detected.
